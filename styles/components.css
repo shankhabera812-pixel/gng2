@@ -647,9 +647,41 @@
 
 /* Order CTA band */
 .order-cta {
+  position: relative;
+  overflow: hidden;
   background: var(--ember-lt);
   padding: var(--sp-10) 0;
   text-align: center;
+}
+
+.order-cta__bg {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.order-cta__bg::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: url('../assets/images/restaurant/product.jpg') center / cover no-repeat;
+  opacity: 0.22;
+}
+
+.order-cta__bg::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(242, 224, 214, 0.7),
+    rgba(242, 224, 214, 0.85)
+  );
+}
+
+.order-cta__content {
+  position: relative;
+  z-index: 1;
 }
 
 .order-cta__buttons {
