@@ -94,6 +94,12 @@
   flex-wrap: wrap;
 }
 
+.hero__order-platforms {
+  margin-top: 28px;
+  margin-bottom: 20px;
+  width: 100%;
+}
+
 /* ---- RIGHT: Photo column ---- */
 .hero__photo {
   position: relative;

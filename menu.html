@@ -26,18 +26,35 @@
   <div class="order-bar" role="region" aria-label="Order online">
     <div class="order-bar__inner">
       <span class="order-bar__label">Order online</span>
-      <a href="index.html#order-toast" class="order-btn order-btn--toast" rel="external">
-        <svg class="order-btn__icon" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M3 2h10a1 1 0 011 1v10a1 1 0 01-1 1H3a1 1 0 01-1-1V3a1 1 0 011-1zm1 2v8h8V4H4zm2 1h4v1H6V5z"/></svg>
-        <span>Toast</span>
-      </a>
-      <a href="index.html#order-doordash" class="order-btn order-btn--doordash" rel="external">
-        <svg class="order-btn__icon" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M2 3h12v2H2V3zm0 4h8v2H2V7zm0 4h10v2H2v-2z"/></svg>
-        <span>DoorDash</span>
-      </a>
-      <a href="index.html#order-grubhub" class="order-btn order-btn--grubhub" rel="external">
-        <svg class="order-btn__icon" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M4 2l1 8h6l1-8H4zm2 10a1.5 1.5 0 100 3 1.5 1.5 0 000-3zm6 0a1.5 1.5 0 100 3 1.5 1.5 0 000-3z"/></svg>
-        <span>Grubhub</span>
-      </a>
+      <div class="order-platforms">
+        <a href="index.html#order-toast" class="order-btn order-btn--toast" aria-label="Order on Toast" rel="external">
+          <span class="order-btn__icon-wrap" aria-hidden="true">
+            <img class="order-btn__icon" src="assets/images/order/toast-bread.svg" alt="">
+          </span>
+          <span class="order-btn__copy">
+            <span class="order-btn__label">Pickup · Native</span>
+            <span class="order-btn__title">Toast</span>
+          </span>
+        </a>
+        <a href="index.html#order-doordash" class="order-btn order-btn--doordash" aria-label="Order on DoorDash" rel="external">
+          <span class="order-btn__icon-wrap" aria-hidden="true">
+            <img class="order-btn__icon" src="assets/images/order/doordash-dashes.svg" alt="">
+          </span>
+          <span class="order-btn__copy">
+            <span class="order-btn__label">Delivery</span>
+            <span class="order-btn__title">DoorDash</span>
+          </span>
+        </a>
+        <a href="index.html#order-grubhub" class="order-btn order-btn--grubhub" aria-label="Order on Grubhub" rel="external">
+          <span class="order-btn__icon-wrap" aria-hidden="true">
+            <img class="order-btn__icon" src="assets/images/order/grubhub-house.svg" alt="">
+          </span>
+          <span class="order-btn__copy">
+            <span class="order-btn__label">Delivery</span>
+            <span class="order-btn__title">Grubhub</span>
+          </span>
+        </a>
+      </div>
     </div>
   </div>
 
@@ -155,9 +172,33 @@
         Ready to order?
       </h2>
       <div class="order-cta__buttons">
-        <a href="index.html#order-toast"    class="order-btn order-btn--toast    order-btn--lg">Order on Toast →</a>
-        <a href="index.html#order-doordash" class="order-btn order-btn--doordash order-btn--lg">Order on DoorDash →</a>
-        <a href="index.html#order-grubhub"  class="order-btn order-btn--grubhub  order-btn--lg">Order on Grubhub →</a>
+        <a href="index.html#order-toast" class="order-btn order-btn--toast order-btn--lg" aria-label="Order on Toast" rel="external">
+          <span class="order-btn__icon-wrap" aria-hidden="true">
+            <img class="order-btn__icon" src="assets/images/order/toast-bread.svg" alt="">
+          </span>
+          <span class="order-btn__copy">
+            <span class="order-btn__label">Pickup · Native</span>
+            <span class="order-btn__title">Order on Toast</span>
+          </span>
+        </a>
+        <a href="index.html#order-doordash" class="order-btn order-btn--doordash order-btn--lg" aria-label="Order on DoorDash" rel="external">
+          <span class="order-btn__icon-wrap" aria-hidden="true">
+            <img class="order-btn__icon" src="assets/images/order/doordash-dashes.svg" alt="">
+          </span>
+          <span class="order-btn__copy">
+            <span class="order-btn__label">Delivery</span>
+            <span class="order-btn__title">Order on DoorDash</span>
+          </span>
+        </a>
+        <a href="index.html#order-grubhub" class="order-btn order-btn--grubhub order-btn--lg" aria-label="Order on Grubhub" rel="external">
+          <span class="order-btn__icon-wrap" aria-hidden="true">
+            <img class="order-btn__icon" src="assets/images/order/grubhub-house.svg" alt="">
+          </span>
+          <span class="order-btn__copy">
+            <span class="order-btn__label">Delivery</span>
+            <span class="order-btn__title">Order on Grubhub</span>
+          </span>
+        </a>
       </div>
     </div>
   </section>

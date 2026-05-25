@@ -25,19 +25,36 @@
   <div class="order-bar" role="region" aria-label="Order online">
     <div class="order-bar__inner">
       <span class="order-bar__label">Order online</span>
-      <!-- TODO: replace #order-toast with real Toast URL -->
-      <a href="#order-toast" class="order-btn order-btn--toast" rel="external">
-        <svg class="order-btn__icon" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M3 2h10a1 1 0 011 1v10a1 1 0 01-1 1H3a1 1 0 01-1-1V3a1 1 0 011-1zm1 2v8h8V4H4zm2 1h4v1H6V5z"/></svg>
-        <span>Toast</span>
-      </a>
-      <a href="#order-doordash" class="order-btn order-btn--doordash" rel="external">
-        <svg class="order-btn__icon" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M2 3h12v2H2V3zm0 4h8v2H2V7zm0 4h10v2H2v-2z"/></svg>
-        <span>DoorDash</span>
-      </a>
-      <a href="#order-grubhub" class="order-btn order-btn--grubhub" rel="external">
-        <svg class="order-btn__icon" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M4 2l1 8h6l1-8H4zm2 10a1.5 1.5 0 100 3 1.5 1.5 0 000-3zm6 0a1.5 1.5 0 100 3 1.5 1.5 0 000-3z"/></svg>
-        <span>Grubhub</span>
-      </a>
+      <div class="order-platforms">
+        <!-- TODO: replace #order-toast with real Toast URL -->
+        <a href="#order-toast" class="order-btn order-btn--toast" aria-label="Order on Toast" rel="external">
+          <span class="order-btn__icon-wrap" aria-hidden="true">
+            <img class="order-btn__icon" src="assets/images/order/toast-bread.svg" alt="">
+          </span>
+          <span class="order-btn__copy">
+            <span class="order-btn__label">Pickup · Native</span>
+            <span class="order-btn__title">Toast</span>
+          </span>
+        </a>
+        <a href="#order-doordash" class="order-btn order-btn--doordash" aria-label="Order on DoorDash" rel="external">
+          <span class="order-btn__icon-wrap" aria-hidden="true">
+            <img class="order-btn__icon" src="assets/images/order/doordash-dashes.svg" alt="">
+          </span>
+          <span class="order-btn__copy">
+            <span class="order-btn__label">Delivery</span>
+            <span class="order-btn__title">DoorDash</span>
+          </span>
+        </a>
+        <a href="#order-grubhub" class="order-btn order-btn--grubhub" aria-label="Order on Grubhub" rel="external">
+          <span class="order-btn__icon-wrap" aria-hidden="true">
+            <img class="order-btn__icon" src="assets/images/order/grubhub-house.svg" alt="">
+          </span>
+          <span class="order-btn__copy">
+            <span class="order-btn__label">Delivery</span>
+            <span class="order-btn__title">Grubhub</span>
+          </span>
+        </a>
+      </div>
     </div>
   </div>
 
@@ -97,14 +114,37 @@
           <p class="hero__sub">
             Real food made fresh every day on Highland Street — bowls, sandwiches, smoothies, and Thai specialty coffee from a kitchen that actually cares what lands on your plate.
           </p>
-          <div class="hero__ctas">
-            <a href="#order-cta" class="btn btn-primary">Order Online ↓</a>
-            <a href="menu.html" class="btn btn-secondary">View Menu</a>
+          <div class="hero__order-platforms" aria-label="Order online">
+            <a href="#order-toast" class="order-btn order-btn--toast order-btn--hero" aria-label="Order on Toast" rel="external">
+              <span class="order-btn__icon-wrap" aria-hidden="true">
+                <img class="order-btn__icon" src="assets/images/order/toast-bread.svg" alt="">
+              </span>
+              <span class="order-btn__copy">
+                <span class="order-btn__label">Pickup · Native</span>
+                <span class="order-btn__title">Toast</span>
+              </span>
+            </a>
+            <a href="#order-doordash" class="order-btn order-btn--doordash order-btn--hero" aria-label="Order on DoorDash" rel="external">
+              <span class="order-btn__icon-wrap" aria-hidden="true">
+                <img class="order-btn__icon" src="assets/images/order/doordash-dashes.svg" alt="">
+              </span>
+              <span class="order-btn__copy">
+                <span class="order-btn__label">Delivery</span>
+                <span class="order-btn__title">DoorDash</span>
+              </span>
+            </a>
+            <a href="#order-grubhub" class="order-btn order-btn--grubhub order-btn--hero" aria-label="Order on Grubhub" rel="external">
+              <span class="order-btn__icon-wrap" aria-hidden="true">
+                <img class="order-btn__icon" src="assets/images/order/grubhub-house.svg" alt="">
+              </span>
+              <span class="order-btn__copy">
+                <span class="order-btn__label">Delivery</span>
+                <span class="order-btn__title">Grubhub</span>
+              </span>
+            </a>
           </div>
-          <div class="hero__order-row" style="display:flex;gap:8px;flex-wrap:wrap;margin-top:16px;">
-            <a href="#order-toast"    class="order-btn order-btn--toast">Toast</a>
-            <a href="#order-doordash" class="order-btn order-btn--doordash">DoorDash</a>
-            <a href="#order-grubhub"  class="order-btn order-btn--grubhub">Grubhub</a>
+          <div class="hero__ctas">
+            <a href="menu.html" class="btn btn-secondary">View Menu</a>
           </div>
         </div>
 
@@ -351,9 +391,37 @@
           </div>
         </div>
 
-        <div style="text-align:center;margin-top:40px;display:flex;justify-content:center;gap:12px;flex-wrap:wrap;">
-          <a href="menu.html#signature-brews" class="btn btn-ghost">View All Drinks</a>
-          <a href="#order-cta" class="order-btn order-btn--toast order-btn--lg">Order Now →</a>
+        <div style="text-align:center;margin-top:40px;">
+          <div class="order-platforms">
+            <a href="#order-toast" class="order-btn order-btn--toast order-btn--lg" aria-label="Order on Toast" rel="external">
+              <span class="order-btn__icon-wrap" aria-hidden="true">
+                <img class="order-btn__icon" src="assets/images/order/toast-bread.svg" alt="">
+              </span>
+              <span class="order-btn__copy">
+                <span class="order-btn__label">Pickup · Native</span>
+                <span class="order-btn__title">Order on Toast</span>
+              </span>
+            </a>
+            <a href="#order-doordash" class="order-btn order-btn--doordash order-btn--lg" aria-label="Order on DoorDash" rel="external">
+              <span class="order-btn__icon-wrap" aria-hidden="true">
+                <img class="order-btn__icon" src="assets/images/order/doordash-dashes.svg" alt="">
+              </span>
+              <span class="order-btn__copy">
+                <span class="order-btn__label">Delivery</span>
+                <span class="order-btn__title">Order on DoorDash</span>
+              </span>
+            </a>
+            <a href="#order-grubhub" class="order-btn order-btn--grubhub order-btn--lg" aria-label="Order on Grubhub" rel="external">
+              <span class="order-btn__icon-wrap" aria-hidden="true">
+                <img class="order-btn__icon" src="assets/images/order/grubhub-house.svg" alt="">
+              </span>
+              <span class="order-btn__copy">
+                <span class="order-btn__label">Delivery</span>
+                <span class="order-btn__title">Order on Grubhub</span>
+              </span>
+            </a>
+          </div>
+          <a href="menu.html#signature-brews" class="btn btn-ghost" style="margin-top:20px;">View All Drinks</a>
         </div>
       </div>
 
@@ -466,9 +534,33 @@
           We don't take orders here on our website — but we're on the three you already use.
         </p>
         <div class="order-cta__buttons">
-          <a href="#order-toast"    id="order-toast"    class="order-btn order-btn--toast    order-btn--lg">Order on Toast →</a>
-          <a href="#order-doordash" id="order-doordash" class="order-btn order-btn--doordash order-btn--lg">Order on DoorDash →</a>
-          <a href="#order-grubhub"  id="order-grubhub"  class="order-btn order-btn--grubhub  order-btn--lg">Order on Grubhub →</a>
+          <a href="#order-toast" id="order-toast" class="order-btn order-btn--toast order-btn--lg" aria-label="Order on Toast" rel="external">
+            <span class="order-btn__icon-wrap" aria-hidden="true">
+              <img class="order-btn__icon" src="assets/images/order/toast-bread.svg" alt="">
+            </span>
+            <span class="order-btn__copy">
+              <span class="order-btn__label">Pickup · Native</span>
+              <span class="order-btn__title">Order on Toast</span>
+            </span>
+          </a>
+          <a href="#order-doordash" id="order-doordash" class="order-btn order-btn--doordash order-btn--lg" aria-label="Order on DoorDash" rel="external">
+            <span class="order-btn__icon-wrap" aria-hidden="true">
+              <img class="order-btn__icon" src="assets/images/order/doordash-dashes.svg" alt="">
+            </span>
+            <span class="order-btn__copy">
+              <span class="order-btn__label">Delivery</span>
+              <span class="order-btn__title">Order on DoorDash</span>
+            </span>
+          </a>
+          <a href="#order-grubhub" id="order-grubhub" class="order-btn order-btn--grubhub order-btn--lg" aria-label="Order on Grubhub" rel="external">
+            <span class="order-btn__icon-wrap" aria-hidden="true">
+              <img class="order-btn__icon" src="assets/images/order/grubhub-house.svg" alt="">
+            </span>
+            <span class="order-btn__copy">
+              <span class="order-btn__label">Delivery</span>
+              <span class="order-btn__title">Order on Grubhub</span>
+            </span>
+          </a>
         </div>
         <p class="order-cta__note">Toast is our preferred partner — it gets your order to us fastest.</p>
       </div>
