@@ -1,0 +1,790 @@
+/* ============================================================
+   GRILL & GREEN — HOMEPAGE
+   Hero · Featured · Story · Staff · Spotlights · Drinks · Footer
+   ============================================================ */
+
+/* ============================================================
+   01 HERO
+   Split layout: left text (55%) + right photo container (45%)
+   ============================================================ */
+
+.hero {
+  background: var(--field);
+  min-height: calc(100vh - var(--nav-h));
+  max-height: 860px;
+  display: flex;
+  align-items: stretch;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero__inner {
+  width: 100%;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 clamp(20px, 5vw, 60px);
+  display: grid;
+  grid-template-columns: 55fr 45fr;
+  gap: 40px;
+  align-items: center;
+}
+
+/* ---- LEFT: Text column ---- */
+.hero__text {
+  padding: 80px 0 80px;
+  position: relative;
+  z-index: 2;
+}
+
+.hero__eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--ff-ui);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ember);
+  margin-bottom: 20px;
+}
+
+.hero__eyebrow::before {
+  content: '';
+  display: block;
+  width: 20px;
+  height: 1px;
+  background: var(--ember);
+  flex-shrink: 0;
+}
+
+.hero__headline {
+  font-family: var(--ff-display);
+  font-size: clamp(52px, 6vw, 88px);
+  font-weight: 400;
+  line-height: 1.0;
+  color: var(--ink-2);
+  letter-spacing: -0.02em;
+  margin-bottom: 24px;
+}
+
+.hero__headline em {
+  font-style: italic;
+  color: var(--ember);
+}
+
+/* Each word wrapped for breeze animation */
+.hero__headline .hero-word {
+  display: inline-block;
+}
+
+.hero__sub {
+  font-family: var(--ff-body);
+  font-size: 18px;
+  font-weight: 300;
+  color: var(--dust);
+  line-height: 1.75;
+  max-width: 440px;
+  margin-bottom: 36px;
+}
+
+.hero__ctas {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+/* ---- RIGHT: Photo column ---- */
+.hero__photo {
+  position: relative;
+  display: flex;
+  align-items: stretch;
+  padding: 24px 0;
+}
+
+.hero__photo-main {
+  width: 100%;
+  border-radius: var(--r-hero);
+  overflow: hidden;
+  position: relative;
+}
+
+.hero__photo-main img {
+  width: 100%;
+  height: 100%;
+  min-height: 500px;
+  object-fit: cover;
+  display: block;
+}
+
+/* Smaller overlap circle */
+.hero__photo-detail {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  overflow: hidden;
+  bottom: 60px;
+  left: -50px;
+  border: 4px solid var(--field);
+  box-shadow: var(--sh-modal);
+  z-index: 3;
+}
+
+.hero__photo-detail img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Sun mark — decorative, top-right */
+.hero__sun {
+  position: absolute;
+  top: 20px;
+  right: -10px;
+  width: 110px;
+  height: 110px;
+  color: var(--ember);
+  opacity: 0.07;
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* ---- RESPONSIVE HERO ---- */
+@media (max-width: 860px) {
+  .hero {
+    max-height: none;
+  }
+
+  .hero__inner {
+    grid-template-columns: 1fr;
+    gap: 32px;
+    padding-top: 60px;
+    padding-bottom: 48px;
+  }
+
+  .hero__text {
+    padding: 0;
+  }
+
+  .hero__photo {
+    height: 360px;
+    padding: 0;
+  }
+
+  .hero__photo-main img {
+    min-height: 360px;
+  }
+
+  .hero__photo-detail {
+    width: 130px;
+    height: 130px;
+    bottom: 20px;
+    left: -20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero__headline {
+    font-size: 46px;
+  }
+
+  .hero__photo {
+    height: 280px;
+  }
+
+  .hero__photo-main img {
+    min-height: 280px;
+  }
+
+  .hero__photo-detail {
+    display: none;
+  }
+}
+
+/* ============================================================
+   02 FEATURED RIGHT NOW
+   3-card grid · Sun motif in heading area
+   ============================================================ */
+
+.featured {
+  background: var(--field);
+  padding: var(--section-pad-v) 0;
+}
+
+.featured__header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-bottom: 36px;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.featured__heading-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.featured__heading-row {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.featured__sun-icon {
+  width: 28px;
+  height: 28px;
+  color: var(--grove);
+  opacity: 0.35;
+  flex-shrink: 0;
+}
+
+.featured__view-link {
+  font-family: var(--ff-ui);
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--ember);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  white-space: nowrap;
+}
+
+.featured__view-link:hover {
+  color: var(--ink-2);
+}
+
+/* ============================================================
+   03 OUR STORY
+   ============================================================ */
+
+.story {
+  background: var(--field-dk);
+  padding: var(--section-pad-v) 0;
+}
+
+.story__inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.story__content {
+  position: relative;
+}
+
+.story__grass {
+  display: flex;
+  gap: 6px;
+  margin-bottom: 16px;
+  height: 28px;
+  align-items: flex-end;
+}
+
+.story__grass-blade {
+  width: 2px;
+  background: var(--grove);
+  opacity: 0.35;
+  border-radius: 2px;
+  transform-origin: bottom center;
+}
+
+.story__grass-blade:nth-child(1) { height: 20px; }
+.story__grass-blade:nth-child(2) { height: 28px; }
+.story__grass-blade:nth-child(3) { height: 16px; }
+
+.story__body {
+  font-family: var(--ff-body);
+  font-size: 16px;
+  font-weight: 300;
+  color: var(--dust);
+  line-height: 1.8;
+  margin-top: 20px;
+  margin-bottom: 28px;
+}
+
+.story__quote {
+  border-left: 3px solid var(--ember);
+  padding: 16px 20px;
+  background: rgba(201, 77, 32, 0.04);
+  border-radius: 0 var(--r-sm) var(--r-sm) 0;
+}
+
+.story__quote p {
+  font-family: var(--ff-display);
+  font-size: 19px;
+  font-style: italic;
+  color: var(--ink-2);
+  line-height: 1.5;
+}
+
+.story__photos {
+  position: relative;
+  height: 500px;
+}
+
+.story__photo-main {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 90%;
+  height: 80%;
+  border-radius: var(--r-image);
+  overflow: hidden;
+}
+
+.story__photo-main img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.story__photo-accent {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 55%;
+  height: 50%;
+  border-radius: var(--r-image);
+  overflow: hidden;
+  border: 4px solid var(--field-dk);
+  box-shadow: var(--sh-modal);
+}
+
+.story__photo-accent img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+@media (max-width: 860px) {
+  .story__inner {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .story__photos {
+    height: 320px;
+  }
+}
+
+/* ============================================================
+   04 STAFF FAVORITES
+   ============================================================ */
+
+.staff {
+  background: var(--field);
+  padding: var(--section-pad-v) 0;
+}
+
+.staff__heading-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 6px;
+}
+
+.staff__volleyball {
+  width: 26px;
+  height: 26px;
+  color: var(--ember);
+  opacity: 0.30;
+  position: relative;
+  top: 2px;
+  flex-shrink: 0;
+}
+
+/* ============================================================
+   05 CATEGORY SPOTLIGHTS
+   Asymmetric image + text rows — Bowls · Coffee · Acai
+   ============================================================ */
+
+.spotlights {
+  background: var(--linen);
+  padding: var(--section-pad-v) 0;
+}
+
+.spotlights__header {
+  text-align: center;
+  margin-bottom: 72px;
+}
+
+.spotlight-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+  margin-bottom: 80px;
+}
+
+.spotlight-row:last-child {
+  margin-bottom: 0;
+}
+
+/* Alternate layout direction */
+.spotlight-row--reverse {
+  direction: rtl;
+}
+
+.spotlight-row--reverse > * {
+  direction: ltr;
+}
+
+.spotlight-img-wrap {
+  position: relative;
+  height: 420px;
+}
+
+.spotlight-img-main {
+  width: 90%;
+  height: 100%;
+  border-radius: var(--r-image);
+  overflow: hidden;
+  transform: rotate(-2deg);
+  box-shadow: var(--sh-hover);
+}
+
+.spotlight-img-main img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: rotate(2deg) scale(1.05);
+}
+
+.spotlight-content {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.spotlight-content .section-heading {
+  font-size: clamp(28px, 3vw, 42px);
+}
+
+.spotlight-content .section-intro {
+  font-size: 16px;
+}
+
+.spotlight-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--ff-ui);
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--ember);
+  text-decoration: none;
+}
+
+.spotlight-link:hover {
+  color: var(--ink-2);
+}
+
+.spotlight-link::after {
+  content: '→';
+}
+
+@media (max-width: 860px) {
+  .spotlight-row {
+    grid-template-columns: 1fr;
+    gap: 32px;
+    direction: ltr;
+  }
+
+  .spotlight-row--reverse {
+    direction: ltr;
+  }
+
+  .spotlight-img-wrap {
+    height: 280px;
+  }
+}
+
+/* ============================================================
+   06 SIGNATURE DRINKS BAND
+   Deep Forest dark section · Wave dividers top + bottom
+   ============================================================ */
+
+.drinks-band {
+  background: var(--ink);
+  position: relative;
+}
+
+.drinks-band__wave-top,
+.drinks-band__wave-bottom {
+  display: block;
+  width: 100%;
+  line-height: 0;
+  pointer-events: none;
+}
+
+.drinks-band__wave-top svg,
+.drinks-band__wave-bottom svg {
+  width: 100%;
+  height: 60px;
+  display: block;
+}
+
+.drinks-band__inner {
+  padding: 60px 0 72px;
+}
+
+.drinks-band .eyebrow {
+  color: var(--ember);
+}
+
+.drinks-band .eyebrow::before {
+  background: var(--ember);
+}
+
+.drinks-band .section-heading {
+  color: #fff;
+  margin-bottom: 12px;
+}
+
+.drinks-band .section-intro {
+  color: rgba(255, 255, 255, 0.5);
+  margin-bottom: 40px;
+}
+
+/* ============================================================
+   08 REWARDS CTA BAND
+   ============================================================ */
+
+.rewards-cta {
+  background: var(--ember-lt);
+  padding: var(--sp-10) 0;
+  text-align: center;
+}
+
+.rewards-cta .section-heading {
+  font-size: clamp(28px, 4vw, 48px);
+  color: var(--ink-2);
+  margin-bottom: 12px;
+}
+
+.rewards-cta .section-intro {
+  margin: 0 auto 32px;
+  color: #7A4030;
+}
+
+.rewards-cta .btn-grove {
+  background: var(--grove);
+  color: #fff;
+  border: none;
+  font-family: var(--ff-ui);
+  font-size: 14px;
+  font-weight: 600;
+  padding: 14px 32px;
+  border-radius: var(--r-pill);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  min-height: 44px;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .rewards-cta .btn-grove {
+    transition: background-color var(--t-base);
+  }
+}
+
+.rewards-cta .btn-grove:hover {
+  background: var(--ink-3);
+}
+
+/* ============================================================
+   FOOTER
+   ============================================================ */
+
+.footer {
+  background: var(--ink);
+  color: rgba(255, 255, 255, 0.65);
+  padding: 72px 0 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.footer__grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1.5fr;
+  gap: 48px;
+  padding-bottom: 56px;
+}
+
+.footer__brand .nav__logo {
+  font-size: 22px;
+  display: inline-block;
+  margin-bottom: 16px;
+}
+
+.footer__tagline {
+  font-family: var(--ff-body);
+  font-size: 14px;
+  font-weight: 300;
+  color: rgba(255, 255, 255, 0.45);
+  line-height: 1.7;
+  max-width: 240px;
+}
+
+.footer__col-title {
+  font-family: var(--ff-ui);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ember);
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.footer__col-title::before {
+  content: '';
+  display: block;
+  width: 14px;
+  height: 1px;
+  background: var(--ember);
+}
+
+.footer__links {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  list-style: none;
+}
+
+.footer__links a {
+  font-family: var(--ff-body);
+  font-size: 14px;
+  font-weight: 300;
+  color: rgba(255, 255, 255, 0.55);
+  text-decoration: none;
+}
+
+.footer__links a:hover {
+  color: #fff;
+}
+
+.footer__info p {
+  font-family: var(--ff-body);
+  font-size: 14px;
+  font-weight: 300;
+  color: rgba(255, 255, 255, 0.55);
+  line-height: 1.7;
+  margin-bottom: 4px;
+}
+
+.footer__social {
+  display: flex;
+  gap: 12px;
+  margin-top: 4px;
+}
+
+.footer__social a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: rgba(255, 255, 255, 0.55);
+  font-size: 14px;
+  text-decoration: none;
+}
+
+.footer__social a:hover {
+  border-color: var(--ember);
+  color: var(--ember);
+}
+
+.footer__rewards-cta {
+  display: inline-block;
+  font-family: var(--ff-ui);
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--ink-2);
+  background: #fff;
+  padding: 10px 20px;
+  border-radius: var(--r-pill);
+  text-decoration: none;
+  margin-top: 12px;
+}
+
+.footer__rewards-cta:hover {
+  background: var(--ember);
+  color: #fff;
+}
+
+.footer__bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.07);
+  padding: 20px 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.footer__copyright {
+  font-family: var(--ff-body);
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.28);
+  font-weight: 300;
+}
+
+/* Summer motifs in footer */
+.footer__palm {
+  position: absolute;
+  bottom: 60px;
+  right: clamp(20px, 5vw, 60px);
+  width: 38px;
+  height: 38px;
+  color: var(--grove);
+  opacity: 0.20;
+  pointer-events: none;
+}
+
+.footer__grass {
+  position: absolute;
+  bottom: 50px;
+  left: clamp(20px, 5vw, 60px);
+  display: flex;
+  gap: 4px;
+  align-items: flex-end;
+  opacity: 0.28;
+  pointer-events: none;
+}
+
+.footer__grass-blade {
+  width: 2px;
+  background: var(--grove);
+  border-radius: 2px;
+}
+
+.footer__grass-blade:nth-child(1) { height: 24px; }
+.footer__grass-blade:nth-child(2) { height: 32px; }
+.footer__grass-blade:nth-child(3) { height: 20px; }
+
+@media (max-width: 860px) {
+  .footer__grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 36px;
+  }
+}
+
+@media (max-width: 540px) {
+  .footer__grid {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+  .footer__palm,
+  .footer__grass {
+    display: none;
+  }
+}

@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Menu — Grill &amp; Green · Worcester, MA</title>
+  <meta name="description" content="Browse the full Grill & Green menu — power bowls, salads, sandwiches, wraps, flatbread, breakfast, açaí bowls, and 25+ drinks. Updated daily.">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Space+Grotesk:wght@300;400;500;600;700&family=Karla:ital,wght@0,300;0,400;0,500;0,600;1,300&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="styles/tokens.css">
+  <link rel="stylesheet" href="styles/base.css">
+  <link rel="stylesheet" href="styles/components.css">
+  <link rel="stylesheet" href="styles/nav.css">
+  <link rel="stylesheet" href="styles/motion.css">
+  <link rel="stylesheet" href="styles/home.css">
+  <link rel="stylesheet" href="styles/menu.css">
+</head>
+<body data-page="menu">
+
+  <!-- ============================================================
+       REWARDS TOAST
+       ============================================================ -->
+  <div class="rewards-toast" role="status" aria-live="polite">
+    <p class="rewards-toast__text">
+      Earn <strong>1 point per $1</strong> spent — plus <strong>25 bonus points</strong> just for signing up.
+      <a href="#">Join free →</a>
+    </p>
+    <button class="rewards-toast__dismiss" aria-label="Dismiss rewards notification">×</button>
+  </div>
+
+  <!-- ============================================================
+       NAVIGATION
+       ============================================================ -->
+  <header class="site-header" role="banner">
+    <nav class="nav" aria-label="Main navigation">
+      <div class="nav__inner">
+        <a href="index.html" class="nav__logo" aria-label="Grill and Green — Home">
+          Grill <em>&amp;</em> Green
+        </a>
+
+        <ul class="nav__links" role="list">
+          <li><a href="index.html" class="nav__link">Home</a></li>
+          <li><a href="menu.html" class="nav__link">Menu</a></li>
+          <li><a href="index.html#story" class="nav__link">About</a></li>
+          <li><a href="index.html#rewards" class="nav__link">Rewards</a></li>
+        </ul>
+
+        <a href="#" class="nav__cta">Order Now →</a>
+
+        <button class="nav__hamburger" aria-expanded="false" aria-controls="mobile-menu" aria-label="Open navigation menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </nav>
+
+    <nav id="mobile-menu" class="nav__overlay" aria-label="Mobile navigation" aria-hidden="true">
+      <ul class="nav__overlay-links" role="list">
+        <li><a href="index.html" class="nav__overlay-link">Home</a></li>
+        <li><a href="menu.html" class="nav__overlay-link">Menu</a></li>
+        <li><a href="index.html#story" class="nav__overlay-link">About</a></li>
+        <li><a href="index.html#rewards" class="nav__overlay-link">Rewards</a></li>
+      </ul>
+      <div class="nav__overlay-bottom">
+        <a href="#" class="nav__overlay-cta">Order Now →</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- ============================================================
+         MENU HERO (compact)
+         ============================================================ -->
+    <section class="menu-hero" aria-label="Menu header">
+      <!-- Sun mark — decorative -->
+      <svg class="menu-hero__sun sun-mark" viewBox="0 0 48 48" fill="none" aria-hidden="true" focusable="false">
+        <circle cx="24" cy="24" r="7" stroke="currentColor" stroke-width="1.5"/>
+        <line x1="24" y1="7"  x2="24" y2="3"  stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+        <line x1="24" y1="41" x2="24" y2="45" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+        <line x1="7"  y1="24" x2="3"  y2="24" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+        <line x1="41" y1="24" x2="45" y2="24" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+        <line x1="12.7" y1="12.7" x2="9.9"  y2="9.9"  stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
+        <line x1="35.3" y1="35.3" x2="38.1" y2="38.1" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
+        <line x1="35.3" y1="12.7" x2="38.1" y2="9.9"  stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
+        <line x1="12.7" y1="35.3" x2="9.9"  y2="38.1" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
+      </svg>
+
+      <div class="container">
+        <div class="eyebrow">Menu · Updated Daily</div>
+        <h1 class="section-heading" style="font-size:clamp(36px,5vw,60px);margin-bottom:12px;">
+          The whole <em>menu.</em>
+        </h1>
+        <p class="section-intro">
+          Bowls, salads, sandwiches, wraps, breakfast, açaí, and 25+ drinks — all made fresh. Use the tabs and filters below to find exactly what you're after.
+        </p>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         STICKY TAB BAR + DIETARY FILTERS
+         ============================================================ -->
+    <div class="menu-tabs-wrapper" role="navigation" aria-label="Menu categories">
+      <!-- Primary category tabs -->
+      <div class="menu-tabs" role="tablist" aria-label="Menu sections">
+        <button class="menu-tab active" role="tab" aria-selected="true"  data-target="power-bowls">Bowls</button>
+        <button class="menu-tab" role="tab" aria-selected="false" data-target="grain-bowls"    data-sections="power-bowls,grain-bowls">Grain Bowls</button>
+        <button class="menu-tab" role="tab" aria-selected="false" data-target="salads">Salads</button>
+        <button class="menu-tab" role="tab" aria-selected="false" data-target="sandwiches">Sandwiches</button>
+        <button class="menu-tab" role="tab" aria-selected="false" data-target="wraps">Wraps</button>
+        <button class="menu-tab" role="tab" aria-selected="false" data-target="flatbread">Flatbread</button>
+        <button class="menu-tab" role="tab" aria-selected="false" data-target="breakfast">Breakfast</button>
+        <button class="menu-tab" role="tab" aria-selected="false" data-target="toast">Toast</button>
+        <button class="menu-tab" role="tab" aria-selected="false" data-target="soups">Soups</button>
+        <button class="menu-tab" role="tab" aria-selected="false" data-target="acai">Açaí</button>
+        <button class="menu-tab" role="tab" aria-selected="false" data-target="baked">Baked</button>
+        <button class="menu-tab" role="tab" aria-selected="false" data-target="fruit-smoothies">Drinks</button>
+      </div>
+
+      <!-- Dietary filters -->
+      <div class="menu-filters" role="group" aria-label="Dietary filters">
+        <span class="filter-label" aria-hidden="true">Filter:</span>
+        <button class="filter-chip active" data-filter="ALL" aria-label="Show all items" role="switch" aria-checked="true">All</button>
+        <button class="filter-chip" data-filter="GF" role="switch" aria-checked="false" aria-label="Filter by Gluten-Free">Gluten-Free</button>
+        <button class="filter-chip" data-filter="DF" role="switch" aria-checked="false" aria-label="Filter by Dairy-Free">Dairy-Free</button>
+        <button class="filter-chip" data-filter="NF" role="switch" aria-checked="false" aria-label="Filter by Nut-Free">Nut-Free</button>
+        <button class="filter-chip" data-filter="VG" role="switch" aria-checked="false" aria-label="Filter by Vegan">Vegan</button>
+        <button class="filter-chip" data-filter="SF" role="switch" aria-checked="false" aria-label="Filter by Soy-Free">Soy-Free</button>
+      </div>
+    </div>
+
+    <!-- Drinks sub-navigation (shown when scrolled into drinks area) -->
+    <div class="drinks-subnav-wrapper" aria-label="Drinks subcategories" aria-hidden="true">
+      <div class="drinks-subnav">
+        <button class="drinks-sub-tab active" data-target="fruit-smoothies">Smoothies</button>
+        <button class="drinks-sub-tab" data-target="juices">Juices &amp; Shots</button>
+        <button class="drinks-sub-tab" data-target="signature-brews">Signature Brews</button>
+        <button class="drinks-sub-tab" data-target="iced-coffee">Iced Coffee</button>
+        <button class="drinks-sub-tab" data-target="hot-coffee">Hot Coffee</button>
+        <button class="drinks-sub-tab" data-target="frappes">Frappes</button>
+        <button class="drinks-sub-tab" data-target="hot-tea">Tea</button>
+        <button class="drinks-sub-tab" data-target="non-coffee">Other</button>
+      </div>
+    </div>
+
+    <!-- ============================================================
+         MENU SECTIONS (populated by menu-render.js)
+         ============================================================ -->
+    <div class="menu-body" id="menu-body">
+      <div id="menu-sections" aria-label="Menu items" aria-live="polite">
+        <!-- Loading state -->
+        <div class="container" style="padding-top:60px;padding-bottom:40px;text-align:center;">
+          <p style="font-family:var(--ff-body);font-size:16px;color:var(--dust);font-weight:300;">Loading menu…</p>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- ============================================================
+       FOOTER
+       ============================================================ -->
+  <footer class="footer" role="contentinfo"
+          style="--section-pad-v: var(--sp-9);">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__brand">
+          <a href="index.html" class="nav__logo" aria-label="Grill and Green home">Grill <em>&amp;</em> Green</a>
+          <p class="footer__tagline">Healthy food and craft coffee, made fresh daily in Worcester, MA.</p>
+        </div>
+
+        <div>
+          <div class="footer__col-title">Menu</div>
+          <ul class="footer__links">
+            <li><a href="#power-bowls">Power Bowls</a></li>
+            <li><a href="#salads">Salads</a></li>
+            <li><a href="#sandwiches">Sandwiches</a></li>
+            <li><a href="#breakfast">Breakfast</a></li>
+            <li><a href="#signature-brews">Signature Brews</a></li>
+            <li><a href="#acai">Açaí Bowls</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <div class="footer__col-title">Visit</div>
+          <div class="footer__info">
+            <p>Worcester, MA</p>
+            <p style="margin-top:12px;color:rgba(255,255,255,0.35);font-size:11px;text-transform:uppercase;letter-spacing:0.08em;font-family:var(--ff-ui);font-weight:600;">Hours</p>
+            <p>Mon–Fri: 7am – 8pm</p>
+            <p>Sat–Sun: 8am – 7pm</p>
+          </div>
+        </div>
+
+        <div>
+          <div class="footer__col-title">Connect</div>
+          <div class="footer__social" aria-label="Social media">
+            <a href="#" aria-label="Instagram">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="16" height="16">
+                <rect x="2" y="2" width="20" height="20" rx="5"/>
+                <circle cx="12" cy="12" r="4.5"/>
+                <circle cx="17.5" cy="6.5" r="1" fill="currentColor"/>
+              </svg>
+            </a>
+            <a href="#" aria-label="Facebook">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="16" height="16">
+                <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/>
+              </svg>
+            </a>
+          </div>
+          <a href="index.html#rewards" class="footer__rewards-cta">Join Rewards →</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Palm motif -->
+    <svg class="footer__palm" viewBox="0 0 48 48" fill="none" aria-hidden="true" focusable="false">
+      <line x1="24" y1="46" x2="25" y2="20" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+      <path d="M25 22 Q17 14 8 18"  stroke="currentColor" stroke-width="1.2" fill="none" stroke-linecap="round"/>
+      <path d="M25 19 Q33 11 38 15" stroke="currentColor" stroke-width="1.2" fill="none" stroke-linecap="round"/>
+      <path d="M25 17 Q20 8 16 8"   stroke="currentColor" stroke-width="1.2" fill="none" stroke-linecap="round"/>
+      <path d="M25 16 Q30 7 34 9"   stroke="currentColor" stroke-width="1.1" fill="none" stroke-linecap="round"/>
+    </svg>
+
+    <!-- Grass blades -->
+    <div class="footer__grass" aria-hidden="true">
+      <div class="footer__grass-blade"></div>
+      <div class="footer__grass-blade"></div>
+      <div class="footer__grass-blade"></div>
+    </div>
+
+    <div class="footer__bottom container">
+      <p class="footer__copyright">&copy; 2025 Grill &amp; Green, Worcester MA. All rights reserved.</p>
+      <p class="footer__copyright">Made with care in Worcester.</p>
+    </div>
+  </footer>
+
+  <script type="module" src="js/main.js"></script>
+</body>
+</html>

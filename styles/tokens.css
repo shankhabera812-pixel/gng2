@@ -1,0 +1,82 @@
+/* ============================================================
+   GRILL & GREEN — DESIGN TOKENS
+   Solar Garden palette · per Design Brief v2.0
+   ============================================================ */
+
+:root {
+  /* ---- COLOR ---- */
+  --ink:        #0E1209;   /* Deep Forest — dark drinks band bg */
+  --ink-2:      #1D2B17;   /* Midnight Botanical — navbar, footer, primary */
+  --ink-3:      #2E4226;
+
+  --ember:      #C94D20;   /* Primary accent — CTAs, prices, badges */
+  --ember-lt:   #F2E0D6;   /* Ember-light — rewards CTA band bg */
+
+  --grove:      #6B8F4E;   /* Botanical green — tags, icons, motifs */
+  --grove-lt:   #D8E8CE;   /* Grove-light — dietary chip bg */
+
+  --field:      #EEF0E9;   /* Pale Field — page background */
+  --field-dk:   #E4E6DF;   /* Slightly darker — story section, subtle shifts */
+  --field-drinks: #E8EAE1; /* 2% darker — drinks context shift */
+
+  --linen:      #F7F4EE;   /* Warm Linen — card surfaces */
+
+  --stone:      #CCC7BC;   /* Borders, dividers, disabled */
+  --dust:       #8A8479;   /* Body copy, descriptions, secondary text */
+  --body:       #2A271F;   /* Main body text */
+
+  /* ---- TYPOGRAPHY ---- */
+  --ff-display: 'Instrument Serif', Georgia, serif;
+  --ff-ui:      'Space Grotesk', system-ui, sans-serif;
+  --ff-body:    'Karla', system-ui, sans-serif;
+
+  /* ---- SPACING (4px base) ---- */
+  --sp-1:  4px;
+  --sp-2:  8px;
+  --sp-3:  12px;
+  --sp-4:  16px;
+  --sp-5:  24px;
+  --sp-6:  32px;
+  --sp-7:  48px;
+  --sp-8:  64px;
+  --sp-9:  80px;
+  --sp-10: 100px;
+  --sp-11: 120px;
+
+  /* ---- BORDER RADIUS ---- */
+  --r-pill:  50px;  /* buttons, chips, tabs */
+  --r-card:  14px;  /* menu item cards */
+  --r-image: 18px;  /* section image blocks */
+  --r-hero:  32px;  /* hero photo container */
+  --r-sm:    8px;   /* small UI elements */
+  --r-md:    12px;  /* medium containers */
+
+  /* ---- SHADOW (warm green-tinted — never cold blue-gray) ---- */
+  --sh-rest:  0 1px 6px rgba(30, 43, 23, 0.07);
+  --sh-hover: 0 8px 28px rgba(30, 43, 23, 0.13);
+  --sh-modal: 0 16px 48px rgba(30, 43, 23, 0.18);
+  --sh-toast: 0 2px 12px rgba(30, 43, 23, 0.10);
+  --sh-nav:   0 2px 16px rgba(30, 43, 23, 0.15);
+
+  /* ---- Z-INDEX SCALE ---- */
+  --z-base:    1;
+  --z-above:   10;
+  --z-tabs:    30;
+  --z-nav:     50;
+  --z-toast:   60;
+  --z-overlay: 100;
+
+  /* ---- LAYOUT ---- */
+  --max-width:      1200px;
+  --content-width:  1080px;
+  --nav-h:          68px;
+  --tab-h:          56px;
+  --tab-offset:     124px;  /* nav + tab bar combined for scroll offset */
+  --section-pad-v:  var(--sp-10);
+
+  /* ---- TRANSITIONS ---- */
+  --t-fast:   0.15s ease;
+  --t-base:   0.2s ease;
+  --t-slow:   0.35s ease;
+  --t-reveal: 0.55s cubic-bezier(0.25, 0.1, 0.25, 1);
+}

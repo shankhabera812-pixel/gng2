@@ -1,0 +1,464 @@
+{
+  "sections": [
+    {
+      "id": "power-bowls",
+      "name": "Power Bowls",
+      "eyebrow": "10 Items",
+      "title": "Our Signature Bowls",
+      "description": "Built on organic brown rice and quinoa. Made fresh, every service.",
+      "group": "food",
+      "tab": "Bowls",
+      "items": [
+        { "name": "Buddha Bowl", "price": "$15.95", "desc": "Gut-loving meal of tri-color carrots, kale, sweet potatoes, watermelon radish, chickpeas, red cabbage, arugula, and sauerkraut on quinoa and brown rice with turmeric tahini sauce.", "tags": ["GF", "SF", "DF", "VG"], "available": true },
+        { "name": "Spring Roll in a Bowl", "price": "$15.95", "desc": "Sliced cucumber, carrots, romaine lettuce, red cabbage, scallion, mint, avocado, edamame, peanuts, rice noodles with house-made peanut sauce.", "tags": ["GF", "DF"], "featured": true, "available": true },
+        { "name": "Kingdom of Life Bowl", "price": "$15.95", "desc": "Sautéed assorted mushroom and tofu with broccoli, scallion, toasted sesame on brown rice and quinoa.", "tags": ["GF", "NF", "DF", "VG"], "available": true },
+        { "name": "Beet Bowl", "price": "$15.95", "desc": "Beet, sweet potato, arugula, radishes, red cabbage, chickpeas on brown rice and quinoa with turmeric tahini sauce.", "tags": ["GF", "NF", "SF", "DF", "VG"], "available": true },
+        { "name": "Honey Sriracha Salmon Bowl", "price": "$21.95", "desc": "Glazed salmon with sriracha, edamame, cucumber, cilantro, avocado on brown rice and quinoa, sprinkled with toasted sesame.", "tags": ["GF", "NF", "DF"], "available": true },
+        { "name": "Chicken Avocado Lime Fajita Bowl", "price": "$18.95", "desc": "Marinated cilantro lime chicken fajita with avocado, red, green, and yellow peppers, red onion, black beans, cilantro, lime on brown rice and quinoa.", "tags": ["GF", "NF", "SF", "DF"], "featured": true, "available": true },
+        { "name": "Shrimp Avocado Lime Fajita Bowl", "price": "$19.95", "desc": "Marinated cilantro lime shrimp fajita with avocado, red, green, and yellow peppers, red onion, black beans, cilantro, lime on brown rice and quinoa.", "tags": ["GF", "NF", "SF", "DF"], "available": true },
+        { "name": "Hummus Bowl", "price": "$15.95", "desc": "Quinoa, tomato, cucumber, red onion, spinach, olive, feta cheese with choice of regular or beetroot hummus, drizzled with EVOO and Za'atar.", "tags": ["GF", "NF", "SF"], "available": true },
+        { "name": "Bang Bang Chicken Bowl", "price": "$18.95", "desc": "Cubes of seasoned chicken in creamy spicy Bang Bang sauce over organic brown rice, avocado, red cabbage, tri-color carrot, cucumber, scallion, and black sesame seed.", "tags": [], "available": true },
+        { "name": "Bánh Mì Bowl", "price": "$17.95", "desc": "Grilled chicken, pickled carrots, red cabbage, cucumber, watermelon radish, spicy mayo with a side of toasted baguette.", "tags": [], "available": true }
+      ]
+    },
+    {
+      "id": "grain-bowls",
+      "name": "Grain Bowls",
+      "eyebrow": "3 Items",
+      "title": "Hearty Grain Foundations",
+      "description": "Premium proteins on a bed of brown rice and quinoa.",
+      "group": "food",
+      "tab": "Grain Bowls",
+      "items": [
+        { "name": "Gochujang Chicken Bowl", "price": "$18.95", "desc": "Grilled marinated chicken, brown rice with quinoa, cucumber, avocado, red cabbage, edamame, pickled carrots, pickled ginger, seaweed, sesame seeds, and scallions. Served with spicy tahini orange sauce.", "tags": [], "featured": true, "badge": "special", "available": true },
+        { "name": "Steak Grain Bowl", "price": "$24.95", "desc": "Grass-fed steak, brown rice with quinoa, charred tomatoes and mushroom, avocado, black bean, arugula, pickled onion salad, multigrain seeds with Italian salsa verde.", "tags": [], "available": true },
+        { "name": "Vegan Butternut Squash Grain Bowl", "price": "$16.95", "desc": "Roasted butternut squash, sautéed red onion and kale, chickpea, cranberry, quinoa tossed with maple Dijon vinaigrette.", "tags": ["VG"], "available": true }
+      ]
+    },
+    {
+      "id": "salads",
+      "name": "Salads",
+      "eyebrow": "5 Items",
+      "title": "Fresh-Tossed Salads",
+      "description": "Seasonal greens, vibrant dressings, real ingredients.",
+      "group": "food",
+      "tab": "Salads",
+      "items": [
+        { "name": "Caesar Salad", "price": "$13.95", "desc": "Romaine lettuce, parmesan, crouton.", "tags": ["NF", "SF"], "available": true },
+        { "name": "Kale Beetroot Salad", "price": "$13.95", "desc": "Cranberry, radish, green apple, candied pecan with honey mustard beetroot dressing.", "tags": ["GF", "SF", "DF"], "available": true },
+        { "name": "Jaffa Orange Salad", "price": "$13.95", "desc": "Arugula, fennel, cucumber, tomato, sliced almond, orange, grapefruit with creamy triple citrus dressing.", "tags": ["GF", "SF", "DF"], "available": true },
+        { "name": "Greek Salad", "price": "$13.95", "desc": "Tomatoes, cucumber, green pepper, Kalamata olives, red onion, and feta cheese in house-made Greek dressing.", "tags": ["GF", "NF", "SF"], "available": true },
+        { "name": "Cobb Salad", "price": "$19.95", "desc": "Mixed greens, cucumber, green pepper, tomato, red onion, boiled egg, chicken, bacon with house dressing.", "tags": [], "available": true }
+      ]
+    },
+    {
+      "id": "sandwiches",
+      "name": "Sandwiches",
+      "eyebrow": "10 Items",
+      "title": "Handcrafted Sandwiches",
+      "description": "Select sandwiches come with chef's daily choice of side.",
+      "group": "food",
+      "tab": "Sandwiches",
+      "items": [
+        { "name": "Ham & Cheese", "price": "$12.95", "desc": "Sourdough bread, smoked ham, cheddar cheese, Dijon mustard. Comes with chef's daily choice of side.", "tags": [], "available": true },
+        { "name": "Plain Grilled Cheese", "price": "$11.95", "desc": "Sourdough bread, cheddar cheese. Comes with chef's daily choice of side.", "tags": [], "available": true },
+        { "name": "Apple Mustard Grilled Cheese", "price": "$12.95", "desc": "Sourdough bread, cheddar cheese, apple mustard jam, raisin. Comes with chef's daily choice of side.", "tags": [], "note": "Cannot be prepared without raisin — allergen note required.", "available": true },
+        { "name": "Avocado Melt", "price": "$13.95", "desc": "Egg, cheddar cheese, bacon, spinach, avocado.", "tags": [], "available": true },
+        { "name": "Veggies Sandwich", "price": "$13.95", "desc": "Chickpea spread, roasted pepper, grilled eggplant, feta cheese and spinach.", "tags": [], "available": true },
+        { "name": "Italiano Ham", "price": "$15.95", "desc": "Salami, capicola, provolone, basil pesto and pickled onion on focaccia bread.", "tags": [], "available": true },
+        { "name": "BLT Bagel Sandwich", "price": "$14.95", "desc": "Bacon, tomatoes, lettuce, avocado, homemade avocado mayo on plain bagel.", "tags": [], "available": true },
+        { "name": "Turkey Bacon Sandwich", "price": "$15.95", "desc": "Turkey, bacon, lettuce, tomatoes, sriracha aioli on sourdough.", "tags": [], "available": true },
+        { "name": "Grilled Chicken Bánh Mì Sandwich", "price": "$18.95", "desc": "Toasted baguette, grilled chicken, pickled carrot, red cabbage, sliced cucumber, watermelon radish, spicy mayo and fresh cilantro.", "tags": [], "available": true },
+        { "name": "Portobello & Steak Focaccia Sandwich", "price": "$17.95", "desc": "Onion, mushroom, provolone cheese, spicy mayo on focaccia.", "tags": [], "available": true }
+      ]
+    },
+    {
+      "id": "wraps",
+      "name": "Burrito Wraps",
+      "eyebrow": "9 Items",
+      "title": "Signature Wraps",
+      "description": "Packed tight with fresh ingredients and bold house sauces.",
+      "group": "food",
+      "tab": "Wraps",
+      "items": [
+        { "name": "Grill & Green Goddess Veggies Wrap", "price": "$13.95", "desc": "Sautéed mushroom, spinach, quinoa, avocado, green goddess herb sauce.", "tags": ["VG"], "available": true },
+        { "name": "Turkey Caesar Wrap", "price": "$13.95", "desc": "Romaine lettuce, tomatoes, turkey, pecorino, Caesar sauce spread.", "tags": [], "available": true },
+        { "name": "Fajita Chicken Wrap", "price": "$15.95", "desc": "Grilled chicken, black beans, smashed avocado, lime brown rice and quinoa, pico de gallo, sour cream, cilantro, roasted bell peppers, onion, mozzarella cheese, salsa verde.", "tags": [], "available": true },
+        { "name": "BLT Wrap", "price": "$14.95", "desc": "Bacon, lettuce, tomatoes, plain mayo.", "tags": [], "available": true },
+        { "name": "Italian Wrap", "price": "$15.95", "desc": "Ham, salami, capicola, provolone cheese, tomatoes, iceberg lettuce, oregano, olive oil.", "tags": [], "available": true },
+        { "name": "Breakfast Wrap", "price": "$12.95", "desc": "Ham, bacon, cheddar cheese, scrambled eggs.", "tags": [], "available": true },
+        { "name": "Steak & Cheese Wrap", "price": "$16.95", "desc": "Philly steak, sautéed bell peppers, onion, mozzarella cheese, spicy aioli.", "tags": [], "available": true },
+        { "name": "Ray's Wrap", "price": "$15.95", "desc": "Grilled chicken, pickled onion, sautéed bell peppers, onion, mozzarella cheese, mayo spice sauce.", "tags": [], "available": true },
+        { "name": "Gochujang Chicken Wrap", "price": "$16.95", "desc": "Grilled marinated chicken, brown rice with quinoa, cucumber, avocado, red cabbage, edamame, pickled carrots, pickled ginger, seaweed, sesame seeds, scallions with spicy tahini orange sauce.", "tags": [], "available": true }
+      ]
+    },
+    {
+      "id": "flatbread",
+      "name": "Flatbread",
+      "eyebrow": "4 Items",
+      "title": "House-Made Flatbread",
+      "description": "Proudly served with our house-made dough.",
+      "group": "food",
+      "tab": "Flatbread",
+      "items": [
+        { "name": "Pepperoni Flatbread", "price": "$16.95", "desc": "Marinara sauce, cheese, spicy honey.", "tags": [], "available": true },
+        { "name": "Cheese Flatbread", "price": "$14.95", "desc": "Marinara sauce and mozzarella cheese.", "tags": [], "available": true },
+        { "name": "Veggies Flatbread", "price": "$16.95", "desc": "Tomato sauce, mushroom, spinach, roasted pepper, onion and cheese.", "tags": [], "available": true },
+        { "name": "BBQ Chicken Flatbread", "price": "$17.95", "desc": "Barbeque sauce, red onion, pineapple, mozzarella cheese, garnished with scallions.", "tags": [], "available": true }
+      ]
+    },
+    {
+      "id": "breakfast",
+      "name": "All Day Breakfast",
+      "eyebrow": "7 Items",
+      "title": "All Day Breakfast",
+      "description": "Morning favorites served any time of day.",
+      "group": "food",
+      "tab": "Breakfast",
+      "items": [
+        { "name": "Quiche", "price": "$15.95", "desc": "Choice of Tomatoes, Spinach & Feta or Smoked Turkey & Cheddar Cheese. Served with mixed green salad and toasted sourdough.", "tags": [], "available": true },
+        { "name": "Yogurt & Mixed Fruit", "price": "$13.95", "desc": "Greek yogurt with honey or house-made berry jam, house-made granola, banana, kiwi, berry.", "tags": [], "available": true },
+        { "name": "French Toast", "price": "$13.95", "desc": "Thick-sliced brioche in sweet egg custard with whole milk, cinnamon, nutmeg, vanilla extract, topped with berries and house-made vanilla cream cheese. Made in-house daily.", "tags": [], "available": true },
+        { "name": "Grill and Green Omelet", "price": "$16.95", "desc": "Chive omelet with choice of cheese. Served with sweet potato, grilled mushroom, tomato, avocado, kale and toasted sourdough.", "tags": [], "available": true },
+        { "name": "Shakshuka", "price": "$15.95", "desc": "Eggs poached in spiced tomato sauce with onion and bell peppers, garnished with cilantro and feta cheese. Served with toasted sourdough.", "tags": [], "available": true },
+        { "name": "Waffle", "price": "$13.95", "desc": "Topped with berry and house-made vanilla cream cheese.", "tags": [], "available": true },
+        { "name": "Breakfast Sandwich", "price": "$12.95", "desc": "Ham, cheese, bacon, and egg.", "tags": [], "available": true }
+      ]
+    },
+    {
+      "id": "toast",
+      "name": "Toast",
+      "eyebrow": "7 Items",
+      "title": "Elevated Toast",
+      "description": "On our house sourdough — simple done beautifully.",
+      "group": "food",
+      "tab": "Toast",
+      "items": [
+        { "name": "Feta & Garden Veg Toast", "price": "$8.95", "desc": "Radish, cucumbers, dill.", "tags": [], "available": true },
+        { "name": "House Avocado Toast", "price": "$10.95", "desc": "Smashed avocado on sourdough bread topped with arugula.", "tags": [], "available": true },
+        { "name": "Mixed Berry Toast", "price": "$9.95", "desc": "House-made berry cream cheese and mixed berry jam.", "tags": [], "available": true },
+        { "name": "Salmon Toast", "price": "$12.95", "desc": "Dill cream cheese, cucumber, pickled red onion, arugula.", "tags": [], "available": true },
+        { "name": "Labneh Toast", "price": "$9.95", "desc": "Labneh, tomatoes, Kalamata olives, EVOO, Za'atar on sourdough bread.", "tags": [], "available": true },
+        { "name": "Peanut Butter Toast", "price": "$8.95", "desc": "", "tags": [], "available": true },
+        { "name": "Almond Butter Toast", "price": "$8.85", "desc": "", "tags": [], "available": true }
+      ]
+    },
+    {
+      "id": "soups",
+      "name": "Soups",
+      "eyebrow": "4 Items",
+      "title": "Warming Soups",
+      "description": "Made from scratch, every batch.",
+      "group": "food",
+      "tab": "Soups",
+      "items": [
+        { "name": "Tomato Bisque", "price": "$9.95", "desc": "Creamy tomato soup garnished with basil, pecorino, EVOO.", "tags": [], "available": true },
+        { "name": "Vegan Lentil Soup", "price": "$9.95", "desc": "Vegetable stock with carrots, celery, onions, spinach, garnished with parsley and olive oil.", "tags": ["VG"], "available": true },
+        { "name": "Miso Soup", "price": "$8.95", "desc": "Miso stock with seaweed, tofu, topped with scallions.", "tags": [], "available": true },
+        { "name": "Creamy Mushroom Soup", "price": "$9.95", "desc": "Mushroom stock, roasted mushroom, onion, thyme, heavy cream, parsley, EVOO.", "tags": [], "available": true }
+      ]
+    },
+    {
+      "id": "acai",
+      "name": "Açaí Bowls",
+      "eyebrow": "3 Items",
+      "title": "Premium Açaí Bowls",
+      "description": "Made with premium Grade A organic açaí berry.",
+      "group": "food",
+      "tab": "Acai",
+      "items": [
+        { "name": "Berry Açaí", "price": "From $11.95", "desc": "Açaí with blueberry, strawberry, kiwi, cacao nibs, coconut and granola.", "tags": [], "available": true, "sizes": "S 12oz $11.95 · L 16oz $14.95" },
+        { "name": "Chocolate Hazelnut Açaí", "price": "From $11.95", "desc": "Açaí with banana, strawberry, coconut flakes, granola and hazelnut drizzle.", "tags": [], "available": true, "sizes": "S 12oz $11.95 · L 16oz $14.95" },
+        { "name": "Build Your Açaí", "price": "From $11.95", "desc": "Create your own açaí bowl. Choose up to 5 toppings — included in price.", "tags": [], "available": true, "sizes": "S 12oz $11.95 · L 16oz $14.95" }
+      ]
+    },
+    {
+      "id": "baked",
+      "name": "Baked Goods",
+      "eyebrow": "8 Items",
+      "title": "Baked In-House",
+      "description": "Made fresh daily by our kitchen team.",
+      "group": "food",
+      "tab": "Baked",
+      "items": [
+        { "name": "Scones", "price": "Ask staff", "desc": "Blueberry Lemon, Lavender Lemon, Cranberry Orange.", "tags": [], "available": false },
+        { "name": "Cookies", "price": "$4.95", "desc": "", "tags": [], "available": true },
+        { "name": "Muffin", "price": "Ask staff", "desc": "", "tags": [], "available": true },
+        { "name": "Brownies", "price": "$4.25", "desc": "", "tags": [], "available": true },
+        { "name": "Cinnamon Rolls", "price": "$4.95", "desc": "", "tags": [], "available": true },
+        { "name": "Feta Spinach Croissant", "price": "$5.25", "desc": "", "tags": [], "available": true },
+        { "name": "Banana Waffle Nutella Croissant", "price": "$5.25", "desc": "", "tags": [], "available": true },
+        { "name": "Plain Bagel", "price": "$3.95", "desc": "", "tags": [], "available": true }
+      ]
+    },
+    {
+      "id": "snacks",
+      "name": "Snacks & Dips",
+      "eyebrow": "5 Items",
+      "title": "Snacks & Dips",
+      "description": "Small bites, big flavor.",
+      "group": "food",
+      "tab": "Drinks",
+      "items": [
+        { "name": "Mediterranean Salad Dip", "price": "$15.95", "desc": "Half salad, half dip — tomatoes, Kalamata olives, cucumber, red onion, olive oil, herbs, lemon juice on labneh or Greek yogurt. Served with crackers.", "tags": [], "available": true },
+        { "name": "Potato Chips — Salted", "price": "$3.30", "desc": "", "tags": [], "available": true },
+        { "name": "Potato Chips — Sour Cream & Onion", "price": "$3.30", "desc": "", "tags": [], "available": true },
+        { "name": "Potato Chips — Sweet Potato", "price": "$3.30", "desc": "", "tags": [], "available": true },
+        { "name": "Potato Chips — BBQ", "price": "$3.30", "desc": "", "tags": [], "available": true }
+      ]
+    },
+    {
+      "id": "sides",
+      "name": "Sides",
+      "eyebrow": "19 Items",
+      "title": "Sides & Add-Ons",
+      "description": "Customize any dish or build your own plate.",
+      "group": "food",
+      "tab": "Drinks",
+      "compact": true,
+      "items": [
+        { "name": "Fruit Cup", "price": "$4.50", "desc": "", "tags": ["VG"], "available": true },
+        { "name": "Side Salad", "price": "$4.50", "desc": "", "tags": [], "available": true },
+        { "name": "Hard-Boiled Egg", "price": "$2.95", "desc": "", "tags": [], "available": true },
+        { "name": "Fried Egg", "price": "$2.95", "desc": "", "tags": [], "available": true },
+        { "name": "Organic Tofu", "price": "$2.95", "desc": "", "tags": ["VG"], "available": true },
+        { "name": "Grilled Chicken", "price": "$6.95", "desc": "", "tags": [], "available": true },
+        { "name": "Shrimp", "price": "$7.95", "desc": "", "tags": [], "available": true },
+        { "name": "Salmon", "price": "$9.95", "desc": "", "tags": [], "available": true },
+        { "name": "Grass-Fed Steak", "price": "$10.95", "desc": "", "tags": [], "available": true },
+        { "name": "Ham (2 pieces)", "price": "$3.00", "desc": "", "tags": [], "available": true },
+        { "name": "Bacon (4 strips)", "price": "$4.00", "desc": "", "tags": [], "available": true },
+        { "name": "Pita Bread", "price": "$1.95", "desc": "", "tags": ["VG"], "available": true },
+        { "name": "Multigrain Toast", "price": "$1.50", "desc": "", "tags": [], "available": true },
+        { "name": "Sourdough Bread", "price": "$1.50", "desc": "", "tags": [], "available": true },
+        { "name": "Gluten-Free Toast", "price": "$1.50", "desc": "", "tags": ["GF"], "available": true },
+        { "name": "Avocado", "price": "$2.00", "desc": "", "tags": ["VG"], "available": true },
+        { "name": "Hummus", "price": "$4.00", "desc": "", "tags": ["VG"], "available": true },
+        { "name": "Guacamole (6oz)", "price": "$4.00", "desc": "", "tags": ["VG"], "available": true },
+        { "name": "Sour Cream (3oz)", "price": "$1.00", "desc": "", "tags": [], "available": true }
+      ]
+    },
+    {
+      "id": "fruit-smoothies",
+      "name": "Fruit Smoothies",
+      "eyebrow": "6 Items",
+      "title": "Fruit Smoothies",
+      "description": "Medium 16oz $8.95 / Large 24oz $10.95. Add-ons +$1.00 each (Collagen Peptide +$2.00).",
+      "group": "drinks",
+      "drinksSub": "Smoothies",
+      "tab": "Drinks",
+      "items": [
+        { "name": "Refresher Smoothie", "price": "Med $8.95 / Lg $10.95", "desc": "Almond milk, agave, mint leaves, spirulina, lemon, frozen avocado, frozen mango.", "tags": [], "available": true },
+        { "name": "Sun-Joy Smoothie", "price": "Med $8.95 / Lg $10.95", "desc": "Orange, agave, vanilla extract, cashews, cinnamon powder, frozen bananas, frozen pineapple.", "tags": [], "available": true },
+        { "name": "Red Bloom Smoothie", "price": "Med $8.95 / Lg $10.95", "desc": "Almond milk, agave, vanilla extract, frozen pitaya, frozen strawberry, frozen bananas.", "tags": [], "available": true },
+        { "name": "Paradise Smoothie", "price": "Med $8.95 / Lg $10.95", "desc": "Almond milk, agave, vanilla extract, frozen pineapple, frozen bananas, frozen mango.", "tags": [], "available": true },
+        { "name": "Tropical Sunrise Smoothie", "price": "Med $8.95 / Lg $10.95", "desc": "Fresh mango, passionfruit, agave, coconut milk.", "tags": [], "available": true },
+        { "name": "Berry Pro Smoothie", "price": "Med $8.95 / Lg $10.95", "desc": "Strawberries, blueberries, red raspberries, kefir and Greek yogurt blended with apple juice.", "tags": [], "available": true }
+      ]
+    },
+    {
+      "id": "power-smoothies",
+      "name": "Power Smoothies",
+      "eyebrow": "4 Items",
+      "title": "Power Smoothies",
+      "description": "Medium 16oz $10.95 / Large 24oz $13.95. Add-ons +$1.00 each (Collagen Peptide +$2.00).",
+      "group": "drinks",
+      "drinksSub": "Smoothies",
+      "tab": "Drinks",
+      "items": [
+        { "name": "Extravagance Smoothie", "price": "Med $10.95 / Lg $13.95", "desc": "Almond milk, agave, cacao powder, cacao nibs, ashwagandha powder, probiotics, frozen banana, ice.", "tags": [], "available": true },
+        { "name": "Turbo Green Smoothie", "price": "Med $10.95 / Lg $13.95", "desc": "Almond milk, agave, lemon, kale, spirulina, flax seeds, frozen pineapple, frozen mango, ice.", "tags": [], "available": true },
+        { "name": "Berry Frenzy Smoothie", "price": "Med $10.95 / Lg $13.95", "desc": "Almond milk, agave, vanilla extract, black chia seeds, protein powder, frozen strawberry, frozen banana, frozen blueberries, ice.", "tags": [], "available": true },
+        { "name": "Blue Surge Smoothie", "price": "Med $10.95 / Lg $13.95", "desc": "Almond milk, agave, hemp seeds, blue spirulina, frozen banana, frozen mango.", "tags": [], "available": true }
+      ]
+    },
+    {
+      "id": "juices",
+      "name": "Cold-Pressed Juices",
+      "eyebrow": "7 Items",
+      "title": "Cold-Pressed Juices",
+      "description": "Organic. More than one pound of fruits and vegetables per bottle.",
+      "group": "drinks",
+      "drinksSub": "Juices & Shots",
+      "tab": "Drinks",
+      "items": [
+        { "name": "Organic Lush Juice (12oz)", "price": "$10.95", "desc": "Kale, lemon, mint, apple, celery.", "tags": ["VG", "GF"], "available": true },
+        { "name": "Organic Glow-Up Juice (12oz)", "price": "$10.95", "desc": "Ginger, apple, orange, lemon.", "tags": ["VG", "GF"], "available": true },
+        { "name": "Organic Fire Starter Juice (12oz)", "price": "$10.95", "desc": "Beetroot, apple, orange, ginger.", "tags": ["VG", "GF"], "available": true },
+        { "name": "Loop Mission Morning Glory (10oz)", "price": "$8.95", "desc": "Clementine, orange, strawberry.", "tags": ["VG", "GF"], "available": true },
+        { "name": "Loop Mission High Achiever (10oz)", "price": "$8.95", "desc": "Beet, apple, carrot.", "tags": ["VG", "GF"], "available": true },
+        { "name": "Loop Mission Deep Green (10oz)", "price": "$8.95", "desc": "Cucumber, celery, spinach, kale, lemon, ginger.", "tags": ["VG", "GF"], "available": true },
+        { "name": "Loop Mission Beach Bum (10oz)", "price": "$8.95", "desc": "Ginger, pineapple, echinacea.", "tags": ["VG", "GF"], "available": true }
+      ]
+    },
+    {
+      "id": "wellness-shots",
+      "name": "Wellness Shots",
+      "eyebrow": "3 Items",
+      "title": "Wellness Shots",
+      "description": "A concentrated hit of functional ingredients.",
+      "group": "drinks",
+      "drinksSub": "Juices & Shots",
+      "tab": "Drinks",
+      "items": [
+        { "name": "Reviver Shot", "price": "$4.95", "desc": "Ginger, lemon, orange, cinnamon powder, turmeric powder.", "tags": ["VG", "GF"], "available": true },
+        { "name": "Inspire Shot", "price": "$4.95", "desc": "Orange, celery, lemon, maca powder.", "tags": ["VG", "GF"], "available": true },
+        { "name": "Enforcer Shot", "price": "$4.95", "desc": "", "tags": [], "available": true }
+      ]
+    },
+    {
+      "id": "signature-brews",
+      "name": "Signature Brews",
+      "eyebrow": "5 Items · All 24oz $8.00",
+      "title": "Signature Brews",
+      "description": "Available cold only. Each one named. Each one crafted.",
+      "group": "drinks",
+      "drinksSub": "Signature Brews",
+      "tab": "Drinks",
+      "items": [
+        { "name": "Worcester Wake-Up (24oz)", "price": "$8.00", "desc": "Signature cold brew with a hint of New England maple syrup and almond milk.", "tags": [], "available": true },
+        { "name": "Bangkok Iced Coffee (24oz)", "price": "$8.00", "desc": "Traditional Thai iced coffee with strong brewed espresso, sweetened condensed milk, topped with evaporated milk.", "tags": [], "available": true },
+        { "name": "Coconut Iced Americano (24oz)", "price": "$8.00", "desc": "Smooth blend of espresso with fresh coconut juice topped with coconut flakes.", "tags": [], "available": true },
+        { "name": "Bangkok Sunshine (24oz)", "price": "$8.00", "desc": "A refreshing variation of Americano infused with the citrusy brightness of orange.", "tags": [], "available": true },
+        { "name": "Black Honey Lemon Americano (24oz)", "price": "$8.00", "desc": "", "tags": [], "available": true }
+      ]
+    },
+    {
+      "id": "iced-coffee",
+      "name": "Classic Iced Coffee",
+      "eyebrow": "12 Items",
+      "title": "Classic Iced Coffee",
+      "description": "Med 16oz $5.95 · Lg 24oz $6.95. Oat/Almond/Coconut milk +$0.50. Iced Americano and Iced Brew Coffee have no milk option.",
+      "group": "drinks",
+      "drinksSub": "Iced Coffee",
+      "tab": "Drinks",
+      "items": [
+        { "name": "Iced Americano", "price": "Med $5.95 / Lg $6.95", "desc": "Espresso shot, water.", "tags": [], "available": true },
+        { "name": "Iced Cappuccino", "price": "Med $5.95 / Lg $6.95", "desc": "Espresso shot, foamed milk.", "tags": [], "available": true },
+        { "name": "Iced Caramel Macchiato", "price": "Med $5.95 / Lg $6.95", "desc": "Espresso, milk, caramel, unmixed.", "tags": [], "available": true },
+        { "name": "Iced Mocha Latte", "price": "Med $5.95 / Lg $6.95", "desc": "Espresso, milk, mocha.", "tags": [], "available": true },
+        { "name": "Iced White Mocha Latte", "price": "Med $5.95 / Lg $6.95", "desc": "Espresso, milk, white mocha.", "tags": [], "available": true },
+        { "name": "Iced Vanilla Latte", "price": "Med $5.95 / Lg $6.95", "desc": "Espresso, milk, vanilla.", "tags": [], "available": true },
+        { "name": "Iced Caramel Latte", "price": "Med $5.95 / Lg $6.95", "desc": "Espresso, milk, caramel.", "tags": [], "available": true },
+        { "name": "Iced Hazelnut Latte", "price": "Med $5.95 / Lg $6.95", "desc": "Espresso, milk, hazelnut.", "tags": [], "available": true },
+        { "name": "Iced Sea Salt Caramel Latte", "price": "Med $5.95 / Lg $6.95", "desc": "Espresso, milk, sea salt caramel.", "tags": [], "available": true },
+        { "name": "Iced Latte", "price": "Med $5.95 / Lg $6.95", "desc": "Espresso, milk.", "tags": [], "available": true },
+        { "name": "Iced Strawberry Latte", "price": "Med $5.95 / Lg $6.95", "desc": "Espresso, milk, fresh strawberries.", "tags": [], "available": true },
+        { "name": "Iced Brew Coffee", "price": "Med $5.95 / Lg $6.95", "desc": "", "tags": [], "available": true }
+      ]
+    },
+    {
+      "id": "hot-coffee",
+      "name": "Hot Coffee",
+      "eyebrow": "11 Items",
+      "title": "Hot Coffee",
+      "description": "Sm 12oz $4.95 · Med 16oz $5.95. Oat/Almond/Coconut milk +$0.50. Classic Espresso $1.95/shot.",
+      "group": "drinks",
+      "drinksSub": "Hot Coffee",
+      "tab": "Drinks",
+      "items": [
+        { "name": "Classic Espresso (Single Shot)", "price": "$1.95/shot", "desc": "", "tags": [], "available": true },
+        { "name": "Hot Americano", "price": "Sm $4.95 / Med $5.95", "desc": "Espresso shot, water.", "tags": [], "available": true },
+        { "name": "Hot Cappuccino", "price": "Sm $4.95 / Med $5.95", "desc": "Espresso, steamed/foamed milk.", "tags": [], "available": true },
+        { "name": "Hot Caramel Macchiato", "price": "Sm $4.95 / Med $5.95", "desc": "Espresso, steamed milk, caramel, unmixed.", "tags": [], "available": true },
+        { "name": "Hot Mocha Latte", "price": "Sm $4.95 / Med $5.95", "desc": "Espresso, steamed milk, mocha.", "tags": [], "available": true },
+        { "name": "Hot White Mocha Latte", "price": "Sm $4.95 / Med $5.95", "desc": "Espresso, steamed milk, white mocha.", "tags": [], "available": true },
+        { "name": "Hot Vanilla Latte", "price": "Sm $4.95 / Med $5.95", "desc": "Espresso, steamed milk, vanilla.", "tags": [], "available": true },
+        { "name": "Hot Caramel Latte", "price": "Sm $4.95 / Med $5.95", "desc": "Espresso, steamed milk, caramel.", "tags": [], "available": true },
+        { "name": "Hot Hazelnut Latte", "price": "Sm $4.95 / Med $5.95", "desc": "Espresso, steamed milk, hazelnut.", "tags": [], "available": true },
+        { "name": "Hot Sea Salt Caramel Latte", "price": "Sm $4.95 / Med $5.95", "desc": "Espresso, steamed milk, sea salt caramel.", "tags": [], "available": true },
+        { "name": "Hot Latte", "price": "Sm $4.95 / Med $5.95", "desc": "Espresso, steamed milk.", "tags": [], "available": true },
+        { "name": "Hot Brew Coffee", "price": "Sm $4.95 / Med $5.95", "desc": "", "tags": [], "available": true }
+      ]
+    },
+    {
+      "id": "frappes",
+      "name": "Frappes",
+      "eyebrow": "8 Items · All 24oz $7.95",
+      "title": "Frappes",
+      "description": "All 24oz — $7.95 each.",
+      "group": "drinks",
+      "drinksSub": "Frappes",
+      "tab": "Drinks",
+      "items": [
+        { "name": "Coffee Frappe (24oz)", "price": "$7.95", "desc": "Coffee base, espresso, milk, frozen.", "tags": [], "available": true },
+        { "name": "Mocha Frappe (24oz)", "price": "$7.95", "desc": "Espresso, mocha, milk, frozen.", "tags": [], "available": true },
+        { "name": "Vanilla Frappe (24oz)", "price": "$7.95", "desc": "Espresso, vanilla, milk, frozen.", "tags": [], "available": true },
+        { "name": "Hazelnut Frappe (24oz)", "price": "$7.95", "desc": "Espresso, hazelnut, milk, frozen.", "tags": [], "available": true },
+        { "name": "Classic Thai Tea Frappe (24oz)", "price": "$7.95", "desc": "Thai tea base, milk, frozen.", "tags": [], "available": true },
+        { "name": "Matcha Frappe (24oz)", "price": "$7.95", "desc": "Milk, matcha, frozen.", "tags": [], "available": true },
+        { "name": "Chocolate Frappe (24oz)", "price": "$7.95", "desc": "Chocolate drizzle, cocoa powder, milk, frozen.", "tags": [], "available": true },
+        { "name": "Peanut Butter Frappe (24oz)", "price": "$7.95", "desc": "Peanut butter, milk, frozen.", "tags": [], "available": true }
+      ]
+    },
+    {
+      "id": "hot-tea",
+      "name": "Hot Tea",
+      "eyebrow": "6 Items",
+      "title": "Hot Tea",
+      "description": "Small 12oz $3.95 · Medium 16oz $5.95.",
+      "group": "drinks",
+      "drinksSub": "Tea",
+      "tab": "Drinks",
+      "items": [
+        { "name": "Hot Classic Thai Tea Latte", "price": "Sm $3.95 / Med $5.95", "desc": "", "tags": [], "available": true },
+        { "name": "Hot Matcha Latte", "price": "Sm $3.95 / Med $5.95", "desc": "", "tags": [], "available": true },
+        { "name": "Hot Classic Chai Tea Latte", "price": "Sm $3.95 / Med $5.95", "desc": "", "tags": [], "available": true },
+        { "name": "Tea Bag", "price": "Ask staff", "desc": "", "tags": [], "available": true },
+        { "name": "Hot Golden Milk Tea", "price": "$2.00", "desc": "Almond milk, turmeric, cinnamon, maple syrup, black pepper. All organic.", "tags": ["VG"], "available": false },
+        { "name": "Hot Turmeric Ginger Chai Tea Latte", "price": "Ask staff", "desc": "", "tags": [], "available": false }
+      ]
+    },
+    {
+      "id": "iced-tea",
+      "name": "Iced Tea",
+      "eyebrow": "6 Items",
+      "title": "Iced Tea",
+      "description": "Medium 16oz $5.95 · Large 24oz $6.95.",
+      "group": "drinks",
+      "drinksSub": "Tea",
+      "tab": "Drinks",
+      "items": [
+        { "name": "Iced Classic Thai Tea Latte", "price": "Med $5.95 / Lg $6.95", "desc": "Thai tea base, milk, sweetened.", "tags": [], "available": true },
+        { "name": "Iced Matcha Latte", "price": "Med $5.95 / Lg $6.95", "desc": "Matcha, milk.", "tags": [], "available": true },
+        { "name": "Iced Classic Chai Tea Latte", "price": "Med $5.95 / Lg $6.95", "desc": "Chai tea, milk.", "tags": [], "available": true },
+        { "name": "Iced Matcha Strawberry", "price": "Med $5.95 / Lg $6.95", "desc": "Matcha, milk, fresh strawberries in strawberry syrup.", "tags": [], "available": true },
+        { "name": "Iced Yuzu Lemon Black Tea", "price": "Med $5.95 / Lg $6.95", "desc": "Black tea, yuzu syrup, lemon juice, topped with fresh oranges.", "tags": [], "available": true },
+        { "name": "Iced Turmeric Ginger Chai Tea Latte", "price": "Med $5.95 / Lg $6.95", "desc": "", "tags": [], "available": false }
+      ]
+    },
+    {
+      "id": "non-coffee",
+      "name": "Non-Coffee & Others",
+      "eyebrow": "19 Items",
+      "title": "Non-Coffee & Others",
+      "description": "Seasonal specials, sparkling drinks, and packaged beverages.",
+      "group": "drinks",
+      "drinksSub": "Other",
+      "tab": "Drinks",
+      "compact": true,
+      "items": [
+        { "name": "Mango Lemon Sparkling", "price": "Med $5.95 / Lg $6.95", "desc": "", "tags": [], "available": true, "badge": "new" },
+        { "name": "Peach Sparkling", "price": "Med $5.95 / Lg $6.95", "desc": "", "tags": [], "available": true, "badge": "new" },
+        { "name": "Hot Chocolate", "price": "Sm $3.95 / Med $4.95", "desc": "", "tags": [], "available": true },
+        { "name": "Hot Black Sesame Cream", "price": "Sm $3.95 / Med $4.95", "desc": "Ground black sesame, steamed milk.", "tags": [], "available": true },
+        { "name": "Ichiko Milk (Iced Strawberry Milk)", "price": "Ask staff", "desc": "Milk, strawberry powder, topped with fresh strawberries.", "tags": [], "available": true },
+        { "name": "Iced Pink Sparkling (Strawberry & Lemon)", "price": "Ask staff", "desc": "Sparkling water, strawberry powder, lemon, topped with dried strawberries.", "tags": [], "available": true },
+        { "name": "Iced Yuzu Sparkling (Yuzu & Lemon)", "price": "Ask staff", "desc": "Sparkling water, yuzu syrup, lemon, topped with fresh oranges and lemons.", "tags": [], "available": true },
+        { "name": "Water (Bottle)", "price": "$2.50", "desc": "", "tags": [], "available": false },
+        { "name": "Soda", "price": "$2.50", "desc": "", "tags": [], "available": true },
+        { "name": "Spindrift Sparkling Water (Unsweetened)", "price": "$3.95", "desc": "", "tags": [], "available": true },
+        { "name": "Kombucha", "price": "$5.95", "desc": "", "tags": [], "available": true },
+        { "name": "Yuzuco", "price": "$4.95", "desc": "", "tags": [], "available": true },
+        { "name": "Harney & Sons (Master Tea Blenders)", "price": "$5.95", "desc": "", "tags": [], "available": true },
+        { "name": "Red Jacket", "price": "$4.95", "desc": "", "tags": [], "available": true },
+        { "name": "Cold-Pressed Cane Juice", "price": "$8.95", "desc": "", "tags": [], "available": true },
+        { "name": "Vita Coco Coconut Water", "price": "$4.95", "desc": "", "tags": [], "available": false },
+        { "name": "Saratoga Still Spring Water (12oz)", "price": "$3.50", "desc": "Natural spring water.", "tags": [], "available": false },
+        { "name": "Saratoga Sparkling Spring Water (12oz)", "price": "$3.50", "desc": "", "tags": [], "available": true },
+        { "name": "Saratoga Still Spring Water (28oz)", "price": "$5.50", "desc": "", "tags": [], "available": true },
+        { "name": "Saratoga Sparkling Spring Water (28oz)", "price": "$5.50", "desc": "", "tags": [], "available": true }
+      ]
+    }
+  ]
+}

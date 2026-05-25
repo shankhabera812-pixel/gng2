@@ -1,0 +1,136 @@
+/* ============================================================
+   GRILL & GREEN — MOTION LANGUAGE
+   All keyframes and transitions gated by prefers-reduced-motion
+   ============================================================ */
+
+/* ============================================================
+   KEYFRAMES (defined unconditionally, applied conditionally)
+   ============================================================ */
+
+@keyframes sun-rotate {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+@keyframes wave-flow {
+  from { stroke-dashoffset: 200; }
+  to   { stroke-dashoffset: 0; }
+}
+
+@keyframes wave-flow-path {
+  from { stroke-dashoffset: 400; }
+  to   { stroke-dashoffset: 0; }
+}
+
+@keyframes grass-sway {
+  0%, 100% { transform: rotate(0deg); }
+  25%       { transform: rotate(4deg); }
+  75%       { transform: rotate(-4deg); }
+}
+
+@keyframes word-arrive {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+/* ============================================================
+   MOTION APPLICATION — only when user hasn't requested reduced motion
+   ============================================================ */
+
+@media (prefers-reduced-motion: no-preference) {
+
+  /* Sun mark — 40s rotation, so slow it reads as texture */
+  .sun-mark {
+    animation: sun-rotate 40s linear infinite;
+    transform-origin: center;
+  }
+
+  /* Wave divider — stroke flowing */
+  .wave-path-primary {
+    stroke-dasharray: 400;
+    stroke-dashoffset: 400;
+    animation: wave-flow-path 6s linear infinite;
+  }
+
+  .wave-path-secondary {
+    stroke-dasharray: 400;
+    stroke-dashoffset: 400;
+    animation: wave-flow-path 8s linear infinite reverse;
+  }
+
+  /* Grass blades — sway only when parent section is hovered */
+  .grass-sway-trigger:hover .grass-blade,
+  .grass-sway-trigger:focus-within .grass-blade {
+    animation: grass-sway 2s ease-in-out infinite;
+    transform-origin: bottom center;
+  }
+
+  /* Hero headline word-by-word breeze */
+  .hero-word {
+    display: inline-block;
+    opacity: 0;
+    animation: word-arrive 0.5s ease-out forwards;
+  }
+
+  /* Stagger delays — set via CSS custom property --delay on each word */
+  .hero-word { animation-delay: var(--delay, 0ms); }
+
+  /* Scroll reveal — active class set by JS */
+  .reveal {
+    transition: opacity var(--t-reveal), transform var(--t-reveal);
+  }
+
+  .reveal.revealed {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* Staggered card reveals — delay set inline by JS */
+  .reveal-stagger {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity var(--t-reveal), transform var(--t-reveal);
+    transition-delay: var(--stagger-delay, 0ms);
+  }
+
+  .reveal-stagger.revealed {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* Dietary filter fade — non-matching items de-emphasised */
+  .menu-card.filtered-out {
+    opacity: 0.14;
+    transform: scale(0.98);
+    transition: opacity var(--t-base), transform var(--t-base);
+  }
+
+  .menu-card:not(.filtered-out) {
+    transition: opacity var(--t-base), transform var(--t-base),
+                box-shadow var(--t-base), border-color var(--t-base);
+  }
+}
+
+/* ============================================================
+   REDUCED MOTION FALLBACKS
+   ============================================================ */
+
+@media (prefers-reduced-motion: reduce) {
+  .sun-mark { animation: none; }
+  .wave-path-primary,
+  .wave-path-secondary { animation: none; }
+  .hero-word { opacity: 1; transform: none; animation: none; }
+  .reveal, .reveal-stagger { opacity: 1; transform: none; transition: none; }
+  .menu-card.filtered-out { opacity: 0.3; transform: none; transition: none; }
+}
