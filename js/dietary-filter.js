@@ -1,101 +1,93 @@
 /* ============================================================
    DIETARY FILTER
-   CSS class toggle approach — no DOM add/remove.
+   CSS class toggle — no DOM add/remove.
    Non-matching cards fade to opacity 0.14 + scale(0.98).
-   Multi-select: active filters must ALL be present on a card.
+   Multi-select: ALL active filters must be present on a card.
+
+   resetFilters() is exported so tab-panels.js can call it
+   when switching sections (clears state back to "All").
    ============================================================ */
+
+const activeFilters = new Set();
+let allChip = null;
+let chips   = null;
 
 export function initDietaryFilter() {
   const filterRow = document.querySelector('.menu-filters');
   if (!filterRow) return;
 
-  const chips = filterRow.querySelectorAll('.filter-chip[data-filter]');
-  const activeFilters = new Set();
+  chips   = Array.from(filterRow.querySelectorAll('.filter-chip[data-filter]'));
+  allChip = filterRow.querySelector('[data-filter="ALL"]');
 
   chips.forEach(chip => {
-    chip.setAttribute('role', 'switch');
-    chip.setAttribute('aria-checked', 'false');
-    chip.setAttribute('tabindex', '0');
-
-    chip.addEventListener('click', () => toggleFilter(chip));
+    chip.addEventListener('click',   () => toggleFilter(chip));
     chip.addEventListener('keydown', (e) => {
-      if (e.key === 'Enter' || e.key === ' ') {
-        e.preventDefault();
-        toggleFilter(chip);
-      }
+      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggleFilter(chip); }
     });
   });
+}
 
-  function toggleFilter(chip) {
-    const filter = chip.dataset.filter;
+function toggleFilter(chip) {
+  const filter = chip.dataset.filter;
 
-    if (filter === 'ALL') {
-      // Clear all filters
-      activeFilters.clear();
-      chips.forEach(c => {
-        c.classList.remove('active');
-        c.setAttribute('aria-checked', 'false');
-      });
+  if (filter === 'ALL') {
+    activeFilters.clear();
+    chips.forEach(c => { c.classList.remove('active'); c.setAttribute('aria-checked', 'false'); });
+    chip.classList.add('active');
+    chip.setAttribute('aria-checked', 'true');
+  } else {
+    // Deactivate the "All" chip
+    if (allChip) { allChip.classList.remove('active'); allChip.setAttribute('aria-checked', 'false'); }
+
+    if (activeFilters.has(filter)) {
+      activeFilters.delete(filter);
+      chip.classList.remove('active');
+      chip.setAttribute('aria-checked', 'false');
+    } else {
+      activeFilters.add(filter);
       chip.classList.add('active');
       chip.setAttribute('aria-checked', 'true');
-    } else {
-      // Deactivate "All" chip
-      const allChip = filterRow.querySelector('[data-filter="ALL"]');
-      if (allChip) {
-        allChip.classList.remove('active');
-        allChip.setAttribute('aria-checked', 'false');
-      }
-
-      if (activeFilters.has(filter)) {
-        activeFilters.delete(filter);
-        chip.classList.remove('active');
-        chip.setAttribute('aria-checked', 'false');
-      } else {
-        activeFilters.add(filter);
-        chip.classList.add('active');
-        chip.setAttribute('aria-checked', 'true');
-      }
-
-      // If nothing selected, reactivate "All"
-      if (activeFilters.size === 0 && allChip) {
-        allChip.classList.add('active');
-        allChip.setAttribute('aria-checked', 'true');
-      }
     }
 
-    applyFilters();
+    // Nothing selected → reactivate "All"
+    if (activeFilters.size === 0 && allChip) {
+      allChip.classList.add('active');
+      allChip.setAttribute('aria-checked', 'true');
+    }
   }
 
-  function applyFilters() {
-    // Observe all rendered menu cards
-    const cards = document.querySelectorAll('.menu-card');
+  applyFilters();
+}
 
-    cards.forEach(card => {
-      if (activeFilters.size === 0) {
-        card.classList.remove('filtered-out');
-        return;
-      }
+function applyFilters() {
+  // Only operate on cards inside currently-visible panels
+  document.querySelectorAll('.menu-section.panel-active .menu-card').forEach(card => {
+    if (activeFilters.size === 0) {
+      card.classList.remove('filtered-out');
+      return;
+    }
+    const cardTags = card.dataset.tags
+      ? new Set(card.dataset.tags.split(','))
+      : new Set();
 
-      const cardTags = card.dataset.tags
-        ? new Set(card.dataset.tags.split(','))
-        : new Set();
+    const matches = [...activeFilters].every(f => cardTags.has(f));
+    card.classList.toggle('filtered-out', !matches);
+  });
 
-      // All active filters must be present on the card
-      const matches = [...activeFilters].every(f => cardTags.has(f));
+  // Ensure cards in hidden panels are never stuck with the class
+  document.querySelectorAll('.menu-section:not(.panel-active) .menu-card').forEach(card => {
+    card.classList.remove('filtered-out');
+  });
+}
 
-      if (matches) {
-        card.classList.remove('filtered-out');
-      } else {
-        card.classList.add('filtered-out');
-      }
-    });
-  }
-
-  // Re-apply when menu renders (async)
-  const menuSections = document.getElementById('menu-sections');
-  if (menuSections) {
-    new MutationObserver(() => {
-      if (activeFilters.size > 0) applyFilters();
-    }).observe(menuSections, { childList: true, subtree: true });
-  }
+/**
+ * Exported so tab-panels.js can reset filters on section switch.
+ */
+export function resetFilters() {
+  if (!chips) return;
+  activeFilters.clear();
+  chips.forEach(c => { c.classList.remove('active'); c.setAttribute('aria-checked', 'false'); });
+  if (allChip) { allChip.classList.add('active'); allChip.setAttribute('aria-checked', 'true'); }
+  // Remove filtered-out from all cards
+  document.querySelectorAll('.menu-card.filtered-out').forEach(c => c.classList.remove('filtered-out'));
 }

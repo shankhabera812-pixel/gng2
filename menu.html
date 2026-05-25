@@ -110,7 +110,7 @@
       <!-- Primary category tabs -->
       <div class="menu-tabs" role="tablist" aria-label="Menu sections">
         <button class="menu-tab active" role="tab" aria-selected="true"  data-target="power-bowls">Bowls</button>
-        <button class="menu-tab" role="tab" aria-selected="false" data-target="grain-bowls"    data-sections="power-bowls,grain-bowls">Grain Bowls</button>
+        <button class="menu-tab" role="tab" aria-selected="false" data-target="grain-bowls">Grain Bowls</button>
         <button class="menu-tab" role="tab" aria-selected="false" data-target="salads">Salads</button>
         <button class="menu-tab" role="tab" aria-selected="false" data-target="sandwiches">Sandwiches</button>
         <button class="menu-tab" role="tab" aria-selected="false" data-target="wraps">Wraps</button>
@@ -120,32 +120,18 @@
         <button class="menu-tab" role="tab" aria-selected="false" data-target="soups">Soups</button>
         <button class="menu-tab" role="tab" aria-selected="false" data-target="acai">Açaí</button>
         <button class="menu-tab" role="tab" aria-selected="false" data-target="baked">Baked</button>
-        <button class="menu-tab" role="tab" aria-selected="false" data-target="fruit-smoothies">Drinks</button>
+        <button class="menu-tab" role="tab" aria-selected="false" data-target="snacks">Sides</button>
+        <button class="menu-tab" role="tab" aria-selected="false" data-target="fruit-smoothies" data-group="drinks">Drinks</button>
       </div>
 
-      <!-- Dietary filters -->
+      <!-- Dietary filters — centered, compact, always visible -->
       <div class="menu-filters" role="group" aria-label="Dietary filters">
-        <span class="filter-label" aria-hidden="true">Filter:</span>
-        <button class="filter-chip active" data-filter="ALL" aria-label="Show all items" role="switch" aria-checked="true">All</button>
-        <button class="filter-chip" data-filter="GF" role="switch" aria-checked="false" aria-label="Filter by Gluten-Free">Gluten-Free</button>
-        <button class="filter-chip" data-filter="DF" role="switch" aria-checked="false" aria-label="Filter by Dairy-Free">Dairy-Free</button>
-        <button class="filter-chip" data-filter="NF" role="switch" aria-checked="false" aria-label="Filter by Nut-Free">Nut-Free</button>
-        <button class="filter-chip" data-filter="VG" role="switch" aria-checked="false" aria-label="Filter by Vegan">Vegan</button>
-        <button class="filter-chip" data-filter="SF" role="switch" aria-checked="false" aria-label="Filter by Soy-Free">Soy-Free</button>
-      </div>
-    </div>
-
-    <!-- Drinks sub-navigation (shown when scrolled into drinks area) -->
-    <div class="drinks-subnav-wrapper" aria-label="Drinks subcategories" aria-hidden="true">
-      <div class="drinks-subnav">
-        <button class="drinks-sub-tab active" data-target="fruit-smoothies">Smoothies</button>
-        <button class="drinks-sub-tab" data-target="juices">Juices &amp; Shots</button>
-        <button class="drinks-sub-tab" data-target="signature-brews">Signature Brews</button>
-        <button class="drinks-sub-tab" data-target="iced-coffee">Iced Coffee</button>
-        <button class="drinks-sub-tab" data-target="hot-coffee">Hot Coffee</button>
-        <button class="drinks-sub-tab" data-target="frappes">Frappes</button>
-        <button class="drinks-sub-tab" data-target="hot-tea">Tea</button>
-        <button class="drinks-sub-tab" data-target="non-coffee">Other</button>
+        <button class="filter-chip active" data-filter="ALL" role="switch" aria-checked="true"  aria-label="Show all items">All</button>
+        <button class="filter-chip" data-filter="GF"  role="switch" aria-checked="false" aria-label="Filter Gluten-Free">GF</button>
+        <button class="filter-chip" data-filter="DF"  role="switch" aria-checked="false" aria-label="Filter Dairy-Free">DF</button>
+        <button class="filter-chip" data-filter="NF"  role="switch" aria-checked="false" aria-label="Filter Nut-Free">NF</button>
+        <button class="filter-chip" data-filter="VG"  role="switch" aria-checked="false" aria-label="Filter Vegan">VG</button>
+        <button class="filter-chip" data-filter="SF"  role="switch" aria-checked="false" aria-label="Filter Soy-Free">SF</button>
       </div>
     </div>
 
@@ -153,12 +139,7 @@
          MENU SECTIONS (populated by menu-render.js)
          ============================================================ -->
     <div class="menu-body" id="menu-body">
-      <div id="menu-sections" aria-label="Menu items" aria-live="polite">
-        <!-- Loading state -->
-        <div class="container" style="padding-top:60px;padding-bottom:40px;text-align:center;">
-          <p style="font-family:var(--ff-body);font-size:16px;color:var(--dust);font-weight:300;">Loading menu…</p>
-        </div>
-      </div>
+      <div id="menu-sections" aria-label="Menu items"></div>
     </div>
 
   </main>

@@ -326,6 +326,8 @@ function buildSection(section) {
   sec.id = section.id;
   sec.className = 'menu-section';
   sec.setAttribute('aria-label', section.name);
+  // Stamp data-group so tab-panels.js can find drinks / food sections
+  sec.dataset.group = section.group || 'food';
   if (section.group === 'drinks') sec.dataset.drinksSub = section.drinksSub || '';
 
   // Header
@@ -371,10 +373,15 @@ function buildSection(section) {
 
 /**
  * Main render function — fetches menu.json and populates #menu-sections.
+ * Clears the container first, then renders all section elements.
+ * All sections start hidden; tab-panels.js activates the first one.
  */
 export async function renderMenu() {
   const container = document.getElementById('menu-sections');
   if (!container) return;
+
+  // Clear any placeholder content (loading state, previous renders)
+  container.innerHTML = '';
 
   let data;
   try {
@@ -382,16 +389,15 @@ export async function renderMenu() {
     data = await res.json();
   } catch (err) {
     console.error('Failed to load menu data', err);
-    container.innerHTML = '<p style="text-align:center;padding:40px;color:var(--dust)">Menu is loading — please refresh.</p>';
+    container.innerHTML = '<p style="text-align:center;padding:60px 20px;color:var(--dust);font-family:var(--ff-body);font-size:16px;font-weight:300;">Could not load menu — please refresh.</p>';
     return;
   }
 
-  // Render all sections
+  // Render all sections (all hidden by default via CSS .menu-section { display:none })
   data.sections.forEach(section => {
     const el = buildSection(section);
     container.appendChild(el);
   });
 
-  // Return sections data for scroll-spy and filter to use
   return data.sections;
 }

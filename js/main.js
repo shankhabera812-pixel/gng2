@@ -3,18 +3,17 @@
    Initializes all modules. Split by page context.
    ============================================================ */
 
-import { initRewardsToast } from './rewards-toast.js';
-import { initNav }          from './nav.js';
-import { initScrollReveal } from './scroll-reveal.js';
+import { initRewardsToast }  from './rewards-toast.js';
+import { initNav }           from './nav.js';
+import { initScrollReveal }  from './scroll-reveal.js';
 
 // Homepage-only
-import { initBreeze }       from './breeze.js';
+import { initBreeze }        from './breeze.js';
 
 // Menu-page-only
-import { renderMenu }       from './menu-render.js';
-import { initScrollSpy }    from './scroll-spy.js';
+import { renderMenu }        from './menu-render.js';
+import { initTabPanels }     from './tab-panels.js';
 import { initDietaryFilter } from './dietary-filter.js';
-import { initDrinksBg }     from './drinks-bg.js';
 
 document.addEventListener('DOMContentLoaded', async () => {
   // ---- Shared across both pages ----
@@ -29,15 +28,17 @@ document.addEventListener('DOMContentLoaded', async () => {
 
   // ---- Menu page only ----
   if (document.body.dataset.page === 'menu') {
-    // Render the menu first, then wire interactivity
+    // 1. Render all section elements into the DOM (all hidden by CSS)
     await renderMenu();
 
-    // After render, init scroll-based features
-    initScrollSpy();
-    initDietaryFilter();
-    initDrinksBg();
+    // 2. Wire tab panel switching — this also activates the first tab
+    const panels = initTabPanels();
+    if (panels) panels.activateFirst();
 
-    // Re-run scroll reveal for the newly rendered cards
+    // 3. Wire dietary filter chips
+    initDietaryFilter();
+
+    // 4. Scroll-reveal for cards in the initial panel
     initScrollReveal();
   }
 });

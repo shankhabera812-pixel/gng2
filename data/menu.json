@@ -198,7 +198,7 @@
       "title": "Snacks & Dips",
       "description": "Small bites, big flavor.",
       "group": "food",
-      "tab": "Drinks",
+      "tab": "Sides",
       "items": [
         { "name": "Mediterranean Salad Dip", "price": "$15.95", "desc": "Half salad, half dip — tomatoes, Kalamata olives, cucumber, red onion, olive oil, herbs, lemon juice on labneh or Greek yogurt. Served with crackers.", "tags": [], "available": true },
         { "name": "Potato Chips — Salted", "price": "$3.30", "desc": "", "tags": [], "available": true },
@@ -214,7 +214,7 @@
       "title": "Sides & Add-Ons",
       "description": "Customize any dish or build your own plate.",
       "group": "food",
-      "tab": "Drinks",
+      "tab": "Sides",
       "compact": true,
       "items": [
         { "name": "Fruit Cup", "price": "$4.50", "desc": "", "tags": ["VG"], "available": true },

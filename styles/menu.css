@@ -1,12 +1,7 @@
 /* ============================================================
    GRILL & GREEN — MENU PAGE
-   Hero · Sticky tabs · Filter · Sections · Cards · Drinks sub-nav
+   Hero · Sticky tabs (centered) · Filter (centered) · Panel sections
    ============================================================ */
-
-/* Menu page needs a larger scroll offset — accounts for nav + tabs + filters */
-body[data-page="menu"] {
-  --tab-offset: 176px;
-}
 
 /* ============================================================
    MENU PAGE HERO (compact)
@@ -40,7 +35,7 @@ body[data-page="menu"] {
 }
 
 /* ============================================================
-   STICKY CATEGORY TAB BAR
+   STICKY TAB + FILTER WRAPPER
    ============================================================ */
 
 .menu-tabs-wrapper {
@@ -50,19 +45,19 @@ body[data-page="menu"] {
   background: var(--field);
   border-bottom: 1px solid var(--stone);
   box-shadow: 0 2px 8px rgba(30, 43, 23, 0.06);
+  padding: 14px 0 0;
 }
+
+/* ============================================================
+   PRIMARY CATEGORY TABS — centered, wrap on small screens
+   ============================================================ */
 
 .menu-tabs {
   display: flex;
-  gap: 4px;
-  padding: 10px clamp(20px, 5vw, 60px);
-  overflow-x: auto;
-  scrollbar-width: none;
-  -ms-overflow-style: none;
-}
-
-.menu-tabs::-webkit-scrollbar {
-  display: none;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 5px;
+  padding: 0 clamp(16px, 4vw, 48px) 12px;
 }
 
 .menu-tab {
@@ -70,19 +65,21 @@ body[data-page="menu"] {
   font-size: 13px;
   font-weight: 500;
   color: var(--dust);
-  padding: 7px 16px;
+  padding: 8px 18px;
   border-radius: var(--r-pill);
   cursor: pointer;
   white-space: nowrap;
-  flex-shrink: 0;
-  border: none;
+  border: 1.5px solid transparent;
   background: none;
-  min-height: 36px;
+  min-height: 38px;
+  display: inline-flex;
+  align-items: center;
 }
 
 @media (prefers-reduced-motion: no-preference) {
   .menu-tab {
-    transition: background-color var(--t-fast), color var(--t-fast);
+    transition: background-color var(--t-fast), color var(--t-fast),
+                border-color var(--t-fast);
   }
 }
 
@@ -94,50 +91,36 @@ body[data-page="menu"] {
 .menu-tab.active {
   background: var(--ink-2);
   color: #fff;
+  border-color: var(--ink-2);
 }
 
 /* ============================================================
-   DIETARY FILTER ROW
+   DIETARY FILTER ROW — centered, compact chips, always visible
    ============================================================ */
 
 .menu-filters {
   display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
   align-items: center;
-  gap: 6px;
-  padding: 8px clamp(20px, 5vw, 60px) 10px;
-  overflow-x: auto;
-  scrollbar-width: none;
-  -ms-overflow-style: none;
-}
-
-.menu-filters::-webkit-scrollbar {
-  display: none;
-}
-
-.filter-label {
-  font-family: var(--ff-ui);
-  font-size: 10px;
-  font-weight: 600;
-  color: var(--dust);
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  flex-shrink: 0;
-  margin-right: 4px;
+  gap: 5px;
+  padding: 8px clamp(16px, 4vw, 48px) 12px;
+  border-top: 1px solid rgba(204, 199, 188, 0.55);
 }
 
 .filter-chip {
   font-family: var(--ff-ui);
-  font-size: 11px;
-  font-weight: 500;
-  padding: 5px 14px;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  padding: 4px 13px;
   border-radius: var(--r-pill);
   cursor: pointer;
   white-space: nowrap;
-  flex-shrink: 0;
-  border: 1px solid var(--stone);
-  background: var(--field);
+  border: 1.5px solid var(--stone);
+  background: transparent;
   color: var(--dust);
-  min-height: 30px;
+  min-height: 26px;
   display: inline-flex;
   align-items: center;
 }
@@ -149,54 +132,53 @@ body[data-page="menu"] {
   }
 }
 
+.filter-chip:hover {
+  border-color: var(--ink-2);
+  color: var(--ink-2);
+}
+
 .filter-chip.active {
   background: var(--ink-2);
   color: #fff;
   border-color: var(--ink-2);
 }
 
-.filter-chip[data-filter="GF"].active { background: var(--grove); border-color: var(--grove); }
-.filter-chip[data-filter="DF"].active { background: #5B7FA0; border-color: #5B7FA0; }
-.filter-chip[data-filter="NF"].active { background: #8B6A2E; border-color: #8B6A2E; }
-.filter-chip[data-filter="VG"].active { background: var(--grove); border-color: var(--grove); }
-.filter-chip[data-filter="V"].active  { background: var(--grove-lt); border-color: var(--grove); color: var(--ink-3); }
+/* Per-tag accent colors when active */
+.filter-chip[data-filter="GF"].active { background: var(--grove);    border-color: var(--grove); }
+.filter-chip[data-filter="DF"].active { background: #4E7AA0;          border-color: #4E7AA0; }
+.filter-chip[data-filter="NF"].active { background: #8B6A2E;          border-color: #8B6A2E; }
+.filter-chip[data-filter="VG"].active { background: var(--grove);    border-color: var(--grove); }
+.filter-chip[data-filter="SF"].active { background: var(--ink-3);    border-color: var(--ink-3); }
 
 /* ============================================================
    MENU BODY
    ============================================================ */
 
 .menu-body {
-  padding: 48px 0 100px;
+  padding: 40px 0 80px;
   background: var(--field);
-}
-
-/* Background transition for drinks area */
-.menu-body.drinks-context {
-  background: var(--field-drinks);
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .menu-body {
-    transition: background-color 0.6s ease;
-  }
+  min-height: 60vh;
 }
 
 /* ============================================================
-   MENU SECTION
+   PANEL SYSTEM
+   All sections hidden by default — JS adds .panel-active to show
    ============================================================ */
 
 .menu-section {
-  padding: 56px 0;
-  border-bottom: 1px solid rgba(204, 199, 188, 0.4);
-  scroll-margin-top: var(--tab-offset);
+  display: none;
 }
 
-.menu-section:last-child {
-  border-bottom: none;
+.menu-section.panel-active {
+  display: block;
 }
+
+/* ============================================================
+   MENU SECTION CONTENT
+   ============================================================ */
 
 .menu-section__header {
-  margin-bottom: 32px;
+  margin-bottom: 28px;
 }
 
 .menu-section__eyebrow {
@@ -218,6 +200,7 @@ body[data-page="menu"] {
   width: 16px;
   height: 1px;
   background: var(--ember);
+  flex-shrink: 0;
 }
 
 .menu-section__title {
@@ -256,71 +239,24 @@ body[data-page="menu"] {
   gap: 20px;
 }
 
-/* Large items (sides, non-coffee) — more compact list layout */
 .menu-section__grid--compact {
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   gap: 14px;
 }
 
 /* ============================================================
-   DRINKS SUB-NAVIGATION
+   DRINKS PANEL — multiple sub-sections shown together,
+   separated by a subtle divider
    ============================================================ */
 
-.drinks-subnav-wrapper {
-  background: var(--field-drinks);
-  border-bottom: 1px solid rgba(204, 199, 188, 0.35);
-  position: sticky;
-  top: calc(var(--nav-h) + var(--tab-h));
-  z-index: calc(var(--z-tabs) - 1);
-  display: none;
-}
-
-.drinks-subnav-wrapper.visible {
-  display: block;
-}
-
-.drinks-subnav {
-  display: flex;
-  gap: 4px;
-  padding: 7px clamp(20px, 5vw, 60px);
-  overflow-x: auto;
-  scrollbar-width: none;
-  -ms-overflow-style: none;
-}
-
-.drinks-subnav::-webkit-scrollbar {
-  display: none;
-}
-
-.drinks-sub-tab {
-  font-family: var(--ff-ui);
-  font-size: 11px;
-  font-weight: 500;
-  color: var(--dust);
-  padding: 5px 13px;
-  border-radius: var(--r-pill);
-  cursor: pointer;
-  white-space: nowrap;
-  flex-shrink: 0;
-  border: none;
-  background: none;
-  min-height: 28px;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .drinks-sub-tab {
-    transition: background-color var(--t-fast), color var(--t-fast);
-  }
-}
-
-.drinks-sub-tab:hover,
-.drinks-sub-tab.active {
-  background: var(--ink-2);
-  color: #fff;
+.menu-section.panel-active + .menu-section.panel-active {
+  border-top: 1px solid rgba(204, 199, 188, 0.4);
+  padding-top: 40px;
+  margin-top: 0;
 }
 
 /* ============================================================
-   RESPONSIVE MENU
+   RESPONSIVE
    ============================================================ */
 
 @media (max-width: 640px) {
@@ -331,6 +267,16 @@ body[data-page="menu"] {
 
   .menu-card__img-wrap {
     height: 150px;
+  }
+
+  .menu-tabs {
+    gap: 4px;
+  }
+
+  .menu-tab {
+    font-size: 12px;
+    padding: 7px 14px;
+    min-height: 34px;
   }
 }
 
