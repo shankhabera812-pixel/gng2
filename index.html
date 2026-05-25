@@ -3,18 +3,15 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Grill &amp; Green — Healthy Food &amp; Coffee · Worcester, MA</title>
-  <meta name="description" content="Grill & Green serves fresh bowls, sandwiches, smoothies, and craft coffee in Worcester, MA. Earn rewards on every visit.">
+  <title>Grill &amp; Green Kitchen — A Little Paris in Worcester, MA</title>
+  <meta name="description" content="Grill & Green Kitchen on Highland Street — a MediterrAsian café from owner Fawn Weydt. Fresh bowls, Thai specialty coffee, all-day breakfast. Order on Toast, DoorDash, or Grubhub.">
 
-  <!-- Preconnect for Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Space+Grotesk:wght@300;400;500;600;700&family=Karla:ital,wght@0,300;0,400;0,500;0,600;1,300&display=swap" rel="stylesheet">
 
-  <!-- Hero image preload -->
-  <link rel="preload" as="image" href="assets/images/menu/Spring Roll in a Bowl.jpg">
+  <link rel="preload" as="image" href="assets/images/restaurant/hero.jpg">
 
-  <!-- Styles -->
   <link rel="stylesheet" href="styles/tokens.css">
   <link rel="stylesheet" href="styles/base.css">
   <link rel="stylesheet" href="styles/components.css">
@@ -24,115 +21,98 @@
 </head>
 <body data-page="home">
 
-  <!-- ============================================================
-       REWARDS TOAST (above nav)
-       ============================================================ -->
-  <div class="rewards-toast" role="status" aria-live="polite">
-    <p class="rewards-toast__text">
-      Earn <strong>1 point per $1</strong> spent — plus <strong>25 bonus points</strong> just for signing up.
-      <a href="#">Join free →</a>
-    </p>
-    <button class="rewards-toast__dismiss" aria-label="Dismiss rewards notification">×</button>
+  <!-- ORDER BAR — persistent across page -->
+  <div class="order-bar" role="region" aria-label="Order online">
+    <div class="order-bar__inner">
+      <span class="order-bar__label">Order online</span>
+      <!-- TODO: replace #order-toast with real Toast URL -->
+      <a href="#order-toast" class="order-btn order-btn--toast" rel="external">
+        <svg class="order-btn__icon" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M3 2h10a1 1 0 011 1v10a1 1 0 01-1 1H3a1 1 0 01-1-1V3a1 1 0 011-1zm1 2v8h8V4H4zm2 1h4v1H6V5z"/></svg>
+        <span>Toast</span>
+      </a>
+      <a href="#order-doordash" class="order-btn order-btn--doordash" rel="external">
+        <svg class="order-btn__icon" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M2 3h12v2H2V3zm0 4h8v2H2V7zm0 4h10v2H2v-2z"/></svg>
+        <span>DoorDash</span>
+      </a>
+      <a href="#order-grubhub" class="order-btn order-btn--grubhub" rel="external">
+        <svg class="order-btn__icon" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M4 2l1 8h6l1-8H4zm2 10a1.5 1.5 0 100 3 1.5 1.5 0 000-3zm6 0a1.5 1.5 0 100 3 1.5 1.5 0 000-3z"/></svg>
+        <span>Grubhub</span>
+      </a>
+    </div>
   </div>
 
-  <!-- ============================================================
-       NAVIGATION
-       ============================================================ -->
   <header class="site-header" role="banner">
     <nav class="nav" aria-label="Main navigation">
       <div class="nav__inner">
-        <a href="index.html" class="nav__logo" aria-label="Grill and Green — Home">
-          Grill <em>&amp;</em> Green
+        <a href="index.html" class="nav__logo" aria-label="Grill and Green Kitchen — Home">
+          <img src="assets/images/brand/logo.jpeg" alt="Grill and Green Kitchen" width="120" height="40">
         </a>
 
-        <!-- Desktop links -->
         <ul class="nav__links" role="list">
           <li><a href="index.html" class="nav__link">Home</a></li>
           <li><a href="menu.html" class="nav__link">Menu</a></li>
           <li><a href="#story" class="nav__link">About</a></li>
-          <li><a href="#rewards" class="nav__link">Rewards</a></li>
+          <li><a href="#visit" class="nav__link">Visit</a></li>
         </ul>
 
-        <a href="menu.html" class="nav__cta">Order Now →</a>
+        <a href="#order-cta" class="nav__cta">Order Now →</a>
 
-        <!-- Mobile hamburger -->
         <button class="nav__hamburger" aria-expanded="false" aria-controls="mobile-menu" aria-label="Open navigation menu">
-          <span></span>
-          <span></span>
-          <span></span>
+          <span></span><span></span><span></span>
         </button>
       </div>
     </nav>
 
-    <!-- Mobile overlay -->
     <nav id="mobile-menu" class="nav__overlay" aria-label="Mobile navigation" aria-hidden="true">
       <ul class="nav__overlay-links" role="list">
         <li><a href="index.html" class="nav__overlay-link">Home</a></li>
         <li><a href="menu.html" class="nav__overlay-link">Menu</a></li>
         <li><a href="#story" class="nav__overlay-link">About</a></li>
-        <li><a href="#rewards" class="nav__overlay-link">Rewards</a></li>
+        <li><a href="#visit" class="nav__overlay-link">Visit</a></li>
       </ul>
       <div class="nav__overlay-bottom">
-        <a href="menu.html" class="nav__overlay-cta">Order Now →</a>
+        <a href="#order-cta" class="nav__overlay-cta">Order Now →</a>
       </div>
     </nav>
   </header>
 
   <main>
 
-    <!-- ============================================================
-         01 HERO
-         Split layout: left text + right shaped photo container
-         ============================================================ -->
+    <!-- 01 HERO -->
     <section class="hero" aria-label="Hero">
-
-      <!-- Rotating sun mark — decorative -->
       <svg class="hero__sun sun-mark" viewBox="0 0 48 48" fill="none" aria-hidden="true" focusable="false">
         <circle cx="24" cy="24" r="7" stroke="currentColor" stroke-width="1.5"/>
         <line x1="24" y1="7"  x2="24" y2="3"  stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
         <line x1="24" y1="41" x2="24" y2="45" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
         <line x1="7"  y1="24" x2="3"  y2="24" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
         <line x1="41" y1="24" x2="45" y2="24" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-        <line x1="12.7" y1="12.7" x2="9.9"  y2="9.9"  stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
-        <line x1="35.3" y1="35.3" x2="38.1" y2="38.1" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
-        <line x1="35.3" y1="12.7" x2="38.1" y2="9.9"  stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
-        <line x1="12.7" y1="35.3" x2="9.9"  y2="38.1" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
-        <line x1="24" y1="14" x2="24" y2="10" stroke="currentColor" stroke-width="1.1" stroke-linecap="round" transform="rotate(22.5 24 24)"/>
-        <line x1="24" y1="14" x2="24" y2="10" stroke="currentColor" stroke-width="1.1" stroke-linecap="round" transform="rotate(45 24 24)"/>
-        <line x1="24" y1="14" x2="24" y2="10" stroke="currentColor" stroke-width="1.1" stroke-linecap="round" transform="rotate(67.5 24 24)"/>
-        <line x1="24" y1="14" x2="24" y2="10" stroke="currentColor" stroke-width="1.1" stroke-linecap="round" transform="rotate(112.5 24 24)"/>
-        <line x1="24" y1="14" x2="24" y2="10" stroke="currentColor" stroke-width="1.1" stroke-linecap="round" transform="rotate(157.5 24 24)"/>
-        <line x1="24" y1="14" x2="24" y2="10" stroke="currentColor" stroke-width="1.1" stroke-linecap="round" transform="rotate(202.5 24 24)"/>
-        <line x1="24" y1="14" x2="24" y2="10" stroke="currentColor" stroke-width="1.1" stroke-linecap="round" transform="rotate(247.5 24 24)"/>
-        <line x1="24" y1="14" x2="24" y2="10" stroke="currentColor" stroke-width="1.1" stroke-linecap="round" transform="rotate(292.5 24 24)"/>
-        <line x1="24" y1="14" x2="24" y2="10" stroke="currentColor" stroke-width="1.1" stroke-linecap="round" transform="rotate(337.5 24 24)"/>
       </svg>
 
       <div class="hero__inner">
-        <!-- Left: Text -->
         <div class="hero__text">
-          <div class="hero__eyebrow">Worcester, MA &middot; Healthy Food &amp; Coffee</div>
-
+          <div class="hero__eyebrow">141 Highland St · Worcester · Open Daily</div>
           <h1 class="hero__headline">
-            Fresh.<br><em>Grilled.</em><br>Alive.
+            A little of <em>Paris</em><br>in Worcester.
           </h1>
-
           <p class="hero__sub">
-            Real food made by real people — bowls, sandwiches, smoothies, and craft coffee that actually tastes as good as it is for you.
+            A MediterrAsian kitchen and café from chef-owner Fawn Weydt — plant-forward bowls, hand-crafted Thai coffee, and breakfast that lingers like a Parisian morning.
           </p>
-
           <div class="hero__ctas">
-            <a href="menu.html" class="btn btn-primary">Explore the Menu →</a>
-            <a href="#story" class="btn btn-secondary">Our Story</a>
+            <a href="#order-cta" class="btn btn-primary">Order Online ↓</a>
+            <a href="menu.html" class="btn btn-secondary">View Menu</a>
+          </div>
+          <div class="hero__order-row" style="display:flex;gap:8px;flex-wrap:wrap;margin-top:16px;">
+            <a href="#order-toast"    class="order-btn order-btn--toast">Toast</a>
+            <a href="#order-doordash" class="order-btn order-btn--doordash">DoorDash</a>
+            <a href="#order-grubhub"  class="order-btn order-btn--grubhub">Grubhub</a>
           </div>
         </div>
 
-        <!-- Right: Photo -->
         <div class="hero__photo">
           <div class="hero__photo-main">
             <img
-              src="assets/images/menu/Spring Roll in a Bowl.jpg"
-              alt="Spring Roll in a Bowl — fresh cucumber, avocado, peanut sauce over rice noodles"
+              src="assets/images/restaurant/hero.jpg"
+              alt="Inside Grill and Green Kitchen — pastel walls, floral details, and a warm café atmosphere on Highland Street"
               width="600"
               height="760"
               loading="eager"
@@ -140,8 +120,8 @@
           </div>
           <div class="hero__photo-detail" aria-hidden="true">
             <img
-              src="assets/images/menu/Gochujang Chicken Bowl.jpg"
-              alt="Gochujang Chicken Bowl"
+              src="assets/images/restaurant/owner-fawn.jpg"
+              alt=""
               width="200"
               height="200"
               loading="lazy"
@@ -151,48 +131,29 @@
       </div>
     </section>
 
-    <!-- Wave divider Hero → Featured — purely decorative stroke -->
     <div style="background:var(--field);line-height:0;overflow:hidden;" aria-hidden="true">
       <svg viewBox="0 0 1440 32" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" style="display:block;width:100%;height:32px;">
         <path class="wave-path-primary" d="M0,16 C180,28 360,4 540,16 C720,28 900,4 1080,16 C1260,28 1380,8 1440,14" fill="none" stroke="var(--grove)" stroke-width="1.2" opacity="0.22" stroke-dasharray="400" stroke-dashoffset="400"/>
       </svg>
     </div>
 
-    <!-- ============================================================
-         02 FEATURED RIGHT NOW
-         ============================================================ -->
+    <!-- 02 FEATURED -->
     <section class="featured section" aria-labelledby="featured-heading">
       <div class="container">
         <div class="featured__header">
           <div class="featured__heading-group">
-            <div class="eyebrow">Featured Right Now</div>
+            <div class="eyebrow">On the Menu Today</div>
             <div class="featured__heading-row">
-              <h2 class="section-heading" id="featured-heading">
-                What's good<br><em>today.</em>
-              </h2>
-              <!-- Sun motif inline with heading -->
-              <svg class="featured__sun-icon sun-mark" viewBox="0 0 48 48" fill="none" aria-hidden="true" focusable="false">
-                <circle cx="24" cy="24" r="7" stroke="currentColor" stroke-width="1.5"/>
-                <line x1="24" y1="6"  x2="24" y2="2"  stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-                <line x1="24" y1="42" x2="24" y2="46" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-                <line x1="6"  y1="24" x2="2"  y2="24" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-                <line x1="42" y1="24" x2="46" y2="24" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-                <line x1="11.5" y1="11.5" x2="8.9" y2="8.9" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
-                <line x1="36.5" y1="36.5" x2="39.1" y2="39.1" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
-                <line x1="36.5" y1="11.5" x2="39.1" y2="8.9" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
-                <line x1="11.5" y1="36.5" x2="8.9"  y2="39.1" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
-              </svg>
+              <h2 class="section-heading" id="featured-heading">Worth stopping<br><em>in for.</em></h2>
             </div>
           </div>
-          <a href="menu.html" class="featured__view-link" aria-label="View full menu">View full menu →</a>
+          <a href="menu.html" class="featured__view-link" aria-label="View full menu">Full menu →</a>
         </div>
 
-        <!-- 3-card grid -->
         <div class="grid-3" style="margin-bottom:0;">
-          <!-- Card 1: Today's Special -->
-          <article class="menu-card reveal-stagger" aria-label="Gochujang Chicken Bowl — Today's Special">
+          <article class="menu-card reveal-stagger">
             <div class="menu-card__img-wrap">
-              <img class="menu-card__img" src="assets/images/menu/Gochujang Chicken Bowl.jpg" alt="Gochujang Chicken Bowl — grilled marinated chicken with spicy tahini orange sauce" loading="lazy" width="400" height="190">
+              <img class="menu-card__img" src="assets/images/menu/Gochujang Chicken Bowl.jpg" alt="Gochujang Chicken Bowl" loading="lazy" width="400" height="190">
               <span class="badge badge--special">Today's Special</span>
             </div>
             <div class="menu-card__body">
@@ -201,16 +162,12 @@
                 <span class="menu-card__price">$18.95</span>
               </div>
               <p class="menu-card__desc">Grilled marinated chicken, brown rice with quinoa, cucumber, avocado, red cabbage, edamame, pickled carrots, seaweed and spicy tahini orange sauce.</p>
-              <div class="menu-card__tags">
-                <span class="chip chip--dietary" title="Featured">Featured</span>
-              </div>
             </div>
           </article>
 
-          <!-- Card 2: Salmon Bowl -->
-          <article class="menu-card reveal-stagger" aria-label="Honey Sriracha Salmon Bowl">
+          <article class="menu-card reveal-stagger">
             <div class="menu-card__img-wrap">
-              <img class="menu-card__img" src="assets/images/menu/Honey Sriracha Salmon Bowl.jpg" alt="Honey Sriracha Salmon Bowl — glazed salmon with avocado and sesame" loading="lazy" width="400" height="190">
+              <img class="menu-card__img" src="assets/images/menu/Honey Sriracha Salmon Bowl.jpg" alt="Honey Sriracha Salmon Bowl" loading="lazy" width="400" height="190">
             </div>
             <div class="menu-card__body">
               <div class="menu-card__name-row">
@@ -219,17 +176,16 @@
               </div>
               <p class="menu-card__desc">Glazed salmon with sriracha, edamame, cucumber, cilantro, avocado on brown rice and quinoa, sprinkled with toasted sesame.</p>
               <div class="menu-card__tags">
-                <span class="chip chip--dietary" title="Gluten-Free">GF</span>
-                <span class="chip chip--dietary" title="Nut-Free">NF</span>
-                <span class="chip chip--dietary" title="Dairy-Free">DF</span>
+                <span class="chip chip--dietary">GF</span>
+                <span class="chip chip--dietary">NF</span>
+                <span class="chip chip--dietary">DF</span>
               </div>
             </div>
           </article>
 
-          <!-- Card 3: Spring Roll Bowl -->
-          <article class="menu-card reveal-stagger" aria-label="Spring Roll in a Bowl">
+          <article class="menu-card reveal-stagger">
             <div class="menu-card__img-wrap">
-              <img class="menu-card__img" src="assets/images/menu/Spring Roll in a Bowl.jpg" alt="Spring Roll in a Bowl — fresh vegetables with peanut sauce" loading="lazy" width="400" height="190">
+              <img class="menu-card__img" src="assets/images/menu/Spring Roll in a Bowl.jpg" alt="Spring Roll in a Bowl" loading="lazy" width="400" height="190">
             </div>
             <div class="menu-card__body">
               <div class="menu-card__name-row">
@@ -238,8 +194,8 @@
               </div>
               <p class="menu-card__desc">Sliced cucumber, carrots, romaine lettuce, red cabbage, scallion, mint, avocado, edamame, peanuts, rice noodles with house-made peanut sauce.</p>
               <div class="menu-card__tags">
-                <span class="chip chip--dietary" title="Gluten-Free">GF</span>
-                <span class="chip chip--dietary" title="Dairy-Free">DF</span>
+                <span class="chip chip--dietary">GF</span>
+                <span class="chip chip--dietary">DF</span>
               </div>
             </div>
           </article>
@@ -247,48 +203,48 @@
       </div>
     </section>
 
-    <!-- ============================================================
-         03 OUR STORY
-         ============================================================ -->
+    <!-- 03 OUR STORY -->
     <section class="story section grass-sway-trigger" id="story" aria-labelledby="story-heading">
       <div class="container">
         <div class="story__inner">
-          <!-- Left: Content -->
           <div class="story__content reveal">
-            <!-- Grass blades motif -->
             <div class="story__grass" aria-hidden="true">
               <div class="story__grass-blade grass-blade"></div>
               <div class="story__grass-blade grass-blade"></div>
               <div class="story__grass-blade grass-blade"></div>
             </div>
 
-            <div class="eyebrow">Our Story</div>
+            <div class="eyebrow">Our Story · Established April 2025</div>
             <h2 class="section-heading" id="story-heading">
-              Made by people<br>who <em>actually care.</em>
+              Lucky number <em>seven.</em>
             </h2>
 
             <p class="story__body">
-              We built Grill &amp; Green around a simple idea: food that's actually good for you should actually taste incredible. Every bowl, sandwich, and smoothie is made fresh — from ingredients you can pronounce — by people who genuinely care about what lands on your plate.
+              Twelve years ago, Achara "Fawn" Weydt opened her first restaurant — a small Thai kitchen in West Boylston called Brown Rice. Today she owns or co-owns seven local restaurants across Worcester and the surrounding area. Grill &amp; Green Kitchen, on Highland Street, is the newest — and the most personal.
             </p>
             <p class="story__body" style="margin-top:-8px;">
-              We're a Worcester original. Not a chain, not a franchise — just a kitchen that believes in doing things right and a community worth feeding well.
+              The interior was inspired by a Paris café she fell for years ago. Pastel walls, floral details, a soft kind of light. "It's a little of Paris in Worcester," she says. The food is what she calls <em>MediterrAsian</em> — plant-forward, vegan-friendly, grass-fed and hormone-free where it counts, with dishes built around an <em>Eat the Rainbow</em> philosophy.
+            </p>
+            <p class="story__body" style="margin-top:-8px;">
+              Breakfast is her favorite meal here — a croissant, a coffee, maybe a fresh orange juice. Typical Parisian. The kind of morning we hope you'll come find for yourself.
             </p>
 
             <blockquote class="story__quote">
-              <p>"The food here feels like someone took it seriously."</p>
+              <p>"I hope we can be a part of bringing healthy eating to our Quartier Latin part of Worcester."</p>
+              <footer style="margin-top:10px;font-family:var(--ff-ui);font-size:12px;font-style:normal;color:var(--dust);">— Fawn Weydt, Owner</footer>
             </blockquote>
 
-            <div style="margin-top:28px;">
-              <a href="menu.html" class="btn btn-primary">Explore the Menu</a>
+            <div style="margin-top:28px;display:flex;gap:12px;flex-wrap:wrap;">
+              <a href="menu.html" class="btn btn-primary">View Menu</a>
+              <a href="#visit" class="btn btn-secondary">Visit Us</a>
             </div>
           </div>
 
-          <!-- Right: Layered photos -->
           <div class="story__photos reveal">
             <div class="story__photo-main">
               <img
-                src="assets/images/menu/Buddha Bowl.jpg"
-                alt="Buddha Bowl — a vibrant, colorful bowl of seasonal vegetables on quinoa"
+                src="assets/images/restaurant/owner-fawn.jpg"
+                alt="Fawn Weydt, owner of Grill and Green Kitchen in Worcester"
                 loading="lazy"
                 width="500"
                 height="400"
@@ -296,8 +252,8 @@
             </div>
             <div class="story__photo-accent">
               <img
-                src="assets/images/menu/Shakshuka.jpg"
-                alt="Shakshuka — eggs poached in spiced tomato sauce, fresh from the kitchen"
+                src="assets/images/restaurant/interior.jpg"
+                alt="The pastel, floral interior of Grill and Green Kitchen — a little Paris in Worcester"
                 loading="lazy"
                 width="280"
                 height="250"
@@ -308,76 +264,7 @@
       </div>
     </section>
 
-    <!-- ============================================================
-         04 STAFF FAVORITES
-         ============================================================ -->
-    <section class="staff section" aria-labelledby="staff-heading">
-      <div class="container">
-        <div class="eyebrow">Straight From the Team</div>
-        <div class="staff__heading-row">
-          <h2 class="section-heading" id="staff-heading">Staff <em>Favorites</em></h2>
-          <!-- Beach volleyball — single use only -->
-          <svg class="staff__volleyball" viewBox="0 0 48 48" fill="none" aria-hidden="true" focusable="false">
-            <circle cx="24" cy="24" r="17" stroke="currentColor" stroke-width="1.2"/>
-            <path d="M7 24 Q24 15 41 24" stroke="currentColor" stroke-width="1" fill="none"/>
-            <path d="M11 13 Q8 23 11 35" stroke="currentColor" stroke-width="1" fill="none"/>
-            <path d="M37 13 Q40 23 37 35" stroke="currentColor" stroke-width="1" fill="none"/>
-          </svg>
-        </div>
-        <p class="section-intro" style="margin-bottom:40px;">Three people, three obsessions. These are the dishes our team can't stop ordering on their breaks.</p>
-
-        <div class="grid-3">
-          <!-- Staff card 1 -->
-          <div class="staff-card reveal-stagger">
-            <blockquote class="staff-card__quote">
-              "The Spring Roll Bowl is what made me apply here. I'd eaten it four times before my first shift."
-            </blockquote>
-            <div class="staff-card__footer">
-              <div class="staff-card__avatar" aria-hidden="true">M</div>
-              <div class="staff-card__info">
-                <span class="staff-card__name">Maya R.</span>
-                <span class="staff-card__role">Front of House</span>
-                <span class="staff-card__fave">Spring Roll in a Bowl</span>
-              </div>
-            </div>
-          </div>
-
-          <!-- Staff card 2 -->
-          <div class="staff-card reveal-stagger">
-            <blockquote class="staff-card__quote">
-              "Bangkok Iced Coffee every single morning. I've converted at least fifteen regulars. You're welcome."
-            </blockquote>
-            <div class="staff-card__footer">
-              <div class="staff-card__avatar" aria-hidden="true">D</div>
-              <div class="staff-card__info">
-                <span class="staff-card__name">David K.</span>
-                <span class="staff-card__role">Barista</span>
-                <span class="staff-card__fave">Bangkok Iced Coffee</span>
-              </div>
-            </div>
-          </div>
-
-          <!-- Staff card 3 -->
-          <div class="staff-card reveal-stagger">
-            <blockquote class="staff-card__quote">
-              "Honey Sriracha Salmon Bowl. The glaze hits different when you've watched someone make it fresh."
-            </blockquote>
-            <div class="staff-card__footer">
-              <div class="staff-card__avatar" aria-hidden="true">S</div>
-              <div class="staff-card__info">
-                <span class="staff-card__name">Sofia T.</span>
-                <span class="staff-card__role">Kitchen Lead</span>
-                <span class="staff-card__fave">Honey Sriracha Salmon Bowl</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ============================================================
-         05 CATEGORY SPOTLIGHTS
-         ============================================================ -->
+    <!-- 04 CATEGORY SPOTLIGHTS -->
     <section class="spotlights section" aria-labelledby="spotlights-heading">
       <div class="container">
         <div class="spotlights__header reveal">
@@ -385,77 +272,54 @@
           <h2 class="section-heading" id="spotlights-heading" style="text-align:center;">Three things<br>we do <em>really well.</em></h2>
         </div>
 
-        <!-- Row 1: Bowls -->
         <div class="spotlight-row reveal">
           <div class="spotlight-img-wrap">
             <div class="spotlight-img-main">
-              <img
-                src="assets/images/menu/Buddha Bowl.jpg"
-                alt="Colorful power bowl with fresh seasonal vegetables"
-                loading="lazy"
-                width="560"
-                height="420"
-              >
+              <img src="assets/images/menu/Buddha Bowl.jpg" alt="Buddha Bowl — fifteen plant-based ingredients in one bowl" loading="lazy" width="560" height="420">
             </div>
           </div>
           <div class="spotlight-content">
             <div class="eyebrow">Power Bowls</div>
             <h3 class="section-heading">Built for<br><em>the way you eat.</em></h3>
-            <p class="section-intro">Ten signature bowls, each one balanced for protein, color, and flavor. Brown rice and quinoa as the foundation. Sauces you'll want to bottle.</p>
+            <p class="section-intro">Ten signature bowls on organic brown rice and quinoa. The Buddha Bowl alone packs fifteen plant-based ingredients. Grass-fed beef and all-natural chicken when you want protein — always with intention.</p>
             <a href="menu.html#power-bowls" class="spotlight-link">Explore Bowls</a>
           </div>
         </div>
 
-        <!-- Row 2: Coffee — reversed -->
         <div class="spotlight-row spotlight-row--reverse reveal">
           <div class="spotlight-img-wrap">
             <div class="spotlight-img-main">
-              <img
-                src="assets/images/menu/Bangkok Iced Coffee (24oz).jpg"
-                alt="Bangkok Iced Coffee — a signature 24oz cold brew creation"
-                loading="lazy"
-                width="560"
-                height="420"
-              >
+              <img src="assets/images/restaurant/product.jpg" alt="Thai specialty coffee served at Grill and Green Kitchen" loading="lazy" width="560" height="420">
             </div>
           </div>
           <div class="spotlight-content">
-            <div class="eyebrow">Signature Brews</div>
-            <h3 class="section-heading">Coffee with<br><em>a personality.</em></h3>
-            <p class="section-intro">Five drinks named for the city and the craft behind them. Worcester Wake-Up. Bangkok Iced. Coconut Americano. Not just coffee — reasons to come back.</p>
-            <a href="menu.html#signature-brews" class="spotlight-link">Explore Drinks</a>
+            <div class="eyebrow">Thai Specialty Coffee</div>
+            <h3 class="section-heading">A coffee cup<br><em>with a passport.</em></h3>
+            <p class="section-intro">
+              Our beans come from small farms in Northern Thailand — hand-picked by Mr. Manas, a retired schoolteacher tending coffee trees between rose apple and banana groves, and from young farmers in Chiang Rai's high mountains. Roasted in Boston by Pack Katisomsakul, two-time U.S. Brewers Cup finalist. Worth slowing down for.
+            </p>
+            <a href="menu.html#hot-coffee" class="spotlight-link">Explore Coffee</a>
           </div>
         </div>
 
-        <!-- Row 3: Açaí -->
         <div class="spotlight-row reveal">
           <div class="spotlight-img-wrap">
             <div class="spotlight-img-main">
-              <img
-                src="assets/images/menu/Berry Acai.jpg"
-                alt="Berry Açaí Bowl — premium Grade A organic açaí with fresh toppings"
-                loading="lazy"
-                width="560"
-                height="420"
-              >
+              <img src="assets/images/menu/Berry Acai.jpg" alt="Berry Açaí Bowl with fresh toppings" loading="lazy" width="560" height="420">
             </div>
           </div>
           <div class="spotlight-content">
             <div class="eyebrow">Açaí Bowls</div>
             <h3 class="section-heading">Premium açaí,<br><em>done properly.</em></h3>
-            <p class="section-intro">Grade A organic açaí — not the watered-down frozen stuff. Three signature builds plus a fully customizable bowl where you choose up to five toppings.</p>
+            <p class="section-intro">Grade A organic açaí — baked goods and scones made fresh on premise every morning. Three signature builds plus a fully customizable bowl where you choose up to five toppings.</p>
             <a href="menu.html#acai" class="spotlight-link">Explore Açaí</a>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- ============================================================
-         06 SIGNATURE DRINKS BAND
-         Full-width Deep Forest dark section — the visual centrepiece
-         ============================================================ -->
+    <!-- 05 SIGNATURE DRINKS BAND -->
     <section class="drinks-band" aria-labelledby="drinks-band-heading">
-      <!-- Top wave: Linen → Ink -->
       <div class="drinks-band__wave-top" style="background:var(--linen);" aria-hidden="true">
         <svg viewBox="0 0 1440 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M0,20 C240,50 480,0 720,20 C960,40 1200,5 1440,20 L1440,60 L0,60 Z" fill="var(--ink)" stroke="none"/>
@@ -468,7 +332,7 @@
         <h2 class="section-heading" id="drinks-band-heading">
           Drinks with<br><em>a personality.</em>
         </h2>
-        <p class="section-intro">Each one named. Each one crafted. These aren't just coffee — they're the reason regulars come back.</p>
+        <p class="section-intro">Bangkok Iced Coffee. Worcester Wake-Up. Coconut Americano. Named drinks, not generic cups — the kind of thing you order again tomorrow.</p>
 
         <div class="grid-4">
           <div class="dark-card reveal-stagger">
@@ -493,12 +357,12 @@
           </div>
         </div>
 
-        <div style="text-align:center;margin-top:40px;">
+        <div style="text-align:center;margin-top:40px;display:flex;justify-content:center;gap:12px;flex-wrap:wrap;">
           <a href="menu.html#signature-brews" class="btn btn-ghost">View All Drinks</a>
+          <a href="#order-cta" class="order-btn order-btn--toast order-btn--lg">Order Now →</a>
         </div>
       </div>
 
-      <!-- Bottom wave: Ink → Linen (trust strip background) -->
       <div class="drinks-band__wave-bottom" aria-hidden="true">
         <svg viewBox="0 0 1440 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
           <rect width="1440" height="60" fill="var(--linen)"/>
@@ -508,71 +372,163 @@
       </div>
     </section>
 
-    <!-- ============================================================
-         07 WELLNESS TRUST STRIP
-         ============================================================ -->
+    <!-- 06 TESTIMONIALS -->
+    <section class="testimonials section section--linen" aria-labelledby="testimonials-heading">
+      <div class="container">
+        <div class="eyebrow" style="justify-content:center;">What People Are Saying</div>
+        <h2 class="section-heading" id="testimonials-heading" style="text-align:center;">
+          Worcester is <em>talking.</em>
+        </h2>
+        <p class="section-intro" style="text-align:center;margin:0 auto 48px;">
+          Stories from the people who've made Grill &amp; Green part of their week.
+        </p>
+
+        <div class="grid-3">
+          <article class="testimonial-card reveal-stagger">
+            <div class="testimonial-card__stars" aria-label="5 out of 5 stars">★★★★★</div>
+            <blockquote class="testimonial-card__quote">
+              "The Buddha Bowl tastes like someone actually planned it. Fifteen different things and somehow it all works."
+            </blockquote>
+            <footer class="testimonial-card__footer">
+              <div class="testimonial-card__avatar" aria-hidden="true">A</div>
+              <div>
+                <div class="testimonial-card__name">Anna L.</div>
+                <div class="testimonial-card__meta">Worcester regular · Verified Google review</div>
+              </div>
+            </footer>
+          </article>
+
+          <article class="testimonial-card reveal-stagger">
+            <div class="testimonial-card__stars" aria-label="5 out of 5 stars">★★★★★</div>
+            <blockquote class="testimonial-card__quote">
+              "It's a little of Paris in Worcester — and they mean it. The croissant, the coffee, the light in the room. I keep coming back."
+            </blockquote>
+            <footer class="testimonial-card__footer">
+              <div class="testimonial-card__avatar" aria-hidden="true">M</div>
+              <div>
+                <div class="testimonial-card__name">Marcus T.</div>
+                <div class="testimonial-card__meta">Highland Street neighbor · Placeholder review</div>
+              </div>
+            </footer>
+          </article>
+
+          <article class="testimonial-card reveal-stagger">
+            <div class="testimonial-card__stars" aria-label="5 out of 5 stars">★★★★★</div>
+            <blockquote class="testimonial-card__quote">
+              "Leena's chickpea mix and the mango black bean salsa salad are exceptional. You can tell the kitchen actually cares."
+            </blockquote>
+            <footer class="testimonial-card__footer">
+              <div class="testimonial-card__avatar" aria-hidden="true">S</div>
+              <div>
+                <div class="testimonial-card__name">Sarah K.</div>
+                <div class="testimonial-card__meta">Worcester · Placeholder review</div>
+              </div>
+            </footer>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- 07 WELLNESS TRUST STRIP -->
     <div class="trust-strip" role="region" aria-label="Our commitments">
       <div class="trust-strip__inner">
         <div class="trust-item">
           <svg class="trust-item__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true">
             <path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2z"/>
             <path d="M8 12c0-2.2 1.8-4 4-4s4 1.8 4 4-1.8 4-4 4-4-1.8-4-4z"/>
-            <path d="M12 2v2M12 20v2M2 12h2M20 12h2"/>
           </svg>
-          <span class="trust-item__label">Organic Ingredients</span>
+          <span class="trust-item__label">100% Organic Juices</span>
         </div>
         <div class="trust-item">
           <svg class="trust-item__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true">
             <path d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/>
           </svg>
-          <span class="trust-item__label">Made In-House</span>
+          <span class="trust-item__label">Baked Fresh Daily</span>
         </div>
         <div class="trust-item">
           <svg class="trust-item__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true">
             <path d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"/>
           </svg>
-          <span class="trust-item__label">Allergen Labeled</span>
+          <span class="trust-item__label">Vegan Friendly</span>
         </div>
         <div class="trust-item">
           <svg class="trust-item__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true">
             <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
           </svg>
-          <span class="trust-item__label">Cold-Pressed</span>
+          <span class="trust-item__label">Thai Specialty Coffee</span>
         </div>
       </div>
     </div>
 
-    <!-- ============================================================
-         08 REWARDS CTA BAND
-         ============================================================ -->
-    <section class="rewards-cta section" id="rewards" aria-labelledby="rewards-heading">
+    <!-- 08 ORDER CTA BAND -->
+    <section class="order-cta section" id="order-cta" aria-labelledby="order-heading">
       <div class="container">
-        <div class="eyebrow" style="justify-content:center;">Grill &amp; Green Rewards</div>
-        <h2 class="section-heading" id="rewards-heading">Join free, earn<br><em>25 points today.</em></h2>
-        <p class="section-intro" style="text-align:center;margin:0 auto 32px;">
-          Earn 1 point for every dollar you spend. Redeem for free food and drinks. No hoops — just loyalty, rewarded.
+        <div class="eyebrow" style="justify-content:center;">Order Online</div>
+        <h2 class="section-heading" id="order-heading" style="text-align:center;">
+          Pick your <em>platform.</em><br>We'll handle the rest.
+        </h2>
+        <p class="section-intro" style="text-align:center;margin:0 auto 36px;">
+          We don't take orders here on our website — but we're on the three you already use.
         </p>
-        <div style="text-align:center;">
-          <a href="#" class="btn-grove">Sign Up Free →</a>
+        <div class="order-cta__buttons">
+          <a href="#order-toast"    id="order-toast"    class="order-btn order-btn--toast    order-btn--lg">Order on Toast →</a>
+          <a href="#order-doordash" id="order-doordash" class="order-btn order-btn--doordash order-btn--lg">Order on DoorDash →</a>
+          <a href="#order-grubhub"  id="order-grubhub"  class="order-btn order-btn--grubhub  order-btn--lg">Order on Grubhub →</a>
+        </div>
+        <p class="order-cta__note">Toast is our preferred partner — it gets your order to us fastest.</p>
+      </div>
+    </section>
+
+    <!-- 09 VISIT US -->
+    <section class="visit section section--story" id="visit" aria-labelledby="visit-heading">
+      <div class="container">
+        <div class="visit__inner">
+          <div class="visit__content reveal">
+            <div class="eyebrow">Find Us</div>
+            <h2 class="section-heading" id="visit-heading">Come say <em>hello.</em></h2>
+            <p class="visit__address">
+              <strong>141 Highland Street</strong>
+              Worcester, MA
+            </p>
+            <dl class="visit__hours">
+              <dt>Mon — Fri</dt><dd>11 AM — 8 PM</dd>
+              <dt>Sat — Sun</dt><dd>10 AM — 8 PM</dd>
+            </dl>
+            <ul class="visit__contact">
+              <li><a href="tel:+15083049864">(508) 304-9864</a></li>
+              <li><a href="mailto:grillandgreenworcester@gmail.com">grillandgreenworcester@gmail.com</a></li>
+            </ul>
+            <div class="visit__ctas">
+              <a class="btn btn-primary" href="https://maps.google.com/?q=141+Highland+St,+Worcester+MA" target="_blank" rel="noopener">Get Directions →</a>
+              <a class="btn btn-secondary" href="tel:+15083049864">Call the Shop</a>
+            </div>
+          </div>
+          <div class="visit__photo reveal">
+            <img
+              src="assets/images/restaurant/exterior.jpg"
+              alt="The exterior of Grill and Green Kitchen on Highland Street in Worcester"
+              loading="lazy"
+              width="600"
+              height="500"
+            >
+          </div>
         </div>
       </div>
     </section>
 
   </main>
 
-  <!-- ============================================================
-       FOOTER
-       ============================================================ -->
+  <!-- FOOTER -->
   <footer class="footer" role="contentinfo">
     <div class="container">
       <div class="footer__grid">
-        <!-- Brand column -->
         <div class="footer__brand">
-          <a href="index.html" class="nav__logo" aria-label="Grill and Green home">Grill <em>&amp;</em> Green</a>
-          <p class="footer__tagline">Healthy food and craft coffee, made fresh daily in Worcester, MA.</p>
+          <a href="index.html" class="footer__logo" aria-label="Grill and Green Kitchen home">
+            <img src="assets/images/brand/logo.jpeg" alt="Grill and Green Kitchen" width="140" height="48">
+          </a>
+          <p class="footer__tagline">A little of Paris in Worcester. MediterrAsian kitchen and café — 141 Highland Street.</p>
         </div>
 
-        <!-- Menu links -->
         <div>
           <div class="footer__col-title">Menu</div>
           <ul class="footer__links">
@@ -585,18 +541,17 @@
           </ul>
         </div>
 
-        <!-- Visit -->
         <div>
           <div class="footer__col-title">Visit</div>
           <div class="footer__info">
-            <p>Worcester, MA</p>
+            <p>141 Highland Street<br>Worcester, MA</p>
+            <p style="margin-top:8px;"><a href="tel:+15083049864" style="color:rgba(255,255,255,0.55);">(508) 304-9864</a></p>
             <p style="margin-top:12px;color:rgba(255,255,255,0.35);font-size:11px;text-transform:uppercase;letter-spacing:0.08em;font-family:var(--ff-ui);font-weight:600;">Hours</p>
-            <p>Mon–Fri: 7am – 8pm</p>
-            <p>Sat–Sun: 8am – 7pm</p>
+            <p>Mon–Fri: 11 AM – 8 PM</p>
+            <p>Sat–Sun: 10 AM – 8 PM</p>
           </div>
         </div>
 
-        <!-- Connect + Rewards -->
         <div>
           <div class="footer__col-title">Connect</div>
           <div class="footer__social" aria-label="Social media links">
@@ -612,27 +567,18 @@
                 <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/>
               </svg>
             </a>
-            <a href="#" aria-label="TikTok">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="16" height="16">
-                <path d="M9 12a4 4 0 104 4V4a5 5 0 005 5"/>
-              </svg>
-            </a>
           </div>
-          <a href="#rewards" class="footer__rewards-cta" style="margin-top:16px;">Join Rewards →</a>
+          <a href="#order-cta" class="footer__rewards-cta">Order Online →</a>
         </div>
       </div>
     </div>
 
-    <!-- Palm motif — bottom right -->
     <svg class="footer__palm" viewBox="0 0 48 48" fill="none" aria-hidden="true" focusable="false">
       <line x1="24" y1="46" x2="25" y2="20" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
       <path d="M25 22 Q17 14 8 18"  stroke="currentColor" stroke-width="1.2" fill="none" stroke-linecap="round"/>
       <path d="M25 19 Q33 11 38 15" stroke="currentColor" stroke-width="1.2" fill="none" stroke-linecap="round"/>
-      <path d="M25 17 Q20 8 16 8"   stroke="currentColor" stroke-width="1.2" fill="none" stroke-linecap="round"/>
-      <path d="M25 16 Q30 7 34 9"   stroke="currentColor" stroke-width="1.1" fill="none" stroke-linecap="round"/>
     </svg>
 
-    <!-- Grass blades — bottom left -->
     <div class="footer__grass" aria-hidden="true">
       <div class="footer__grass-blade"></div>
       <div class="footer__grass-blade"></div>
@@ -640,12 +586,11 @@
     </div>
 
     <div class="footer__bottom container">
-      <p class="footer__copyright">&copy; 2025 Grill &amp; Green, Worcester MA. All rights reserved.</p>
+      <p class="footer__copyright">&copy; 2025 Grill &amp; Green Kitchen · 141 Highland St, Worcester MA</p>
       <p class="footer__copyright">Made with care in Worcester.</p>
     </div>
   </footer>
 
-  <!-- JS Module -->
   <script type="module" src="js/main.js"></script>
 </body>
 </html>

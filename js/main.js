@@ -3,7 +3,6 @@
    Initializes all modules. Split by page context.
    ============================================================ */
 
-import { initRewardsToast }  from './rewards-toast.js';
 import { initNav }           from './nav.js';
 import { initScrollReveal }  from './scroll-reveal.js';
 
@@ -17,7 +16,6 @@ import { initDietaryFilter } from './dietary-filter.js';
 
 document.addEventListener('DOMContentLoaded', async () => {
   // ---- Shared across both pages ----
-  initRewardsToast();
   initNav();
   initScrollReveal();
 
@@ -28,17 +26,12 @@ document.addEventListener('DOMContentLoaded', async () => {
 
   // ---- Menu page only ----
   if (document.body.dataset.page === 'menu') {
-    // 1. Render all section elements into the DOM (all hidden by CSS)
     await renderMenu();
 
-    // 2. Wire tab panel switching — this also activates the first tab
     const panels = initTabPanels();
     if (panels) panels.activateFirst();
 
-    // 3. Wire dietary filter chips
     initDietaryFilter();
-
-    // 4. Scroll-reveal for cards in the initial panel
     initScrollReveal();
   }
 });

@@ -58,6 +58,11 @@
   --sh-toast: 0 2px 12px rgba(30, 43, 23, 0.10);
   --sh-nav:   0 2px 16px rgba(30, 43, 23, 0.15);
 
+  /* ---- ORDER PLATFORM BRAND COLORS ---- */
+  --order-toast:    #FF4C00;
+  --order-doordash: #EB1700;
+  --order-grubhub:  #F63440;
+
   /* ---- Z-INDEX SCALE ---- */
   --z-base:    1;
   --z-above:   10;

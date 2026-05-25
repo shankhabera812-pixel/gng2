@@ -50,6 +50,21 @@
   color: var(--ember);
 }
 
+.nav__logo img {
+  height: 40px;
+  width: auto;
+  display: block;
+  border-radius: 4px;
+}
+
+.footer__logo img {
+  height: 48px;
+  width: auto;
+  display: block;
+  border-radius: 4px;
+  margin-bottom: 16px;
+}
+
 /* ---- DESKTOP NAV LINKS ---- */
 .nav__links {
   display: flex;

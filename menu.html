@@ -22,40 +22,43 @@
 </head>
 <body data-page="menu">
 
-  <!-- ============================================================
-       REWARDS TOAST
-       ============================================================ -->
-  <div class="rewards-toast" role="status" aria-live="polite">
-    <p class="rewards-toast__text">
-      Earn <strong>1 point per $1</strong> spent — plus <strong>25 bonus points</strong> just for signing up.
-      <a href="#">Join free →</a>
-    </p>
-    <button class="rewards-toast__dismiss" aria-label="Dismiss rewards notification">×</button>
+  <!-- ORDER BAR -->
+  <div class="order-bar" role="region" aria-label="Order online">
+    <div class="order-bar__inner">
+      <span class="order-bar__label">Order online</span>
+      <a href="index.html#order-toast" class="order-btn order-btn--toast" rel="external">
+        <svg class="order-btn__icon" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M3 2h10a1 1 0 011 1v10a1 1 0 01-1 1H3a1 1 0 01-1-1V3a1 1 0 011-1zm1 2v8h8V4H4zm2 1h4v1H6V5z"/></svg>
+        <span>Toast</span>
+      </a>
+      <a href="index.html#order-doordash" class="order-btn order-btn--doordash" rel="external">
+        <svg class="order-btn__icon" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M2 3h12v2H2V3zm0 4h8v2H2V7zm0 4h10v2H2v-2z"/></svg>
+        <span>DoorDash</span>
+      </a>
+      <a href="index.html#order-grubhub" class="order-btn order-btn--grubhub" rel="external">
+        <svg class="order-btn__icon" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M4 2l1 8h6l1-8H4zm2 10a1.5 1.5 0 100 3 1.5 1.5 0 000-3zm6 0a1.5 1.5 0 100 3 1.5 1.5 0 000-3z"/></svg>
+        <span>Grubhub</span>
+      </a>
+    </div>
   </div>
 
-  <!-- ============================================================
-       NAVIGATION
-       ============================================================ -->
   <header class="site-header" role="banner">
     <nav class="nav" aria-label="Main navigation">
       <div class="nav__inner">
-        <a href="index.html" class="nav__logo" aria-label="Grill and Green — Home">
-          Grill <em>&amp;</em> Green
+        <a href="index.html" class="nav__logo" aria-label="Grill and Green Kitchen — Home">
+          <img src="assets/images/brand/logo.jpeg" alt="Grill and Green Kitchen" width="120" height="40">
         </a>
 
         <ul class="nav__links" role="list">
           <li><a href="index.html" class="nav__link">Home</a></li>
           <li><a href="menu.html" class="nav__link">Menu</a></li>
           <li><a href="index.html#story" class="nav__link">About</a></li>
-          <li><a href="index.html#rewards" class="nav__link">Rewards</a></li>
+          <li><a href="index.html#visit" class="nav__link">Visit</a></li>
         </ul>
 
-        <a href="#" class="nav__cta">Order Now →</a>
+        <a href="index.html#order-cta" class="nav__cta">Order Now →</a>
 
         <button class="nav__hamburger" aria-expanded="false" aria-controls="mobile-menu" aria-label="Open navigation menu">
-          <span></span>
-          <span></span>
-          <span></span>
+          <span></span><span></span><span></span>
         </button>
       </div>
     </nav>
@@ -65,10 +68,10 @@
         <li><a href="index.html" class="nav__overlay-link">Home</a></li>
         <li><a href="menu.html" class="nav__overlay-link">Menu</a></li>
         <li><a href="index.html#story" class="nav__overlay-link">About</a></li>
-        <li><a href="index.html#rewards" class="nav__overlay-link">Rewards</a></li>
+        <li><a href="index.html#visit" class="nav__overlay-link">Visit</a></li>
       </ul>
       <div class="nav__overlay-bottom">
-        <a href="#" class="nav__overlay-cta">Order Now →</a>
+        <a href="index.html#order-cta" class="nav__overlay-cta">Order Now →</a>
       </div>
     </nav>
   </header>
@@ -144,16 +147,28 @@
 
   </main>
 
-  <!-- ============================================================
-       FOOTER
-       ============================================================ -->
-  <footer class="footer" role="contentinfo"
-          style="--section-pad-v: var(--sp-9);">
+  <!-- ORDER CTA (compact on menu page) -->
+  <section class="order-cta section" aria-labelledby="menu-order-heading" style="padding:var(--sp-8) 0;">
+    <div class="container">
+      <h2 class="section-heading" id="menu-order-heading" style="text-align:center;font-size:clamp(24px,3vw,36px);margin-bottom:24px;">
+        Ready to order?
+      </h2>
+      <div class="order-cta__buttons">
+        <a href="index.html#order-toast"    class="order-btn order-btn--toast    order-btn--lg">Order on Toast →</a>
+        <a href="index.html#order-doordash" class="order-btn order-btn--doordash order-btn--lg">Order on DoorDash →</a>
+        <a href="index.html#order-grubhub"  class="order-btn order-btn--grubhub  order-btn--lg">Order on Grubhub →</a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer" role="contentinfo" style="--section-pad-v: var(--sp-9);">
     <div class="container">
       <div class="footer__grid">
         <div class="footer__brand">
-          <a href="index.html" class="nav__logo" aria-label="Grill and Green home">Grill <em>&amp;</em> Green</a>
-          <p class="footer__tagline">Healthy food and craft coffee, made fresh daily in Worcester, MA.</p>
+          <a href="index.html" class="footer__logo" aria-label="Grill and Green Kitchen home">
+            <img src="assets/images/brand/logo.jpeg" alt="Grill and Green Kitchen" width="140" height="48">
+          </a>
+          <p class="footer__tagline">A little of Paris in Worcester. MediterrAsian kitchen and café — 141 Highland Street.</p>
         </div>
 
         <div>
@@ -171,10 +186,11 @@
         <div>
           <div class="footer__col-title">Visit</div>
           <div class="footer__info">
-            <p>Worcester, MA</p>
+            <p>141 Highland Street<br>Worcester, MA</p>
+            <p style="margin-top:8px;"><a href="tel:+15083049864" style="color:rgba(255,255,255,0.55);">(508) 304-9864</a></p>
             <p style="margin-top:12px;color:rgba(255,255,255,0.35);font-size:11px;text-transform:uppercase;letter-spacing:0.08em;font-family:var(--ff-ui);font-weight:600;">Hours</p>
-            <p>Mon–Fri: 7am – 8pm</p>
-            <p>Sat–Sun: 8am – 7pm</p>
+            <p>Mon–Fri: 11 AM – 8 PM</p>
+            <p>Sat–Sun: 10 AM – 8 PM</p>
           </div>
         </div>
 
@@ -194,21 +210,17 @@
               </svg>
             </a>
           </div>
-          <a href="index.html#rewards" class="footer__rewards-cta">Join Rewards →</a>
+          <a href="index.html#order-cta" class="footer__rewards-cta">Order Online →</a>
         </div>
       </div>
     </div>
 
-    <!-- Palm motif -->
     <svg class="footer__palm" viewBox="0 0 48 48" fill="none" aria-hidden="true" focusable="false">
       <line x1="24" y1="46" x2="25" y2="20" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
       <path d="M25 22 Q17 14 8 18"  stroke="currentColor" stroke-width="1.2" fill="none" stroke-linecap="round"/>
       <path d="M25 19 Q33 11 38 15" stroke="currentColor" stroke-width="1.2" fill="none" stroke-linecap="round"/>
-      <path d="M25 17 Q20 8 16 8"   stroke="currentColor" stroke-width="1.2" fill="none" stroke-linecap="round"/>
-      <path d="M25 16 Q30 7 34 9"   stroke="currentColor" stroke-width="1.1" fill="none" stroke-linecap="round"/>
     </svg>
 
-    <!-- Grass blades -->
     <div class="footer__grass" aria-hidden="true">
       <div class="footer__grass-blade"></div>
       <div class="footer__grass-blade"></div>
@@ -216,7 +228,7 @@
     </div>
 
     <div class="footer__bottom container">
-      <p class="footer__copyright">&copy; 2025 Grill &amp; Green, Worcester MA. All rights reserved.</p>
+      <p class="footer__copyright">&copy; 2025 Grill &amp; Green Kitchen · 141 Highland St, Worcester MA</p>
       <p class="footer__copyright">Made with care in Worcester.</p>
     </div>
   </footer>

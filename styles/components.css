@@ -569,6 +569,185 @@
 }
 
 /* ============================================================
+   ORDER BAR + ORDER BUTTONS
+   ============================================================ */
+
+.order-bar {
+  background: var(--ink-2);
+  padding: 8px clamp(16px, 4vw, 60px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  z-index: var(--z-toast);
+}
+
+.order-bar__inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.order-bar__label {
+  font-family: var(--ff-ui);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.65);
+  margin-right: 4px;
+}
+
+.order-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  font-family: var(--ff-ui);
+  font-size: 12px;
+  font-weight: 700;
+  padding: 6px 14px;
+  border-radius: var(--r-pill);
+  color: #fff;
+  text-decoration: none;
+  min-height: 32px;
+  border: none;
+  white-space: nowrap;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .order-btn {
+    transition: transform var(--t-fast), box-shadow var(--t-fast), filter var(--t-fast);
+  }
+}
+
+.order-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
+  filter: brightness(1.05);
+}
+
+.order-btn__icon {
+  width: 14px;
+  height: 14px;
+  flex-shrink: 0;
+}
+
+.order-btn--toast    { background: var(--order-toast); }
+.order-btn--doordash { background: var(--order-doordash); }
+.order-btn--grubhub  { background: var(--order-grubhub); }
+
+.order-btn--lg {
+  font-size: 14px;
+  padding: 14px 28px;
+  min-height: 50px;
+  gap: 8px;
+}
+
+/* Order CTA band */
+.order-cta {
+  background: var(--ember-lt);
+  padding: var(--sp-10) 0;
+  text-align: center;
+}
+
+.order-cta__buttons {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.order-cta__note {
+  font-family: var(--ff-body);
+  font-style: italic;
+  color: #7A4030;
+  font-size: 13px;
+  margin-top: 18px;
+}
+
+/* ============================================================
+   TESTIMONIAL CARDS
+   ============================================================ */
+
+.testimonial-card {
+  background: #fff;
+  border: 1px solid var(--stone);
+  border-radius: var(--r-card);
+  padding: 28px 26px;
+  box-shadow: var(--sh-rest);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .testimonial-card {
+    transition: transform var(--t-base), box-shadow var(--t-base);
+  }
+
+  .testimonial-card:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--sh-hover);
+  }
+}
+
+.testimonial-card__stars {
+  color: var(--ember);
+  font-size: 13px;
+  letter-spacing: 3px;
+}
+
+.testimonial-card__quote {
+  font-family: var(--ff-display);
+  font-size: 19px;
+  font-style: italic;
+  line-height: 1.5;
+  color: var(--ink-2);
+  flex: 1;
+  border: none;
+  margin: 0;
+  padding: 0;
+}
+
+.testimonial-card__footer {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.testimonial-card__avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--grove-lt);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--ff-ui);
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--ink-3);
+  flex-shrink: 0;
+}
+
+.testimonial-card__name {
+  font-family: var(--ff-ui);
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--ink-2);
+}
+
+.testimonial-card__meta {
+  font-family: var(--ff-body);
+  font-size: 11px;
+  font-weight: 300;
+  color: var(--dust);
+  margin-top: 2px;
+}
+
+/* ============================================================
    GRID HELPERS
    ============================================================ */
 
