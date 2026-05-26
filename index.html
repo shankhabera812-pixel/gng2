@@ -8,8 +8,9 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Space+Grotesk:wght@300;400;500;600;700&family=Karla:ital,wght@0,300;0,400;0,500;0,600;1,300&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Space+Grotesk:wght@300;400;500;600;700&family=Karla:ital,wght@0,300;0,400;0,500;0,600;1,300&family=Nunito:wght@700;800&display=swap" rel="stylesheet">
 
+  <link rel="preload" as="image" href="assets/images/brand/logo-icon.png">
   <link rel="preload" as="image" href="assets/images/restaurant/hero.jpg">
   <link rel="preload" as="image" href="assets/images/restaurant/gngoutside12.jpg">
 
@@ -39,7 +40,18 @@
     <nav class="nav" aria-label="Main navigation">
       <div class="nav__inner">
         <a href="index.html" class="nav__logo" aria-label="Grill and Green Kitchen — Home">
-          <img src="assets/images/brand/logo.jpeg" alt="Grill and Green Kitchen" width="120" height="40">
+          <img
+            src="assets/images/brand/logo-icon.png"
+            alt=""
+            class="nav__logo-icon"
+            width="46"
+            height="52"
+            loading="eager"
+          >
+          <span class="nav__logo-text" aria-hidden="true">
+            <span class="nav__logo-name">GRILL &amp; GREEN</span>
+            <span class="nav__logo-kitchen">Kitchen</span>
+          </span>
         </a>
 
         <ul class="nav__links" role="list">
@@ -344,7 +356,7 @@
     </section>
 
     <!-- 05 SIGNATURE DRINKS BAND -->
-    <section class="drinks-band" aria-labelledby="drinks-band-heading">
+    <section class="drinks-band" id="signature-brews" aria-labelledby="drinks-band-heading">
       <div class="drinks-band__wave-top" style="background:var(--linen);" aria-hidden="true">
         <svg viewBox="0 0 1440 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M0,20 C240,50 480,0 720,20 C960,40 1200,5 1440,20 L1440,60 L0,60 Z" fill="var(--ink)" stroke="none"/>
@@ -353,11 +365,36 @@
       </div>
 
       <div class="drinks-band__inner container">
-        <div class="eyebrow">Signature Brews · Available Cold Only</div>
-        <h2 class="section-heading" id="drinks-band-heading">
-          Drinks with<br><em>a personality.</em>
-        </h2>
-        <p class="section-intro">Bangkok Iced Coffee. Worcester Wake-Up. Coconut Americano. Named drinks, not generic cups — the kind of thing you order again tomorrow.</p>
+        <div class="drinks-band__header">
+          <div class="drinks-band__header-copy reveal">
+            <div class="eyebrow">Signature Brews · Available Cold Only</div>
+            <h2 class="section-heading" id="drinks-band-heading">
+              Drinks with<br><em>a personality.</em>
+            </h2>
+            <p class="section-intro">Bangkok Iced Coffee. Worcester Wake-Up. Coconut Americano. Named drinks, not generic cups — the kind of thing you order again tomorrow.</p>
+          </div>
+
+          <div class="drinks-band__photos reveal" aria-hidden="true">
+            <div class="drinks-band__photo-menu">
+              <img
+                src="assets/images/restaurant/realmenu.jpg"
+                alt="In-store drink menu boards at Grill and Green Kitchen"
+                loading="lazy"
+                width="1360"
+                height="765"
+              >
+            </div>
+            <div class="drinks-band__photo-drinks">
+              <img
+                src="assets/images/restaurant/4coffee.jpg"
+                alt="Four signature iced drinks with branded sleeves"
+                loading="lazy"
+                width="1080"
+                height="810"
+              >
+            </div>
+          </div>
+        </div>
 
         <div class="grid-4">
           <div class="dark-card reveal-stagger">
@@ -382,7 +419,7 @@
           </div>
         </div>
 
-        <div style="text-align:center;margin-top:40px;">
+        <div class="drinks-band__actions">
           <div class="order-platforms">
             <a href="#order-toast" class="order-btn order-btn--toast order-btn--lg" aria-label="Order on Toast" rel="external">
               <span class="order-btn__icon-wrap" aria-hidden="true">
@@ -514,7 +551,7 @@
     </div>
 
     <!-- 08 ORDER CTA BAND -->
-    <section class="order-cta section" id="order-cta" aria-labelledby="order-heading">
+    <section class="order-cta order-cta--platform section" id="order-cta" aria-labelledby="order-heading">
       <div class="order-cta__bg" aria-hidden="true"></div>
       <div class="container order-cta__content">
         <div class="eyebrow" style="justify-content:center;">Order Online</div>
@@ -602,7 +639,18 @@
       <div class="footer__grid">
         <div class="footer__brand">
           <a href="index.html" class="footer__logo" aria-label="Grill and Green Kitchen home">
-            <img src="assets/images/brand/logo.jpeg" alt="Grill and Green Kitchen" width="140" height="48">
+            <img
+              src="assets/images/brand/logo-icon.png"
+              alt=""
+              class="footer__logo-icon"
+              width="52"
+              height="62"
+              loading="lazy"
+            >
+            <span class="footer__logo-text" aria-hidden="true">
+              <span class="footer__logo-name">GRILL &amp; GREEN</span>
+              <span class="footer__logo-kitchen">Kitchen</span>
+            </span>
           </a>
           <p class="footer__tagline">A little of Paris in Worcester. MediterrAsian kitchen and café — 141 Highland Street.</p>
         </div>

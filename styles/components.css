@@ -846,8 +846,45 @@
   content: '';
   position: absolute;
   inset: 0;
-  background: url('../assets/images/restaurant/product.jpg') center / cover no-repeat;
-  opacity: 0.5;
+  background: center / cover no-repeat;
+  opacity: 0.4;
+}
+
+.order-cta--platform .order-cta__bg::before {
+  background-image: url('../assets/images/restaurant/readytoorder3.jpg');
+}
+
+.order-cta--menu {
+  padding: var(--sp-9) 0;
+  min-height: clamp(300px, 34vw, 380px);
+  display: flex;
+  align-items: center;
+}
+
+.order-cta--menu .order-cta__content {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--sp-5);
+}
+
+.order-cta--menu .section-heading {
+  text-align: center;
+  font-size: clamp(24px, 3vw, 36px);
+  margin: 0;
+  max-width: 100%;
+}
+
+.order-cta--menu .order-cta__buttons {
+  width: 100%;
+  max-width: 720px;
+  margin-inline: auto;
+}
+
+.order-cta--menu .order-cta__bg::before {
+  background-image: url('../assets/images/restaurant/readytoorder2.jpg');
 }
 
 .order-cta__bg::after {
@@ -856,8 +893,8 @@
   inset: 0;
   background: linear-gradient(
     to bottom,
-    rgba(242, 224, 214, 0.4),
-    rgba(242, 224, 214, 0.55)
+    rgba(242, 224, 214, 0.32),
+    rgba(242, 224, 214, 0.48)
   );
 }
 
@@ -870,6 +907,11 @@
 .order-cta__content .section-intro,
 .order-cta__content .eyebrow {
   text-shadow: 0 1px 12px rgba(255, 255, 255, 0.85);
+}
+
+.order-cta--platform .order-cta__content .section-intro {
+  color: #4A453C;
+  font-weight: 400;
 }
 
 .order-cta__buttons {
