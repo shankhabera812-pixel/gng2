@@ -615,9 +615,54 @@
    ORDER BUTTONS
    ============================================================ */
 
+.platform-buttons-frame {
+  background: var(--linen);
+  border: 1px solid var(--stone);
+  border-radius: 18px;
+  padding: 14px 14px 12px;
+  box-shadow: var(--sh-rest);
+}
+
+.hero-order-label {
+  display: block;
+  font-family: var(--ff-ui);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--dust);
+  margin-bottom: 10px;
+}
+
+.platform-buttons-frame .hero__order-platforms {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 8px;
+  width: 100%;
+}
+
+.platform-buttons-frame .order-btn--hero {
+  min-height: 64px;
+  padding: 10px;
+  gap: 8px;
+}
+
+.platform-buttons-frame .order-btn--hero .order-btn__icon-wrap {
+  width: 34px;
+  height: 34px;
+}
+
+.platform-buttons-frame .order-btn--hero .order-btn__icon {
+  width: 18px;
+  height: 18px;
+}
+
+.platform-buttons-frame .order-btn--hero .order-btn__title {
+  font-size: 13px;
+}
+
 .order-platforms,
-.order-cta__buttons,
-.hero__order-platforms {
+.order-cta__buttons {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 12px;
@@ -631,11 +676,11 @@
   gap: 10px;
   width: 100%;
   min-height: 52px;
-  padding: 10px 12px;
+  padding: 13px;
   font-family: var(--ff-ui);
   text-decoration: none;
   border: none;
-  border-radius: 12px;
+  border-radius: 10px;
   color: #fff;
   text-align: left;
   cursor: pointer;
@@ -658,7 +703,11 @@
   outline-offset: 2px;
 }
 
-.order-btn--toast    { background: var(--order-toast-bg); }
+.order-btn--toast {
+  background: var(--order-toast-bg);
+  border: 0.5px solid rgba(255, 255, 255, 0.09);
+}
+
 .order-btn--grubhub  { background: var(--order-grubhub); }
 .order-btn--doordash { background: var(--order-doordash); }
 
@@ -689,12 +738,12 @@
 
 .order-btn__label {
   font-family: var(--ff-ui);
-  font-size: 9px;
+  font-size: 10px;
   font-weight: 600;
   letter-spacing: 0.1em;
   text-transform: uppercase;
   line-height: 1;
-  opacity: 0.82;
+  color: rgba(255, 255, 255, 0.4);
 }
 
 .order-btn__title {
@@ -702,13 +751,13 @@
   font-size: 13px;
   font-weight: 600;
   line-height: 1.15;
-  letter-spacing: 0.02em;
+  letter-spacing: 0.01em;
 }
 
 .order-btn--lg {
   min-height: 64px;
-  padding: 12px 14px;
-  border-radius: 12px;
+  padding: 13px;
+  border-radius: 10px;
 }
 
 .order-btn--lg .order-btn__icon-wrap {
@@ -731,8 +780,8 @@
 
 .order-btn--hero {
   min-height: 72px;
-  padding: 14px 16px;
-  border-radius: 12px;
+  padding: 13px;
+  border-radius: 10px;
 }
 
 .order-btn--hero .order-btn__icon-wrap {
@@ -753,18 +802,26 @@
 
 .order-btn--hero .order-btn__title {
   font-size: 14px;
-  letter-spacing: 0.02em;
+  letter-spacing: 0.01em;
 }
 
 @media (max-width: 768px) {
   .order-platforms,
-  .order-cta__buttons,
-  .hero__order-platforms {
+  .order-cta__buttons {
     grid-template-columns: 1fr;
   }
 }
 
 @media (max-width: 480px) {
+  .platform-buttons-frame .hero__order-platforms {
+    grid-template-columns: 1fr;
+  }
+
+  .platform-buttons-frame .order-btn--hero {
+    min-height: 64px;
+    padding: 13px;
+  }
+
   .order-btn--hero {
     min-height: 64px;
   }

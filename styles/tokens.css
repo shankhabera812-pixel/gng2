@@ -60,9 +60,9 @@
 
   /* ---- ORDER PLATFORM BRAND COLORS ---- */
   --order-toast:    #FF4C00;
-  --order-toast-bg: #1A1D1A;
-  --order-doordash: #FF3008;
-  --order-grubhub:  #FF8000;
+  --order-toast-bg: #18140c;
+  --order-doordash: #E52900;
+  --order-grubhub:  #ED6020;
 
   /* ---- Z-INDEX SCALE ---- */
   --z-base:    1;

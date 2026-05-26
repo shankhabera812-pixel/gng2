@@ -5,7 +5,7 @@
 
 /* ============================================================
    01 HERO
-   Split layout: left text (55%) + right photo container (45%)
+   Split layout: left text (48%) + right photo stack (52%)
    ============================================================ */
 
 .hero {
@@ -24,14 +24,14 @@
   margin: 0 auto;
   padding: 0 clamp(20px, 5vw, 60px);
   display: grid;
-  grid-template-columns: 55fr 45fr;
+  grid-template-columns: 48fr 52fr;
   gap: 40px;
-  align-items: center;
+  align-items: start;
 }
 
 /* ---- LEFT: Text column ---- */
 .hero__text {
-  padding: 80px 0 80px;
+  padding: 72px 0 48px;
   position: relative;
   z-index: 2;
 }
@@ -92,55 +92,63 @@
   display: flex;
   gap: 12px;
   flex-wrap: wrap;
+  margin-top: 16px;
+  margin-bottom: 0;
 }
 
-.hero__order-platforms {
+.hero-order-block {
   margin-top: 28px;
-  margin-bottom: 20px;
+  margin-bottom: 24px;
+  max-width: 100%;
   width: 100%;
 }
 
 /* ---- RIGHT: Photo column ---- */
 .hero__photo {
   position: relative;
-  display: flex;
-  align-items: stretch;
-  padding: 24px 0;
+  padding: 72px clamp(12px, 2vw, 24px) 48px 0;
 }
 
 .hero__photo-main {
-  width: 100%;
-  border-radius: var(--r-hero);
-  overflow: hidden;
   position: relative;
+  width: 100%;
+  height: clamp(520px, 46vw, 580px);
+  overflow: visible;
+  margin-top: 18px;
+  margin-left: 16px;
+}
+
+.hero__photo-main > img:first-of-type {
+  border-radius: var(--r-hero);
 }
 
 .hero__photo-main img {
   width: 100%;
   height: 100%;
-  min-height: 500px;
   object-fit: cover;
   display: block;
 }
 
-/* Smaller overlap circle */
-.hero__photo-detail {
+.hero__photo-outdoor {
   position: absolute;
-  width: 200px;
-  height: 200px;
-  border-radius: 50%;
+  top: 0;
+  right: 0;
+  transform: translate(45%, -45%);
+  width: clamp(148px, 20vw, 190px);
+  height: clamp(110px, 15vw, 142px);
+  border-radius: 16px;
   overflow: hidden;
-  bottom: 60px;
-  left: -50px;
-  border: 4px solid var(--field);
-  box-shadow: var(--sh-modal);
+  border: 3px solid var(--field);
+  box-shadow: 0 8px 24px rgba(30, 43, 23, 0.16),
+              0 2px 6px rgba(30, 43, 23, 0.08);
   z-index: 3;
 }
 
-.hero__photo-detail img {
+.hero__photo-outdoor img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  display: block;
 }
 
 /* Sun mark — decorative, top-right */
@@ -166,27 +174,31 @@
     grid-template-columns: 1fr;
     gap: 32px;
     padding-top: 60px;
-    padding-bottom: 48px;
+    padding-bottom: 64px;
   }
 
   .hero__text {
     padding: 0;
+    padding-bottom: 8px;
   }
 
   .hero__photo {
-    height: 360px;
+    height: auto;
     padding: 0;
   }
 
-  .hero__photo-main img {
-    min-height: 360px;
+  .hero__photo-main {
+    height: 400px;
+    margin-top: 0;
+    margin-left: 0;
   }
 
-  .hero__photo-detail {
-    width: 130px;
-    height: 130px;
-    bottom: 20px;
-    left: -20px;
+  .hero__photo-outdoor {
+    top: 0;
+    right: 0;
+    transform: translate(45%, -45%);
+    width: 120px;
+    height: 90px;
   }
 }
 
@@ -195,15 +207,11 @@
     font-size: 46px;
   }
 
-  .hero__photo {
-    height: 280px;
+  .hero__photo-main {
+    height: 300px;
   }
 
-  .hero__photo-main img {
-    min-height: 280px;
-  }
-
-  .hero__photo-detail {
+  .hero__photo-outdoor {
     display: none;
   }
 }
