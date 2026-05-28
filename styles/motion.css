@@ -144,4 +144,7 @@
   /* Kitchen Built section — pillar rows */
   .pillar-img-main img { transition: none; transform: rotate(2deg) scale(1.05); }
   .pillar-link { transition: none; }
+  /* Mobile Row 5 fallback */
+  .pillar-full-strip__photo { animation: none !important; opacity: 0 !important; }
+  .pillar-full-strip__photo:nth-child(1) { opacity: 1 !important; }
 }
