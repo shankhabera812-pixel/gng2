@@ -164,6 +164,23 @@
   pointer-events: none;
 }
 
+/* Wave divider between hero and next section */
+.hero__wave-bottom {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  line-height: 0;
+  z-index: 10;
+  pointer-events: none;
+}
+
+.hero__wave-bottom svg {
+  width: 100%;
+  height: clamp(30px, 4vw, 60px);
+  display: block;
+}
+
 /* ---- RESPONSIVE HERO ---- */
 @media (max-width: 860px) {
   .hero {
@@ -174,7 +191,7 @@
     grid-template-columns: 1fr;
     gap: 32px;
     padding-top: 60px;
-    padding-bottom: 64px;
+    padding-bottom: 110px;
   }
 
   .hero__text {
