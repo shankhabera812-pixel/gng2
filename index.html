@@ -165,74 +165,106 @@
       </div>
     </section>
 
-    <div style="background:var(--field);line-height:0;overflow:hidden;" aria-hidden="true">
-      <svg viewBox="0 0 1440 32" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" style="display:block;width:100%;height:32px;">
-        <path class="wave-path-primary" d="M0,16 C180,28 360,4 540,16 C720,28 900,4 1080,16 C1260,28 1380,8 1440,14" fill="none" stroke="var(--grove)" stroke-width="1.2" opacity="0.22" stroke-dasharray="400" stroke-dashoffset="400"/>
-      </svg>
-    </div>
+    <!-- 02 CATEGORY EXPLORER -->
+    <section class="category-explorer" aria-label="Explore the menu">
+      <a href="menu.html#breakfast" class="cat-panel" aria-label="Explore All Day Breakfast">
+        <img class="cat-panel__img" src="assets/images/menu/French toast.jpg" alt="French toast with maple syrup and fresh berries" loading="lazy" width="600" height="480">
+        <div class="cat-panel__content">
+          <h2 class="cat-panel__name">All Day Breakfast</h2>
+          <p class="cat-panel__desc">Served from open to close — not just mornings</p>
+          <span class="cat-panel__cta">Explore Breakfast <span class="cat-panel__arrow">→</span></span>
+        </div>
+      </a>
+      <a href="menu.html#toast" class="cat-panel" aria-label="Explore Toast">
+        <img class="cat-panel__img" src="assets/images/menu/House Avocado Toast.jpg" alt="House Avocado Toast on multigrain bread" loading="lazy" width="600" height="480">
+        <div class="cat-panel__content">
+          <h2 class="cat-panel__name">Toast</h2>
+          <p class="cat-panel__desc">Multigrain or gluten-free — built on good bread</p>
+          <span class="cat-panel__cta">Explore Toast <span class="cat-panel__arrow">→</span></span>
+        </div>
+      </a>
+      <a href="menu.html#power-bowls" class="cat-panel" aria-label="Explore Power Bowls">
+        <img class="cat-panel__img" src="assets/images/menu/Buddha Bowl.jpg" alt="Buddha Bowl with fifteen plant-based ingredients" loading="lazy" width="600" height="480">
+        <div class="cat-panel__content">
+          <h2 class="cat-panel__name">Power Bowls</h2>
+          <p class="cat-panel__desc">Ten bowls. Fifteen ingredients. One really good meal</p>
+          <span class="cat-panel__cta">Explore Power Bowls <span class="cat-panel__arrow">→</span></span>
+        </div>
+      </a>
+      <a href="menu.html#signature-brews" class="cat-panel" aria-label="Explore Smoothies and Drinks">
+        <img class="cat-panel__img" src="assets/images/restaurant/4coffee.jpg" alt="Four signature iced drinks with branded sleeves" loading="lazy" width="600" height="480">
+        <div class="cat-panel__content">
+          <h2 class="cat-panel__name">Smoothies & Drinks</h2>
+          <p class="cat-panel__desc">Cold-pressed juice, Thai specialty coffee, fruit smoothies</p>
+          <span class="cat-panel__cta">Explore Drinks <span class="cat-panel__arrow">→</span></span>
+        </div>
+      </a>
+      <a href="menu.html#baked" class="cat-panel" aria-label="Explore Baked Goods">
+        <img class="cat-panel__img" src="assets/images/menu/Croissant.jpg" alt="Fresh-baked croissant — made on premise every morning" loading="lazy" width="600" height="480">
+        <div class="cat-panel__content">
+          <h2 class="cat-panel__name">Baked Goods</h2>
+          <p class="cat-panel__desc">Made on premise every morning — scones, croissants, brownies</p>
+          <span class="cat-panel__cta">Explore Baked Goods <span class="cat-panel__arrow">→</span></span>
+        </div>
+      </a>
+    </section>
 
-    <!-- 02 FEATURED -->
-    <section class="featured section" aria-labelledby="featured-heading">
+    <!-- 02b THE DAILY EDIT -->
+    <section class="daily-edit section" aria-labelledby="daily-edit-heading">
       <div class="container">
-        <div class="featured__header">
-          <div class="featured__heading-group">
-            <div class="eyebrow">On the Menu Today</div>
-            <div class="featured__heading-row">
-              <h2 class="section-heading" id="featured-heading">Worth stopping<br><em>in for.</em></h2>
-            </div>
+        <div class="daily-edit__header">
+          <div class="daily-edit__heading-group">
+            <div class="eyebrow">— Today</div>
+            <h2 class="section-heading" id="daily-edit-heading">The Daily <em>Edit.</em></h2>
           </div>
-          <a href="menu.html" class="featured__view-link" aria-label="View full menu">Full menu →</a>
+          <a href="menu.html" class="daily-edit__view-link" aria-label="View full menu">View full menu →</a>
         </div>
 
-        <div class="grid-3" style="margin-bottom:0;">
-          <article class="menu-card reveal-stagger">
-            <div class="menu-card__img-wrap">
-              <img class="menu-card__img" src="assets/images/menu/Gochujang Chicken Bowl.jpg" alt="Gochujang Chicken Bowl" loading="lazy" width="400" height="190">
-              <span class="badge badge--special">Today's Special</span>
+        <div class="grid-3">
+          <a href="menu.html#grain-bowls" class="daily-edit__card reveal-stagger" aria-label="Gochujang Chicken Bowl — $16.95">
+            <div class="daily-edit__card-img">
+              <img src="assets/images/menu/Gochujang Chicken Bowl.jpg" alt="Gochujang Chicken Bowl" loading="lazy" width="400" height="300">
             </div>
-            <div class="menu-card__body">
-              <div class="menu-card__name-row">
-                <h3 class="menu-card__name">Gochujang Chicken Bowl</h3>
-                <span class="menu-card__price">$18.95</span>
+            <div class="daily-edit__card-body">
+              <span class="daily-edit__badge">Chef's Pick</span>
+              <div class="daily-edit__name-row">
+                <h3 class="daily-edit__name">Gochujang Chicken Bowl</h3>
+                <span class="daily-edit__price">$16.95</span>
               </div>
-              <p class="menu-card__desc">Grilled marinated chicken, brown rice with quinoa, cucumber, avocado, red cabbage, edamame, pickled carrots, seaweed and spicy tahini orange sauce.</p>
+              <p class="daily-edit__desc">Gochujang-marinated chicken on brown rice &amp; quinoa with cucumber, avocado, edamame, pickled carrots, and spicy tahini orange sauce.</p>
+              <span class="daily-edit__arrow" aria-hidden="true">→</span>
             </div>
-          </article>
+          </a>
 
-          <article class="menu-card reveal-stagger">
-            <div class="menu-card__img-wrap">
-              <img class="menu-card__img" src="assets/images/menu/Honey Sriracha Salmon Bowl.jpg" alt="Honey Sriracha Salmon Bowl" loading="lazy" width="400" height="190">
+          <a href="menu.html#signature-brews" class="daily-edit__card reveal-stagger" aria-label="Bangkok Iced Coffee — $8.00">
+            <div class="daily-edit__card-img">
+              <img src="assets/images/menu/Bangkok Iced Coffee (24oz).jpg" alt="Bangkok Iced Coffee" loading="lazy" width="400" height="300">
             </div>
-            <div class="menu-card__body">
-              <div class="menu-card__name-row">
-                <h3 class="menu-card__name">Honey Sriracha Salmon Bowl</h3>
-                <span class="menu-card__price">$21.95</span>
+            <div class="daily-edit__card-body">
+              <span class="daily-edit__badge">Most Ordered</span>
+              <div class="daily-edit__name-row">
+                <h3 class="daily-edit__name">Bangkok Iced Coffee</h3>
+                <span class="daily-edit__price">$8.00</span>
               </div>
-              <p class="menu-card__desc">Glazed salmon with sriracha, edamame, cucumber, cilantro, avocado on brown rice and quinoa, sprinkled with toasted sesame.</p>
-              <div class="menu-card__tags">
-                <span class="chip chip--dietary">GF</span>
-                <span class="chip chip--dietary">NF</span>
-                <span class="chip chip--dietary">DF</span>
-              </div>
+              <p class="daily-edit__desc">Strong brewed Thai espresso, sweetened condensed milk, evaporated milk — served ice-cold in a 24oz cup.</p>
+              <span class="daily-edit__arrow" aria-hidden="true">→</span>
             </div>
-          </article>
+          </a>
 
-          <article class="menu-card reveal-stagger">
-            <div class="menu-card__img-wrap">
-              <img class="menu-card__img" src="assets/images/menu/Spring Roll in a Bowl.jpg" alt="Spring Roll in a Bowl" loading="lazy" width="400" height="190">
+          <a href="menu.html#breakfast" class="daily-edit__card reveal-stagger" aria-label="French Toast — $14.95">
+            <div class="daily-edit__card-img">
+              <img src="assets/images/menu/French toast.jpg" alt="French Toast with berries and maple syrup" loading="lazy" width="400" height="300">
             </div>
-            <div class="menu-card__body">
-              <div class="menu-card__name-row">
-                <h3 class="menu-card__name">Spring Roll in a Bowl</h3>
-                <span class="menu-card__price">$15.95</span>
+            <div class="daily-edit__card-body">
+              <span class="daily-edit__badge">Weekend Favorite</span>
+              <div class="daily-edit__name-row">
+                <h3 class="daily-edit__name">French Toast</h3>
+                <span class="daily-edit__price">$14.95</span>
               </div>
-              <p class="menu-card__desc">Sliced cucumber, carrots, romaine lettuce, red cabbage, scallion, mint, avocado, edamame, peanuts, rice noodles with house-made peanut sauce.</p>
-              <div class="menu-card__tags">
-                <span class="chip chip--dietary">GF</span>
-                <span class="chip chip--dietary">DF</span>
-              </div>
+              <p class="daily-edit__desc">Classic thick-cut brioche with maple syrup, fresh berries, and whipped cream — all-day breakfast done right.</p>
+              <span class="daily-edit__arrow" aria-hidden="true">→</span>
             </div>
-          </article>
+          </a>
         </div>
       </div>
     </section>

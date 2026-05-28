@@ -133,4 +133,12 @@
   .hero-word { opacity: 1; transform: none; animation: none; }
   .reveal, .reveal-stagger { opacity: 1; transform: none; transition: none; }
   .menu-card.filtered-out { opacity: 0.3; transform: none; transition: none; }
+  .cat-panel { transition: none; }
+  .cat-panel__img { transition: none; }
+  .cat-panel::after { transition: none; }
+  .cat-panel__cta::before { transition: none; }
+  .cat-panel__arrow { transition: none; }
+  .daily-edit__card { transition: none; transform: none; }
+  .daily-edit__card-img img { transition: none; }
+  .daily-edit__arrow { opacity: 1; transform: none; transition: none; }
 }
