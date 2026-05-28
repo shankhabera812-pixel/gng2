@@ -1150,11 +1150,16 @@
   .pillar-full-strip__photo:nth-child(3) { animation-delay: 10s; }
 
   .pillar-row--full {
-    height: clamp(300px, 65vw, 400px);
+    height: auto;
+    min-height: 400px;
   }
 
   .pillar-full-text {
+    position: relative;
     padding-inline: clamp(20px, 5vw, 40px);
+    padding-top: 64px;
+    padding-bottom: 64px;
+    justify-content: center;
     gap: 12px;
   }
 }
