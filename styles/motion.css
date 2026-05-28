@@ -44,6 +44,11 @@
   to   { opacity: 1; }
 }
 
+@keyframes chalk-drift {
+  0%, 100% { transform: translate3d(0, 0, 0) rotate(var(--chalk-rotate, 0deg)); }
+  50%      { transform: translate3d(var(--chalk-x, 8px), var(--chalk-y, -10px), 0) rotate(var(--chalk-rotate, 0deg)); }
+}
+
 /* ============================================================
    MOTION APPLICATION — only when user hasn't requested reduced motion
    ============================================================ */
@@ -120,6 +125,22 @@
     transition: opacity var(--t-base), transform var(--t-base),
                 box-shadow var(--t-base), border-color var(--t-base);
   }
+
+  .daily-edit__chalk-marks span {
+    animation: chalk-drift var(--chalk-duration, 32s) ease-in-out infinite;
+  }
+
+  .daily-edit__chalk-marks span:nth-child(2n) {
+    --chalk-x: -7px;
+    --chalk-y: 9px;
+    --chalk-duration: 38s;
+  }
+
+  .daily-edit__chalk-marks span:nth-child(3n) {
+    --chalk-x: 10px;
+    --chalk-y: 6px;
+    --chalk-duration: 42s;
+  }
 }
 
 /* ============================================================
@@ -141,6 +162,7 @@
   .daily-edit__card { transition: none; transform: none; }
   .daily-edit__card-img img { transition: none; }
   .daily-edit__arrow { opacity: 1; transform: none; transition: none; }
+  .daily-edit__chalk-marks span { animation: none; }
   /* Kitchen Built section — pillar rows */
   .pillar-img-main img { transition: none; transform: rotate(2deg) scale(1.05); }
   .pillar-link { transition: none; }
