@@ -836,21 +836,24 @@
 }
 
 /* ============================================================
-   05 CATEGORY SPOTLIGHTS
-   Asymmetric image + text rows — Bowls · Coffee · Acai
+   04 WHAT THIS KITCHEN IS BUILT AROUND
+   Five alternating pillar rows:
+   Coffee · Breakfast · MediterrAsian · Smoothies · Full Menu
    ============================================================ */
 
-.spotlights {
+.kitchen-built {
   background: var(--linen);
-  padding: var(--section-pad-v) 0;
+  padding: var(--section-pad-v) 0 0;
 }
 
-.spotlights__header {
+.kitchen-built__header {
   text-align: center;
   margin-bottom: 72px;
 }
 
-.spotlight-row {
+/* ---- Pillar Row — shared base ---- */
+
+.pillar-row {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 60px;
@@ -858,25 +861,25 @@
   margin-bottom: 80px;
 }
 
-.spotlight-row:last-child {
-  margin-bottom: 0;
-}
-
-/* Alternate layout direction */
-.spotlight-row--reverse {
+/* Even rows — text left, image right.
+   direction: rtl flips column order visually.
+   DOM order stays: image first, content second. */
+.pillar-row--reverse {
   direction: rtl;
 }
 
-.spotlight-row--reverse > * {
+.pillar-row--reverse > * {
   direction: ltr;
 }
 
-.spotlight-img-wrap {
+/* ---- Image column ---- */
+
+.pillar-img-wrap {
   position: relative;
   height: 420px;
 }
 
-.spotlight-img-main {
+.pillar-img-main {
   width: 90%;
   height: 100%;
   border-radius: var(--r-image);
@@ -885,24 +888,33 @@
   box-shadow: var(--sh-hover);
 }
 
-.spotlight-img-main img {
+.pillar-img-main img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   transform: rotate(2deg) scale(1.05);
+  display: block;
 }
 
-.spotlight-img-wrap--coffee {
-  overflow: visible;
+@media (prefers-reduced-motion: no-preference) {
+  .pillar-img-main img {
+    transition: transform 0.35s ease;
+  }
+
+  .pillar-row:hover .pillar-img-main img {
+    transform: rotate(2deg) scale(1.08);
+  }
 }
 
-.spotlight-img-wrap--coffee .spotlight-img-main {
+/* Coffee row variant — main image pushed right, detail circle left */
+.pillar-img-wrap--coffee .pillar-img-main {
   width: 90%;
   height: 100%;
   margin-left: auto;
 }
 
-.spotlight-img-detail {
+/* Secondary circular product shot — coffee row only */
+.pillar-img-detail {
   position: absolute;
   width: 160px;
   height: 160px;
@@ -915,28 +927,35 @@
   z-index: 2;
 }
 
-.spotlight-img-detail img {
+.pillar-img-detail img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  display: block;
   transform: none;
 }
 
-.spotlight-content {
+/* ---- Text column ---- */
+
+.pillar-content {
   display: flex;
   flex-direction: column;
   gap: 20px;
 }
 
-.spotlight-content .section-heading {
+.pillar-content .section-heading {
   font-size: clamp(28px, 3vw, 42px);
+  margin-bottom: 0;
 }
 
-.spotlight-content .section-intro {
+.pillar-content .section-intro {
   font-size: 16px;
+  margin: 0;
 }
 
-.spotlight-link {
+/* ---- CTA text link ---- */
+
+.pillar-link {
   display: inline-flex;
   align-items: center;
   gap: 6px;
@@ -945,36 +964,164 @@
   font-weight: 600;
   color: var(--ember);
   text-decoration: none;
+  width: fit-content;
 }
 
-.spotlight-link:hover {
+@media (prefers-reduced-motion: no-preference) {
+  .pillar-link {
+    transition: color var(--t-base);
+  }
+}
+
+.pillar-link:hover {
   color: var(--ink-2);
 }
 
-.spotlight-link::after {
+.pillar-link::after {
   content: '→';
 }
 
+/* ---- Row 5 — Full-width variety panel ---- */
+/* Sits outside .container, inside .kitchen-built */
+
+.pillar-row--full {
+  display: block;
+  position: relative;
+  height: clamp(400px, 42vw, 520px);
+  overflow: hidden;
+  margin-bottom: 0;
+  margin-top: 0;
+}
+
+/* Three-photo horizontal strip — absolute fill */
+.pillar-full-strip {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.pillar-full-strip__photos {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  width: 100%;
+  height: 100%;
+}
+
+.pillar-full-strip__photo {
+  overflow: hidden;
+}
+
+.pillar-full-strip__photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Dark gradient overlay — heavier toward bottom where text lives */
+.pillar-full-strip__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(14, 18, 9, 0.18) 0%,
+    rgba(14, 18, 9, 0.60) 55%,
+    rgba(14, 18, 9, 0.82) 100%
+  );
+  z-index: 1;
+}
+
+/* Text overlay — centered horizontally, anchored to lower third */
+.pillar-full-text {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  padding-bottom: clamp(36px, 5vw, 64px);
+  padding-inline: clamp(20px, 10vw, 160px);
+  gap: 16px;
+  text-align: center;
+}
+
+.pillar-full-text .eyebrow {
+  color: rgba(255, 255, 255, 0.65);
+  justify-content: center;
+  margin-bottom: 0;
+}
+
+.pillar-full-text .eyebrow::before {
+  background: rgba(255, 255, 255, 0.45);
+}
+
+.pillar-full-text .section-heading {
+  color: #fff;
+  font-size: clamp(26px, 3.8vw, 46px);
+  text-shadow: 0 2px 16px rgba(0, 0, 0, 0.45);
+  margin-bottom: 0;
+}
+
+.pillar-full-text .section-intro {
+  color: rgba(255, 255, 255, 0.78);
+  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.35);
+  max-width: 640px;
+  margin: 0;
+}
+
+/* ---- Responsive ---- */
+
 @media (max-width: 860px) {
-  .spotlight-row {
+  .pillar-row {
     grid-template-columns: 1fr;
     gap: 32px;
+    margin-bottom: 56px;
+  }
+
+  /* Disable rtl reversal on small screens — all rows stack image-top, text-bottom */
+  .pillar-row--reverse {
     direction: ltr;
   }
 
-  .spotlight-row--reverse {
-    direction: ltr;
-  }
-
-  .spotlight-img-wrap {
+  .pillar-img-wrap {
     height: 280px;
   }
 
-  .spotlight-img-detail {
+  .pillar-img-detail {
     width: 120px;
     height: 120px;
     bottom: 16px;
     left: 8px;
+  }
+
+  .pillar-row--full {
+    height: clamp(340px, 55vw, 460px);
+  }
+}
+
+@media (max-width: 540px) {
+  .pillar-img-wrap {
+    height: 240px;
+  }
+
+  /* On mobile, show only the first photo, hide the other two */
+  .pillar-full-strip__photo:nth-child(2),
+  .pillar-full-strip__photo:nth-child(3) {
+    display: none;
+  }
+
+  .pillar-full-strip__photos {
+    grid-template-columns: 1fr;
+  }
+
+  .pillar-row--full {
+    height: clamp(300px, 65vw, 400px);
+  }
+
+  .pillar-full-text {
+    padding-inline: clamp(20px, 5vw, 40px);
+    gap: 12px;
   }
 }
 

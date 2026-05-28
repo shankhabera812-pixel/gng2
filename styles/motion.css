@@ -141,4 +141,7 @@
   .daily-edit__card { transition: none; transform: none; }
   .daily-edit__card-img img { transition: none; }
   .daily-edit__arrow { opacity: 1; transform: none; transition: none; }
+  /* Kitchen Built section — pillar rows */
+  .pillar-img-main img { transition: none; transform: rotate(2deg) scale(1.05); }
+  .pillar-link { transition: none; }
 }
