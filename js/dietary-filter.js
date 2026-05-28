@@ -59,7 +59,7 @@ function toggleFilter(chip) {
   applyFilters();
 }
 
-function applyFilters() {
+export function applyFilters() {
   // Only operate on cards inside currently-visible panels
   document.querySelectorAll('.menu-section.panel-active .menu-card').forEach(card => {
     if (activeFilters.size === 0) {

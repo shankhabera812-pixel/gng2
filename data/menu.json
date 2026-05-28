@@ -186,6 +186,7 @@
         { "name": "Muffin", "price": "Ask staff", "desc": "", "tags": [], "available": true },
         { "name": "Brownies", "price": "$4.25", "desc": "", "tags": [], "available": true },
         { "name": "Cinnamon Rolls", "price": "$4.95", "desc": "", "tags": [], "available": true },
+        { "name": "Croissant", "price": "From $3.95", "desc": "Choose almond, plain, chocolate, or raspberry cream cheese.", "tags": [], "available": true },
         { "name": "Feta Spinach Croissant", "price": "$5.25", "desc": "", "tags": [], "available": true },
         { "name": "Banana Waffle Nutella Croissant", "price": "$5.25", "desc": "", "tags": [], "available": true },
         { "name": "Plain Bagel", "price": "$3.95", "desc": "", "tags": [], "available": true }
@@ -245,6 +246,7 @@
       "title": "Fruit Smoothies",
       "description": "Medium 16oz $8.95 / Large 24oz $10.95. Add-ons +$1.00 each (Collagen Peptide +$2.00).",
       "group": "drinks",
+      "drinkGroup": "smoothies",
       "drinksSub": "Smoothies",
       "tab": "Drinks",
       "items": [
@@ -263,6 +265,7 @@
       "title": "Power Smoothies",
       "description": "Medium 16oz $10.95 / Large 24oz $13.95. Add-ons +$1.00 each (Collagen Peptide +$2.00).",
       "group": "drinks",
+      "drinkGroup": "smoothies",
       "drinksSub": "Smoothies",
       "tab": "Drinks",
       "items": [
@@ -279,6 +282,7 @@
       "title": "Cold-Pressed Juices",
       "description": "Organic. More than one pound of fruits and vegetables per bottle.",
       "group": "drinks",
+      "drinkGroup": "smoothies",
       "drinksSub": "Juices & Shots",
       "tab": "Drinks",
       "items": [
@@ -298,6 +302,7 @@
       "title": "Wellness Shots",
       "description": "A concentrated hit of functional ingredients.",
       "group": "drinks",
+      "drinkGroup": "smoothies",
       "drinksSub": "Juices & Shots",
       "tab": "Drinks",
       "items": [
@@ -313,6 +318,7 @@
       "title": "Signature Brews",
       "description": "Available cold only. Each one named. Each one crafted.",
       "group": "drinks",
+      "drinkGroup": "coffee",
       "drinksSub": "Signature Brews",
       "tab": "Drinks",
       "items": [
@@ -330,6 +336,7 @@
       "title": "Classic Iced Coffee",
       "description": "Med 16oz $5.95 · Lg 24oz $6.95. Oat/Almond/Coconut milk +$0.50. Iced Americano and Iced Brew Coffee have no milk option.",
       "group": "drinks",
+      "drinkGroup": "coffee",
       "drinksSub": "Iced Coffee",
       "tab": "Drinks",
       "items": [
@@ -354,6 +361,7 @@
       "title": "Hot Coffee",
       "description": "Sm 12oz $4.95 · Med 16oz $5.95. Oat/Almond/Coconut milk +$0.50. Classic Espresso $1.95/shot.",
       "group": "drinks",
+      "drinkGroup": "coffee",
       "drinksSub": "Hot Coffee",
       "tab": "Drinks",
       "items": [
@@ -378,6 +386,7 @@
       "title": "Frappes",
       "description": "All 24oz — $7.95 each.",
       "group": "drinks",
+      "drinkGroup": "coffee",
       "drinksSub": "Frappes",
       "tab": "Drinks",
       "items": [
@@ -398,6 +407,7 @@
       "title": "Hot Tea",
       "description": "Small 12oz $3.95 · Medium 16oz $5.95.",
       "group": "drinks",
+      "drinkGroup": "other",
       "drinksSub": "Tea",
       "tab": "Drinks",
       "items": [
@@ -416,6 +426,7 @@
       "title": "Iced Tea",
       "description": "Medium 16oz $5.95 · Large 24oz $6.95.",
       "group": "drinks",
+      "drinkGroup": "other",
       "drinksSub": "Tea",
       "tab": "Drinks",
       "items": [
@@ -434,6 +445,7 @@
       "title": "Non-Coffee & Others",
       "description": "Seasonal specials, sparkling drinks, and packaged beverages.",
       "group": "drinks",
+      "drinkGroup": "other",
       "drinksSub": "Other",
       "tab": "Drinks",
       "compact": true,

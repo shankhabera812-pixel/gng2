@@ -28,8 +28,16 @@ export function initTabPanels() {
    * All other sections get display:none via removal of .panel-active.
    */
   function switchPanel(clickedTab) {
-    const targetId  = clickedTab.dataset.target;
-    const isdrinks  = clickedTab.dataset.group === DRINKS_GROUP;
+    // Clear search if active
+    const searchInput = document.getElementById('menu-search-input');
+    if (searchInput && searchInput.value) {
+      const clearBtn = document.getElementById('menu-search-clear');
+      if (clearBtn) clearBtn.click();
+    }
+
+    const targetId   = clickedTab.dataset.target;
+    const isdrinks   = clickedTab.dataset.group === DRINKS_GROUP;
+    const drinkGroup = clickedTab.dataset.drinkGroup;
 
     // ---- Update tab state ----
     tabs.forEach(t => {
@@ -45,8 +53,10 @@ export function initTabPanels() {
     });
 
     // ---- Show the right section(s) ----
-    if (isdrinks) {
-      // Show all drink-group sections together
+    if (drinkGroup) {
+      menuSections.querySelectorAll(`.menu-section[data-drink-group="${drinkGroup}"]`)
+        .forEach(s => s.classList.add('panel-active'));
+    } else if (isdrinks) {
       menuSections.querySelectorAll(`.menu-section[data-group="${DRINKS_GROUP}"]`)
         .forEach(s => s.classList.add('panel-active'));
     } else {

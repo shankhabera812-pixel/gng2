@@ -117,6 +117,18 @@
          STICKY TAB BAR + DIETARY FILTERS
          ============================================================ -->
     <div class="menu-tabs-wrapper" role="navigation" aria-label="Menu categories">
+      <div class="container menu-search-row" role="search">
+        <div class="menu-search-input-wrap">
+          <svg class="menu-search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg>
+          <input type="text" id="menu-search-input" class="menu-search-input" placeholder="Search menu..." aria-label="Search menu">
+          <button id="menu-search-clear" class="menu-search-clear" aria-label="Clear search" style="display:none;">&times;</button>
+        </div>
+        <div id="menu-search-count" class="menu-search-count" aria-live="polite"></div>
+      </div>
+      
       <!-- Primary category tabs -->
       <div class="menu-tabs" role="tablist" aria-label="Menu sections">
         <button class="menu-tab active" role="tab" aria-selected="true"  data-target="power-bowls">Bowls</button>
@@ -131,7 +143,9 @@
         <button class="menu-tab" role="tab" aria-selected="false" data-target="acai">Açaí</button>
         <button class="menu-tab" role="tab" aria-selected="false" data-target="baked">Baked</button>
         <button class="menu-tab" role="tab" aria-selected="false" data-target="snacks">Sides</button>
-        <button class="menu-tab" role="tab" aria-selected="false" data-target="fruit-smoothies" data-group="drinks">Drinks</button>
+        <button class="menu-tab" role="tab" aria-selected="false" data-target="signature-brews" data-group="drinks" data-drink-group="coffee">Coffee</button>
+        <button class="menu-tab" role="tab" aria-selected="false" data-target="fruit-smoothies" data-group="drinks" data-drink-group="smoothies">Smoothies &amp; Juice</button>
+        <button class="menu-tab" role="tab" aria-selected="false" data-target="hot-tea" data-group="drinks" data-drink-group="other">Other Drinks</button>
       </div>
 
       <!-- Dietary filters — centered, compact, always visible -->

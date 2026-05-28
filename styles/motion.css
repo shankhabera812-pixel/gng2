@@ -147,4 +147,31 @@
   /* Mobile Row 5 fallback */
   .pillar-full-strip__photo { animation: none !important; opacity: 0 !important; }
   .pillar-full-strip__photo:nth-child(1) { opacity: 1 !important; }
+
+  /* New Components Fallbacks */
+  .item-preview-modal { transition: none !important; transform: none !important; }
+  .item-preview-overlay.open { transition: none !important; opacity: 1 !important; }
+  #search-results-section { transition: none !important; }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .item-preview-overlay {
+    transition: opacity 0.2s ease;
+    opacity: 0;
+  }
+  .item-preview-overlay.open {
+    opacity: 1;
+  }
+  .item-preview-modal {
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    transform: translateY(20px);
+  }
+  .item-preview-overlay.open .item-preview-modal {
+    transform: translateY(0);
+  }
+  @media (max-width: 640px) {
+    .item-preview-modal {
+      transform: translateY(100%);
+    }
+  }
 }

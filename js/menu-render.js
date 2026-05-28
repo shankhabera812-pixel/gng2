@@ -87,6 +87,10 @@ const IMAGE_MAP = {
   'plain bagel':                          null,
   // Snacks
   'mediterranean salad dip':              'Mediterranean Salad Dip.jpg',
+  'potato chips - salted':                'North-Fork-Potato-Chips-Original-Plain.jpg',
+  'potato chips - sour cream & onion':    'sourcreamonion.jpg',
+  'potato chips - sweet potato':          'North-Fork-Potato-Chips-Sweet-Potato.jpg',
+  'potato chips - bbq':                   'bbg.jpg',
   // Drinks — Smoothies
   'refresher smoothie':                   'Refresher Smoothies.jpg',
   'sun-joy smoothie':                     'Sun-joy Smoothies.jpg',
@@ -154,12 +158,21 @@ const TAG_LABELS = {
   V:  'Vegetarian',
 };
 
+export function slugifyItemName(name) {
+  return name.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
+}
+
+export function getCustomizationKey(sectionId, itemName) {
+  return `${sectionId}--${slugifyItemName(itemName)}`;
+}
+
 /**
  * Resolve image src for a given item name + section id.
  * Returns { src, alt } or null if no image (use placeholder).
  */
-function resolveImage(itemName, sectionId) {
-  const key = itemName.toLowerCase().trim();
+export function resolveImage(itemName, sectionId) {
+  // Normalize all types of dashes to a standard hyphen to prevent character encoding mismatches
+  const key = itemName.toLowerCase().trim().replace(/[\u2013\u2014\u2212\uFF0D]/g, '-');
   const filename = IMAGE_MAP[key];
 
   // Explicit null means intentionally no image
@@ -189,9 +202,18 @@ function buildPlaceholder(sectionId, itemName) {
 /**
  * Build a single menu card DOM element.
  */
-function buildCard(item, sectionId) {
+export function buildCard(item, section, { customizations = {}, searchResult = false } = {}) {
   const card = document.createElement('article');
   card.className = 'menu-card';
+  card.setAttribute('role', 'button');
+  card.setAttribute('tabindex', '0');
+  card.setAttribute('aria-label', `View details for ${item.name}`);
+  card.style.cursor = 'pointer';
+
+  card.dataset.sectionId = section.id;
+  card.dataset.sectionName = section.name;
+  card.dataset.itemSlug = slugifyItemName(item.name);
+
   if (!item.available) card.classList.add('unavailable');
 
   // Data attributes for filtering
@@ -203,7 +225,14 @@ function buildCard(item, sectionId) {
   const imgWrap = document.createElement('div');
   imgWrap.className = 'menu-card__img-wrap';
 
-  const imageData = resolveImage(item.name, sectionId);
+  if (searchResult) {
+    const pill = document.createElement('div');
+    pill.className = 'menu-card__search-pill';
+    pill.textContent = section.name;
+    imgWrap.appendChild(pill);
+  }
+
+  const imageData = resolveImage(item.name, section.id);
   if (imageData) {
     const img = document.createElement('img');
     img.className = 'menu-card__img';
@@ -214,7 +243,7 @@ function buildCard(item, sectionId) {
     img.height = 190;
     imgWrap.appendChild(img);
   } else {
-    imgWrap.appendChild(buildPlaceholder(sectionId, item.name));
+    imgWrap.appendChild(buildPlaceholder(section.id, item.name));
   }
 
   // Badge
@@ -234,6 +263,28 @@ function buildCard(item, sectionId) {
     badge.className = 'badge badge--new';
     badge.textContent = 'New';
     imgWrap.appendChild(badge);
+  }
+
+  const customKey = getCustomizationKey(section.id, item.name);
+  const sectionCustom = customizations[section.id];
+  const itemCustom = customizations[customKey];
+  let hasRequired = false;
+
+  if (itemCustom) {
+    for (const group in itemCustom) {
+      if (itemCustom[group].required) hasRequired = true;
+    }
+  } else if (sectionCustom) {
+    for (const group in sectionCustom) {
+      if (sectionCustom[group].required) hasRequired = true;
+    }
+  }
+
+  if (hasRequired) {
+    const customizeChip = document.createElement('span');
+    customizeChip.className = 'badge badge--customize';
+    customizeChip.textContent = 'Customize';
+    imgWrap.appendChild(customizeChip);
   }
 
   card.appendChild(imgWrap);
@@ -264,6 +315,12 @@ function buildCard(item, sectionId) {
     desc.className = 'menu-card__desc';
     desc.textContent = item.desc;
     body.appendChild(desc);
+
+    const viewDetails = document.createElement('div');
+    viewDetails.className = 'menu-card__view-details';
+    viewDetails.setAttribute('aria-hidden', 'true');
+    viewDetails.textContent = 'View details →';
+    body.appendChild(viewDetails);
   }
 
   // Allergen note (if any)
@@ -321,7 +378,7 @@ function buildCard(item, sectionId) {
 /**
  * Build a full section element from section data.
  */
-function buildSection(section) {
+function buildSection(section, customizations) {
   const sec = document.createElement('section');
   sec.id = section.id;
   sec.className = 'menu-section';
@@ -329,6 +386,7 @@ function buildSection(section) {
   // Stamp data-group so tab-panels.js can find drinks / food sections
   sec.dataset.group = section.group || 'food';
   if (section.group === 'drinks') sec.dataset.drinksSub = section.drinksSub || '';
+  if (section.drinkGroup) sec.dataset.drinkGroup = section.drinkGroup;
 
   // Header
   const header = document.createElement('div');
@@ -363,7 +421,7 @@ function buildSection(section) {
   grid.className = `container menu-section__grid${isCompact ? ' menu-section__grid--compact' : ''}`;
 
   section.items.forEach(item => {
-    const card = buildCard(item, section.id);
+    const card = buildCard(item, section, { customizations });
     grid.appendChild(card);
   });
 
@@ -376,7 +434,7 @@ function buildSection(section) {
  * Clears the container first, then renders all section elements.
  * All sections start hidden; tab-panels.js activates the first one.
  */
-export async function renderMenu() {
+export async function renderMenu({ customizations = {} } = {}) {
   const container = document.getElementById('menu-sections');
   if (!container) return;
 
@@ -395,7 +453,7 @@ export async function renderMenu() {
 
   // Render all sections (all hidden by default via CSS .menu-section { display:none })
   data.sections.forEach(section => {
-    const el = buildSection(section);
+    const el = buildSection(section, customizations);
     container.appendChild(el);
   });
 

@@ -704,7 +704,7 @@
 }
 
 .order-btn--toast {
-  background: var(--order-toast-bg);
+  background: var(--order-toast);
   border: 0.5px solid rgba(255, 255, 255, 0.09);
 }
 

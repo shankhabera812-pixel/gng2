@@ -1,0 +1,201 @@
+{
+  "power-bowls": {
+    "Optional Add-Ons": {
+      "options": {
+        "Hard-Boiled Egg": 2.95,
+        "Organic Tofu": 2.95,
+        "Grilled Chicken (All Natural)": 6.95,
+        "Shrimp": 7.95,
+        "Salmon": 9.95,
+        "Grass-Fed Steak": 10.95,
+        "Extra Rice": 2.00,
+        "Extra Sauce on the Side": 1.00
+      }
+    }
+  },
+  "salads": {
+    "Optional Add-Ons": {
+      "options": {
+        "Hard-Boiled Egg": 2.95,
+        "Organic Tofu": 2.95,
+        "Grilled Chicken (All Natural)": 6.95,
+        "Shrimp": 7.95,
+        "Salmon": 9.95,
+        "Grass-Fed Steak": 10.95,
+        "Extra Rice": 2.00,
+        "Extra Sauce on the Side": 1.00
+      }
+    }
+  },
+  "soups": {
+    "Bread Substitute": {
+      "optional": true,
+      "max": 1,
+      "options": {
+        "Gluten-Free Bread": 1.50
+      }
+    }
+  },
+  "flatbread": {
+    "Substitutions": {
+      "optional": true,
+      "max": 1,
+      "options": {
+        "Gluten-Free Flatbread": 1.00,
+        "Vegan Cheese": 1.00
+      }
+    }
+  },
+  "toast": {
+    "Bread Substitute": {
+      "optional": true,
+      "max": 1,
+      "options": {
+        "Multigrain": 1.50,
+        "Gluten-Free Toast": 1.50
+      }
+    }
+  },
+  "acai--build-your-acai": {
+    "Size": {
+      "required": true,
+      "max": 1,
+      "options": {
+        "Small 12oz": 11.95,
+        "Large 16oz": 14.95
+      }
+    },
+    "Toppings": {
+      "max": 5,
+      "options": {
+        "No Topping": 0,
+        "Peanut Butter": 0,
+        "Chia Seeds": 0,
+        "Almonds": 0,
+        "Coconut Flake": 0,
+        "Granola": 0,
+        "Blueberry": 0,
+        "Banana": 0,
+        "Strawberry": 0,
+        "Honey": 0,
+        "Chocolate Hazelnut Granola": 0,
+        "Cacao Nibs": 0,
+        "Kiwi": 0,
+        "Condensed Milk": 0
+      }
+    }
+  },
+  "breakfast--quiche": {
+    "Your Choice": {
+      "required": true,
+      "max": 1,
+      "options": {
+        "Smoked Turkey": 0,
+        "Veggies": 0
+      }
+    }
+  },
+  "breakfast--yogurt-mixed-fruit": {
+    "Yogurt Option": {
+      "required": true,
+      "max": 1,
+      "options": {
+        "Greek Plain Yogurt": 0,
+        "Organic Cultured Coconut Yogurt": 0
+      }
+    }
+  },
+  "breakfast--grill-and-green-omelet": {
+    "Cheese Option": {
+      "optional": true,
+      "max": 1,
+      "options": {
+        "Mozzarella Cheese": 0,
+        "Feta Cheese": 0,
+        "Cheddar Cheese": 0,
+        "No Cheese": 0
+      }
+    }
+  },
+  "breakfast--shakshuka": {
+    "Add-Ons": {
+      "optional": true,
+      "max": 1,
+      "options": {
+        "Chicken": 6.95,
+        "Salmon": 9.95
+      }
+    }
+  },
+  "breakfast--waffle": {
+    "Add-Ons": {
+      "optional": true,
+      "max": 1,
+      "options": {
+        "Chia Seed": 1.00,
+        "Flax Seed": 1.00,
+        "Cacao Nib": 2.00
+      }
+    }
+  },
+  "breakfast--breakfast-sandwich": {
+    "Bread Choice": {
+      "required": true,
+      "max": 1,
+      "options": {
+        "Plain Bagel": 0,
+        "Croissant": 0,
+        "Everything Bagel": 0,
+        "Gluten-Free English Muffin": 1.00,
+        "Gluten-Free Plain Bagel": 1.00
+      }
+    }
+  },
+  "baked--muffin": {
+    "Muffin Choice": {
+      "required": true,
+      "max": 1,
+      "options": {
+        "Orange Marmalade": 4.95,
+        "Chocolate Chunk (GF)": 4.95,
+        "Blueberry GF": 4.95,
+        "Blueberry Poppy Seed GF": 4.95,
+        "Strawberry Matcha White Chocolate": 4.95,
+        "Pistachio": 4.95
+      }
+    }
+  },
+  "baked--cookies": {
+    "Cookie Choice": {
+      "required": true,
+      "max": 1,
+      "options": {
+        "Chocolate Oat GF": 0,
+        "Peanut Butter Chocolate GF": 0
+      }
+    }
+  },
+  "baked--croissant": {
+    "Croissant Choice": {
+      "required": true,
+      "max": 1,
+      "options": {
+        "Almond Croissant": 4.95,
+        "Plain Croissant": 3.95,
+        "Chocolate Croissant": 4.95,
+        "Raspberry Cream Cheese": 4.95
+      }
+    }
+  },
+  "baked--plain-bagel": {
+    "Spread": {
+      "required": true,
+      "max": 1,
+      "options": {
+        "Cream Cheese": 0.50,
+        "Mixed Berry Spread": 0.50,
+        "None": 0
+      }
+    }
+  }
+}
