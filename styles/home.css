@@ -229,7 +229,15 @@
   }
 
   .hero__photo-outdoor {
-    display: none;
+    display: block;
+    top: 12px;
+    right: 12px;
+    transform: none;
+    width: clamp(118px, 34vw, 150px);
+    height: clamp(88px, 25vw, 112px);
+    border-width: 2px;
+    border-radius: 12px;
+    box-shadow: 0 6px 18px rgba(30, 43, 23, 0.18);
   }
 }
 
