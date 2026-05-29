@@ -717,6 +717,7 @@
 .order-btn {
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 10px;
   width: 100%;
   min-height: 52px;
@@ -724,7 +725,7 @@
   font-family: var(--ff-ui);
   text-decoration: none;
   border: none;
-  border-radius: 10px;
+  border-radius: 8px;
   color: #fff;
   text-align: left;
   cursor: pointer;
@@ -801,7 +802,7 @@
 .order-btn--lg {
   min-height: 64px;
   padding: 13px;
-  border-radius: 10px;
+  border-radius: 8px;
 }
 
 .order-btn--lg .order-btn__icon-wrap {
@@ -825,7 +826,7 @@
 .order-btn--hero {
   min-height: 72px;
   padding: 13px;
-  border-radius: 10px;
+  border-radius: 8px;
 }
 
 .order-btn--hero .order-btn__icon-wrap {
@@ -869,6 +870,55 @@
   .order-btn--hero {
     min-height: 64px;
   }
+}
+
+/* ============================================================
+   ORDER BUTTON WORDMARK - Option B redesign
+   Replaces icon-wrap + copy structure with a single SVG logo.
+   Logo sizing uses max-height + max-width to maintain aspect
+   ratio across all viewport widths.
+
+   Aspect ratios (for reference):
+     Toast      3.785:1  (viewBox 17.99 x 4.753)
+     DoorDash   8.556:1  (natural 154 x 18 - very wide)
+     Grubhub    4.766:1  (viewBox 600 x 125.9)
+
+   At max-height: 20px:
+     Toast    -> ~75.7px wide  (stays within any button >= 90px)
+     DoorDash -> 154px wide -> constrained by max-width on narrow viewports
+     Grubhub  -> ~95.3px wide (stays within any button >= 110px)
+   ============================================================ */
+
+.order-btn__wordmark {
+  display: block;
+  height: auto;
+  width: auto;
+  max-height: 20px;
+  max-width: calc(100% - 20px);
+  flex-shrink: 0;
+  pointer-events: none;
+}
+
+/* Larger variants (--lg and --hero size modifiers) */
+.order-btn--lg .order-btn__wordmark,
+.order-btn--hero .order-btn__wordmark {
+  max-height: 22px;
+}
+
+/* Hero platform-buttons-frame: remove gap (no icon beside text now) */
+.platform-buttons-frame .order-btn--hero {
+  padding: 12px 14px;
+  gap: 0;
+}
+
+/* DARK SECTION EDGE CASE: Toast (#18140c) on drinks-band (#0e1209)
+   These two darks have near-zero contrast. Add a hairline border
+   to define the Toast button edge against the dark section.
+   DoorDash and Grubhub are unaffected (their brand reds/oranges
+   contrast strongly against the deep forest background). */
+.drinks-band__actions .order-btn--toast,
+.drinks-band__inner .order-btn--toast {
+  border: 1px solid rgba(255, 255, 255, 0.18);
 }
 
 /* Order CTA band */
