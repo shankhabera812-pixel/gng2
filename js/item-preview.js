@@ -27,33 +27,39 @@ export function initItemPreview({ sections, customizations }) {
           <div class="item-preview-customizations" id="item-preview-customizations"></div>
           <div class="item-preview-cta-block" id="item-preview-cta-block">
             <p class="item-preview-cta-intro" id="item-preview-cta-intro"></p>
-            <div class="order-cta__buttons" id="item-preview-cta-buttons" style="display:flex;gap:12px;justify-content:center;width:100%;">
+            <div class="item-preview-cta-buttons" id="item-preview-cta-buttons">
               <a href="https://order.toasttab.com/online/grill-and-green-worcester-141-highland-street" class="order-btn order-btn--toast" aria-label="Order on Toast" target="_blank" rel="noopener noreferrer">
-                <span class="order-btn__icon-wrap" aria-hidden="true">
-                  <img class="order-btn__icon" src="assets/images/order/toast-bread.svg" alt="">
-                </span>
-                <span class="order-btn__copy">
-                  <span class="order-btn__label">Pickup · Native</span>
-                  <span class="order-btn__title">Order on Toast</span>
-                </span>
+                <img
+                  class="order-btn__wordmark"
+                  src="assets/images/order/toast-logo-white.svg"
+                  alt=""
+                  aria-hidden="true"
+                  width="80"
+                  height="22"
+                  loading="lazy"
+                >
               </a>
               <a href="https://www.doordash.com/store/grill-and-green-kitchen-worcester-34224401/?utm_campaign=gpa&rwg_token=AFd1xnE-txUF0f7iUgMiyNjNGYi-AOTA8s3OcXJ8QgxCacei0r2nY20U-uthtBy6Np3SNaKsHO2IwHWTFpjC9SCi6X9Oaf7iGg%3D%3D" class="order-btn order-btn--doordash" aria-label="Order on DoorDash" target="_blank" rel="noopener noreferrer">
-                <span class="order-btn__icon-wrap" aria-hidden="true">
-                  <img class="order-btn__icon" src="assets/images/order/doordash-dashes.svg" alt="">
-                </span>
-                <span class="order-btn__copy">
-                  <span class="order-btn__label">Delivery</span>
-                  <span class="order-btn__title">Order on DoorDash</span>
-                </span>
+                <img
+                  class="order-btn__wordmark"
+                  src="assets/images/order/doordash-logo-white.svg"
+                  alt=""
+                  aria-hidden="true"
+                  width="120"
+                  height="14"
+                  loading="lazy"
+                >
               </a>
               <a href="https://www.grubhub.com/restaurant/grill-and-green-worcester-141-highland-street-worcester/11665048?utm_source=google&utm_medium=organic&utm_campaign=place-action-link&delivery=true&rwg_token=AFd1xnFAirb7XZ7j82eFKfpBqMwoQ-y-EFIAI1xyaq_mUJ5X5xyuQU-6vN4raKmgbBKyIxf2b-PhqW5OS8ml-GfgbXZBESvqrQ%3D%3D" class="order-btn order-btn--grubhub" aria-label="Order on Grubhub" target="_blank" rel="noopener noreferrer">
-                <span class="order-btn__icon-wrap" aria-hidden="true">
-                  <img class="order-btn__icon" src="assets/images/order/grubhub-house.svg" alt="">
-                </span>
-                <span class="order-btn__copy">
-                  <span class="order-btn__label">Delivery</span>
-                  <span class="order-btn__title">Order on Grubhub</span>
-                </span>
+                <img
+                  class="order-btn__wordmark"
+                  src="assets/images/order/grubhub-wordmark-white.svg"
+                  alt=""
+                  aria-hidden="true"
+                  width="96"
+                  height="20"
+                  loading="lazy"
+                >
               </a>
             </div>
           </div>
@@ -149,7 +155,7 @@ export function initItemPreview({ sections, customizations }) {
       introEl.textContent = 'Not available right now — check back soon.';
       buttonsEl.style.display = 'none';
     } else {
-      buttonsEl.style.display = 'flex';
+      buttonsEl.style.display = '';
       if (section.group === 'drinks') {
         introEl.textContent = 'Like what you see? Order it now.';
       } else {

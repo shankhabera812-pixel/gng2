@@ -544,10 +544,22 @@
 }
 
 .item-preview-cta-buttons {
-  display: flex;
-  gap: 12px;
-  justify-content: center;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 8px;
+  width: 100%;
+  align-items: stretch;
+}
+
+.item-preview-cta-buttons .order-btn {
+  min-height: 56px;
+  padding: 12px 10px;
+  gap: 0;
+}
+
+.item-preview-cta-buttons .order-btn__wordmark {
+  max-height: 20px;
+  max-width: calc(100% - 16px);
 }
 
 .btn-order {
@@ -612,5 +624,20 @@
     background: var(--stone);
     border-radius: 2px;
     margin: 12px auto;
+  }
+}
+
+@media (max-width: 420px) {
+  .item-preview-cta-buttons {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .item-preview-cta-buttons .order-btn {
+    padding: 12px 14px;
+  }
+
+  .item-preview-cta-buttons .order-btn__wordmark {
+    max-height: 22px;
   }
 }
