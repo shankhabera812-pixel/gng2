@@ -1126,3 +1126,238 @@
   .grid-3 { grid-template-columns: 1fr; }
   .grid-4 { grid-template-columns: 1fr; }
 }
+
+/* ============================================================
+   ITEM PREVIEW MODAL (home + menu)
+   ============================================================ */
+
+.item-preview-overlay {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  z-index: 9999;
+  display: none;
+  align-items: center;
+  justify-content: center;
+}
+
+.item-preview-overlay.open {
+  display: flex;
+}
+
+.item-preview-backdrop {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.45);
+}
+
+.item-preview-modal {
+  position: relative;
+  width: 100%;
+  max-width: 540px;
+  background: var(--field);
+  border-radius: var(--r-lg);
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.item-preview-close {
+  position: absolute;
+  top: 16px; right: 16px;
+  background: rgba(255,255,255,0.8);
+  border: none;
+  font-size: 24px;
+  width: 32px; height: 32px;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.item-preview-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.item-preview-img-wrap {
+  width: 100%;
+  height: 240px;
+  background: var(--linen);
+}
+
+.item-preview-img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.item-preview-metadata {
+  padding: 24px;
+}
+
+.item-preview-badge {
+  font-family: var(--ff-ui);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  color: var(--dust);
+  display: block;
+  margin-bottom: 8px;
+}
+
+.item-preview-name {
+  font-family: var(--ff-display);
+  font-size: 28px;
+  margin-bottom: 4px;
+  color: var(--ink-2);
+}
+
+.item-preview-price {
+  font-family: var(--ff-ui);
+  font-size: 16px;
+  color: var(--ink-2);
+  margin-bottom: 16px;
+}
+
+.item-preview-desc {
+  font-family: var(--ff-body);
+  font-size: 15px;
+  line-height: 1.5;
+  color: var(--dust);
+  margin-bottom: 16px;
+}
+
+.item-preview-tags {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 16px;
+  flex-wrap: wrap;
+}
+
+.item-preview-note {
+  font-size: 13px;
+  color: var(--ember);
+  font-style: italic;
+  margin-bottom: 16px;
+}
+
+.item-preview-customizations {
+  padding: 0 24px 24px;
+}
+
+.item-preview-custom-group {
+  margin-bottom: 20px;
+}
+
+.item-preview-custom-header {
+  display: flex;
+  justify-content: space-between;
+  font-family: var(--ff-ui);
+  font-size: 13px;
+  margin-bottom: 12px;
+  color: var(--ink-2);
+}
+
+.item-preview-custom-header span {
+  color: var(--dust);
+}
+
+.item-preview-custom-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.item-preview-custom-chip {
+  background: var(--field-dk);
+  border: 1px solid var(--stone);
+  border-radius: var(--r-pill);
+  padding: 6px 12px;
+  font-family: var(--ff-ui);
+  font-size: 12px;
+  color: var(--ink-2);
+}
+
+.item-preview-custom-chip .price {
+  color: var(--ember);
+}
+
+.item-preview-cta-block {
+  padding: 24px;
+  background: var(--linen);
+  border-top: 1px solid var(--stone);
+  text-align: center;
+}
+
+.item-preview-cta-intro {
+  font-family: var(--ff-ui);
+  font-size: 14px;
+  color: var(--dust);
+  margin-bottom: 16px;
+}
+
+.item-preview-explore-menu {
+  margin: 0 auto 20px;
+}
+
+.item-preview-explore-menu[hidden] {
+  display: none;
+}
+
+.item-preview-cta-buttons {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 8px;
+  width: 100%;
+  align-items: stretch;
+}
+
+.item-preview-cta-buttons .order-btn {
+  min-height: 56px;
+  padding: 12px 10px;
+  gap: 0;
+}
+
+.item-preview-cta-buttons .order-btn__wordmark {
+  max-height: 20px;
+  max-width: calc(100% - 16px);
+}
+
+@media (max-width: 640px) {
+  .item-preview-overlay {
+    align-items: flex-end;
+  }
+  .item-preview-backdrop {
+    background: rgba(0,0,0,0.35);
+  }
+  .item-preview-modal {
+    border-radius: var(--r-lg) var(--r-lg) 0 0;
+  }
+  .item-preview-drag-handle {
+    width: 40px;
+    height: 4px;
+    background: var(--stone);
+    border-radius: 2px;
+    margin: 12px auto;
+  }
+}
+
+@media (max-width: 420px) {
+  .item-preview-cta-buttons {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .item-preview-cta-buttons .order-btn {
+    padding: 12px 14px;
+  }
+
+  .item-preview-cta-buttons .order-btn__wordmark {
+    max-height: 22px;
+  }
+}

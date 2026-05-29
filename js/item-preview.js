@@ -27,6 +27,7 @@ export function initItemPreview({ sections, customizations }) {
           <div class="item-preview-customizations" id="item-preview-customizations"></div>
           <div class="item-preview-cta-block" id="item-preview-cta-block">
             <p class="item-preview-cta-intro" id="item-preview-cta-intro"></p>
+            <a href="menu.html" class="btn btn-secondary item-preview-explore-menu" id="item-preview-explore-menu" hidden>Explore full menu</a>
             <div class="item-preview-cta-buttons" id="item-preview-cta-buttons">
               <a href="https://order.toasttab.com/online/grill-and-green-worcester-141-highland-street" class="order-btn order-btn--toast" aria-label="Order on Toast" target="_blank" rel="noopener noreferrer">
                 <img
@@ -75,6 +76,10 @@ export function initItemPreview({ sections, customizations }) {
   const modal = overlay.querySelector('.item-preview-modal');
   let activeCard = null;
 
+  function isDailyEditCard(card) {
+    return card.classList.contains('daily-edit__card');
+  }
+
   function openPreview(card) {
     const sectionId = card.dataset.sectionId;
     const itemSlug = card.dataset.itemSlug;
@@ -82,6 +87,7 @@ export function initItemPreview({ sections, customizations }) {
     const data = index[key];
     if (!data) return;
 
+    const fromDailyEdit = isDailyEditCard(card);
     activeCard = card;
     const { item, section } = data;
 
@@ -150,13 +156,19 @@ export function initItemPreview({ sections, customizations }) {
     }
 
     const introEl = overlay.querySelector('#item-preview-cta-intro');
+    const exploreBtn = overlay.querySelector('#item-preview-explore-menu');
     const buttonsEl = overlay.querySelector('#item-preview-cta-buttons');
+    exploreBtn.hidden = !fromDailyEdit;
+
     if (!item.available) {
       introEl.textContent = 'Not available right now — check back soon.';
       buttonsEl.style.display = 'none';
+      exploreBtn.hidden = true;
     } else {
       buttonsEl.style.display = '';
-      if (section.group === 'drinks') {
+      if (fromDailyEdit) {
+        introEl.textContent = 'Today\u2019s pick caught your eye? Add it to your order.';
+      } else if (section.group === 'drinks') {
         introEl.textContent = 'Like what you see? Order it now.';
       } else {
         introEl.textContent = 'Hungry? Add it to your order.';
@@ -179,18 +191,39 @@ export function initItemPreview({ sections, customizations }) {
     }
   }
 
-  document.getElementById('menu-sections').addEventListener('click', e => {
-    const card = e.target.closest('.menu-card');
-    if (card) openPreview(card);
-  });
+  const menuSections = document.getElementById('menu-sections');
+  if (menuSections) {
+    menuSections.addEventListener('click', e => {
+      const card = e.target.closest('.menu-card');
+      if (card) openPreview(card);
+    });
 
-  document.getElementById('menu-sections').addEventListener('keydown', e => {
-    const card = e.target.closest('.menu-card');
-    if (card && (e.key === 'Enter' || e.key === ' ')) {
+    menuSections.addEventListener('keydown', e => {
+      const card = e.target.closest('.menu-card');
+      if (card && (e.key === 'Enter' || e.key === ' ')) {
+        e.preventDefault();
+        openPreview(card);
+      }
+    });
+  }
+
+  const dailyEdit = document.querySelector('.daily-edit');
+  if (dailyEdit) {
+    dailyEdit.addEventListener('click', e => {
+      const card = e.target.closest('.daily-edit__card');
+      if (!card) return;
       e.preventDefault();
       openPreview(card);
-    }
-  });
+    });
+
+    dailyEdit.addEventListener('keydown', e => {
+      const card = e.target.closest('.daily-edit__card');
+      if (card && (e.key === 'Enter' || e.key === ' ')) {
+        e.preventDefault();
+        openPreview(card);
+      }
+    });
+  }
 
   closeBtn.addEventListener('click', closePreview);
   backdrop.addEventListener('click', closePreview);

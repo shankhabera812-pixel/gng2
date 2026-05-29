@@ -57,6 +57,7 @@ function toggleFilter(chip) {
   }
 
   applyFilters();
+  document.dispatchEvent(new CustomEvent('menu-filters-changed'));
 }
 
 export function applyFilters() {
@@ -90,4 +91,9 @@ export function resetFilters() {
   if (allChip) { allChip.classList.add('active'); allChip.setAttribute('aria-checked', 'true'); }
   // Remove filtered-out from all cards
   document.querySelectorAll('.menu-card.filtered-out').forEach(c => c.classList.remove('filtered-out'));
+  document.dispatchEvent(new CustomEvent('menu-filters-changed'));
+}
+
+export function getActiveFilterCount() {
+  return activeFilters.size;
 }

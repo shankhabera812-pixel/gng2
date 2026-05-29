@@ -1,5 +1,6 @@
 import { applyFilters } from './dietary-filter.js';
 import { buildCard } from './menu-render.js';
+import { setToolbarForceExpanded } from './menu-toolbar-compact.js';
 
 export function initMenuSearch({ sections, customizations }) {
   const searchInput = document.getElementById('menu-search-input');
@@ -105,7 +106,11 @@ export function initMenuSearch({ sections, customizations }) {
     }
     
     // Dim tabs
-    if (tabsWrapper) tabsWrapper.classList.add('search-active');
+    if (tabsWrapper) {
+      tabsWrapper.classList.add('search-active');
+      tabsWrapper.classList.add('search-expanded');
+    }
+    setToolbarForceExpanded(true);
 
     // Hide all normal sections by removing panel-active
     document.querySelectorAll('.menu-section:not(#search-results-section)').forEach(s => {
@@ -156,6 +161,8 @@ export function initMenuSearch({ sections, customizations }) {
     clearBtn.style.display = 'none';
     
     if (tabsWrapper) tabsWrapper.classList.remove('search-active');
+    tabsWrapper?.classList.remove('search-expanded');
+    setToolbarForceExpanded(false);
     
     resultsContainer.style.display = 'none';
     resultsContainer.classList.remove('panel-active');

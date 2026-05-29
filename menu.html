@@ -124,7 +124,7 @@
          STICKY TAB BAR + DIETARY FILTERS
          ============================================================ -->
     <div class="menu-tabs-wrapper" role="navigation" aria-label="Menu categories">
-      <div class="container menu-search-row" role="search">
+      <div class="container menu-search-row" id="menu-search-panel" role="search">
         <div class="menu-search-input-wrap">
           <svg class="menu-search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
             <circle cx="11" cy="11" r="8"></circle>
@@ -135,34 +135,50 @@
         </div>
         <div id="menu-search-count" class="menu-search-count" aria-live="polite"></div>
       </div>
-      
-      <!-- Primary category tabs -->
-      <div class="menu-tabs" role="tablist" aria-label="Menu sections">
-        <button class="menu-tab active" role="tab" aria-selected="true"  data-target="power-bowls">Bowls</button>
-        <button class="menu-tab" role="tab" aria-selected="false" data-target="grain-bowls">Grain Bowls</button>
-        <button class="menu-tab" role="tab" aria-selected="false" data-target="salads">Salads</button>
-        <button class="menu-tab" role="tab" aria-selected="false" data-target="sandwiches">Sandwiches</button>
-        <button class="menu-tab" role="tab" aria-selected="false" data-target="wraps">Wraps</button>
-        <button class="menu-tab" role="tab" aria-selected="false" data-target="flatbread">Flatbread</button>
-        <button class="menu-tab" role="tab" aria-selected="false" data-target="breakfast">Breakfast</button>
-        <button class="menu-tab" role="tab" aria-selected="false" data-target="toast">Toast</button>
-        <button class="menu-tab" role="tab" aria-selected="false" data-target="soups">Soups</button>
-        <button class="menu-tab" role="tab" aria-selected="false" data-target="acai">Açaí</button>
-        <button class="menu-tab" role="tab" aria-selected="false" data-target="baked">Baked</button>
-        <button class="menu-tab" role="tab" aria-selected="false" data-target="snacks">Sides</button>
-        <button class="menu-tab" role="tab" aria-selected="false" data-target="signature-brews" data-group="drinks" data-drink-group="coffee">Coffee</button>
-        <button class="menu-tab" role="tab" aria-selected="false" data-target="fruit-smoothies" data-group="drinks" data-drink-group="smoothies">Smoothies &amp; Juice</button>
-        <button class="menu-tab" role="tab" aria-selected="false" data-target="hot-tea" data-group="drinks" data-drink-group="other">Other Drinks</button>
+
+      <div class="menu-toolbar-row">
+        <button type="button" class="menu-search-toggle" aria-label="Search menu" aria-expanded="false" aria-controls="menu-search-panel">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg>
+        </button>
+
+        <div class="menu-tabs-scroll">
+          <div class="menu-tabs" role="tablist" aria-label="Menu sections">
+            <button class="menu-tab active" role="tab" aria-selected="true"  data-target="power-bowls">Bowls</button>
+            <button class="menu-tab" role="tab" aria-selected="false" data-target="grain-bowls">Grain Bowls</button>
+            <button class="menu-tab" role="tab" aria-selected="false" data-target="salads">Salads</button>
+            <button class="menu-tab" role="tab" aria-selected="false" data-target="sandwiches">Sandwiches</button>
+            <button class="menu-tab" role="tab" aria-selected="false" data-target="wraps">Wraps</button>
+            <button class="menu-tab" role="tab" aria-selected="false" data-target="flatbread">Flatbread</button>
+            <button class="menu-tab" role="tab" aria-selected="false" data-target="breakfast">Breakfast</button>
+            <button class="menu-tab" role="tab" aria-selected="false" data-target="toast">Toast</button>
+            <button class="menu-tab" role="tab" aria-selected="false" data-target="soups">Soups</button>
+            <button class="menu-tab" role="tab" aria-selected="false" data-target="acai">Açaí</button>
+            <button class="menu-tab" role="tab" aria-selected="false" data-target="baked">Baked</button>
+            <button class="menu-tab" role="tab" aria-selected="false" data-target="snacks">Sides</button>
+            <button class="menu-tab" role="tab" aria-selected="false" data-target="signature-brews" data-group="drinks" data-drink-group="coffee">Coffee</button>
+            <button class="menu-tab" role="tab" aria-selected="false" data-target="fruit-smoothies" data-group="drinks" data-drink-group="smoothies">Smoothies &amp; Juice</button>
+            <button class="menu-tab" role="tab" aria-selected="false" data-target="hot-tea" data-group="drinks" data-drink-group="other">Other Drinks</button>
+          </div>
+        </div>
+
+        <button type="button" class="menu-filters-toggle" aria-expanded="false" aria-controls="menu-filters-panel">
+          Filters
+          <span class="menu-filters-toggle__badge" aria-hidden="true" hidden></span>
+        </button>
       </div>
 
-      <!-- Dietary filters — centered, compact, always visible -->
-      <div class="menu-filters" role="group" aria-label="Dietary filters">
-        <button class="filter-chip active" data-filter="ALL" role="switch" aria-checked="true"  aria-label="Show all items">All</button>
-        <button class="filter-chip" data-filter="GF"  role="switch" aria-checked="false" aria-label="Filter Gluten-Free">GF</button>
-        <button class="filter-chip" data-filter="DF"  role="switch" aria-checked="false" aria-label="Filter Dairy-Free">DF</button>
-        <button class="filter-chip" data-filter="NF"  role="switch" aria-checked="false" aria-label="Filter Nut-Free">NF</button>
-        <button class="filter-chip" data-filter="VG"  role="switch" aria-checked="false" aria-label="Filter Vegan">VG</button>
-        <button class="filter-chip" data-filter="SF"  role="switch" aria-checked="false" aria-label="Filter Soy-Free">SF</button>
+      <div class="menu-filters-panel" id="menu-filters-panel">
+        <div class="menu-filters" id="menu-filters" role="group" aria-label="Dietary filters">
+          <button class="filter-chip active" data-filter="ALL" role="switch" aria-checked="true"  aria-label="Show all items">All</button>
+          <button class="filter-chip" data-filter="GF"  role="switch" aria-checked="false" aria-label="Filter Gluten-Free">GF</button>
+          <button class="filter-chip" data-filter="DF"  role="switch" aria-checked="false" aria-label="Filter Dairy-Free">DF</button>
+          <button class="filter-chip" data-filter="NF"  role="switch" aria-checked="false" aria-label="Filter Nut-Free">NF</button>
+          <button class="filter-chip" data-filter="VG"  role="switch" aria-checked="false" aria-label="Filter Vegan">VG</button>
+          <button class="filter-chip" data-filter="SF"  role="switch" aria-checked="false" aria-label="Filter Soy-Free">SF</button>
+        </div>
       </div>
     </div>
 

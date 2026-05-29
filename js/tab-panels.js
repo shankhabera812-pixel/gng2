@@ -9,6 +9,7 @@
    ============================================================ */
 
 import { resetFilters } from './dietary-filter.js';
+import { getToolbarHeight, flashToolbarExpand, syncToolbarCompact } from './menu-toolbar-compact.js';
 
 const DRINKS_GROUP = 'drinks';
 
@@ -74,10 +75,9 @@ export function initTabPanels() {
     }
 
     // ---- Scroll to top of menu content ----
-    // Use instant scroll (no smooth) so the content appears immediately at top
     const menuBody = document.getElementById('menu-body');
     if (menuBody) {
-      const stickyHeight = document.querySelector('.menu-tabs-wrapper')?.offsetHeight ?? 0;
+      const stickyHeight = getToolbarHeight();
       const navHeight    = parseInt(
         getComputedStyle(document.documentElement).getPropertyValue('--nav-h') || '68',
         10
@@ -85,6 +85,9 @@ export function initTabPanels() {
       const y = menuBody.getBoundingClientRect().top + window.scrollY - navHeight - stickyHeight;
       window.scrollTo({ top: Math.max(0, y), behavior: 'instant' });
     }
+
+    syncToolbarCompact();
+    flashToolbarExpand();
 
     // ---- Reset dietary filters to "All" ----
     resetFilters();
