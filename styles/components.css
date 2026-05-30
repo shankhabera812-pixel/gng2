@@ -1101,6 +1101,35 @@
   margin-top: 2px;
 }
 
+/* ---- Google Review Variant ---- */
+
+.testimonial-card--google {
+  cursor: default;
+}
+
+.testimonial-card__avatar--google {
+  background: linear-gradient(135deg, #4285F4 0%, #34A853 50%, #FBBC05 100%);
+  color: #fff;
+  font-weight: 700;
+  font-size: 15px;
+}
+
+.testimonial-card__meta--google {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.testimonial-card__meta--google svg {
+  flex-shrink: 0;
+  position: relative;
+  top: 0px;
+}
+
+.testimonial-card__meta--google span {
+  line-height: 1.3;
+}
+
 /* ============================================================
    GRID HELPERS
    ============================================================ */

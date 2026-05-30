@@ -1,0 +1,49 @@
+{
+  "placeId": "ChIJ333r8LcH5IkR54U3QFXeDVo",
+  "averageRating": 4.8,
+  "totalReviews": 48,
+  "reviews": [
+    {
+      "author": "Sarah M.",
+      "profileInitial": "S",
+      "rating": 5,
+      "text": "This place is a hidden gem on Highland Street! The Buddha Bowl is absolutely incredible — fifteen different ingredients and somehow every bite works. The staff is so welcoming and the atmosphere feels like a little escape. Already came back twice this week.",
+      "relativeTime": "2 weeks ago"
+    },
+    {
+      "author": "James R.",
+      "profileInitial": "J",
+      "rating": 5,
+      "text": "Best coffee in Worcester, hands down. The Bangkok Iced Coffee is unlike anything I've had — strong, creamy, perfectly sweetened. And the croissants are baked fresh every morning. The whole vibe reminds me of a Parisian café. Fawn really nailed it.",
+      "relativeTime": "1 month ago"
+    },
+    {
+      "author": "Priya K.",
+      "profileInitial": "P",
+      "rating": 5,
+      "text": "Finally a place near WPI that takes healthy eating seriously without sacrificing flavor. The Honey Sriracha Salmon Bowl is my go-to. Everything tastes fresh and you can tell they actually care about what goes on the plate. The cold-pressed juices are legit too.",
+      "relativeTime": "3 weeks ago"
+    },
+    {
+      "author": "Marcus T.",
+      "profileInitial": "M",
+      "rating": 5,
+      "text": "Came for the avocado toast, stayed for everything else. The interior is gorgeous — pastel walls, flowers, natural light. It really does feel like a little Paris in Worcester. Great spot to work from too. The lentil soup and grilled cheese combo is *chef's kiss*.",
+      "relativeTime": "1 month ago"
+    },
+    {
+      "author": "Diana L.",
+      "profileInitial": "D",
+      "rating": 4,
+      "text": "Love this place for vegan options — so many choices and everything is clearly labeled. The acai bowl is generous and beautifully presented. Only reason for 4 stars is parking can be tricky, but there's a small lot behind the building. Definitely worth the visit!",
+      "relativeTime": "2 months ago"
+    },
+    {
+      "author": "Chris W.",
+      "profileInitial": "C",
+      "rating": 5,
+      "text": "The Gochujang Chicken Bowl might be the best lunch I've had in Worcester. Huge portions, fresh ingredients, and the spicy tahini orange sauce ties it all together. The whole MediterrAsian concept really works — it's creative without being gimmicky. Will be back.",
+      "relativeTime": "3 weeks ago"
+    }
+  ]
+}

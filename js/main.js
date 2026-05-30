@@ -1,6 +1,7 @@
 import { initNav }           from './nav.js';
 import { initScrollReveal }  from './scroll-reveal.js';
 import { initBreeze }        from './breeze.js';
+import { initGoogleReviews } from './google-reviews.js';
 import { renderMenu }        from './menu-render.js';
 import { initTabPanels }     from './tab-panels.js';
 import { initDietaryFilter } from './dietary-filter.js';
@@ -16,6 +17,7 @@ document.addEventListener('DOMContentLoaded', async () => {
   // ---- Homepage only ----
   if (document.body.dataset.page === 'home') {
     initBreeze();
+    initGoogleReviews();
 
     let customizations = {};
     try {
