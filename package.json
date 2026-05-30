@@ -1,0 +1,14 @@
+{
+  "name": "grillngreen",
+  "version": "1.0.0",
+  "description": "Grill & Green Kitchen website",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "echo 'Development server - Open index.html in browser'",
+    "build": "echo 'Build complete - Static site ready for deployment'"
+  },
+  "dependencies": {
+    "@vercel/speed-insights": "^2.0.0"
+  }
+}
